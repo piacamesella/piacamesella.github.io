@@ -1,18 +1,8 @@
-//de aca
-function mostrarListaProductos(arrayProducts){
-    for (const products of arrayProducts){
-        let contenido=`
-        <li>
-        Título:${products.name}
-        `
-
-    }
-}
-function showCategoriesList(array){
+function mostrarListaProductos(listaProductos){
     let htmlContentToAppend = "";
 
-    for(let i = 0; i < array.length; i++){ 
-        let products = array[i];
+    for(let i = 0; i < listaProductos; i++){ 
+        let products = listaProductos[i];
         htmlContentToAppend += `
         <div class="list-group-item list-group-item-action">
             <div class="row">
@@ -32,7 +22,7 @@ function showCategoriesList(array){
             </div>
         </div>
         `
-        document.getElementById("autos").innerHTML;//innerHTML+=talcosa
+        document.getElementById("autos").innerHTML = htmlContentToAppend;
     }
 }
 //a aca arreglar
