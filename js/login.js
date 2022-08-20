@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function(){
     document.getElementById("submitButton").addEventListener("click",function(){
-        if (getElementById("inputEmail")!== "" && getElementById("inputPassword")!==""){
+        if (email!== "" && password!==""){
             window.location.replace("https://github.com/piacamesella/piacamesella.github.io/blob/main/portada.html");
         }})
     })
