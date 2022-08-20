@@ -3,5 +3,6 @@ document.addEventListener("DOMContentLoaded", function(){
         let email=document.getElementById("inputEmail").value;
     })
 })
-if(email!==""&&password)
+if(email!==""&&password){
 window.location.replace("portada.html");
+}
