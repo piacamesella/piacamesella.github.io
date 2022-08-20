@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function(){
-    document.getElementByName("submitButton").addEventListener("click",function(){
+    document.getElementById("submitButton").addEventListener("click",function(){
         if (email!=="" && password!==""){
             window.location.replace("portada.html");
         }})
