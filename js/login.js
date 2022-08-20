@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function(){
-    document.getElementById("submitBtn").addEventListener("click",function(){
+    document.getElementByName("submitButton").addEventListener("click",function(){
         let email=document.getElementById("inputEmail").value;
         let password=document.getElementById("inputPassword").value;
 
