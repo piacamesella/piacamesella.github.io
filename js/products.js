@@ -1,3 +1,7 @@
+//agregue constante con el url del json
+const PRODUCJSON_URL = "https://japceibal.github.io/emercado-api/cats_products/101.json";
+
+let listaProductos=[];
 function mostrarListaProductos(listaProductos){
     let htmlContentToAppend = "";
 
