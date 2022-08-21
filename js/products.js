@@ -1,4 +1,3 @@
-var produjsonUrl = "https://japceibal.github.io/emercado-api/cats_products/101.json";
 let listaProductos=[];
 function mostrarListaProductos(listaProductos){
     let htmlContentToAppend = "";
@@ -28,6 +27,7 @@ function mostrarListaProductos(listaProductos){
     }
 }
 //a aca arreglar
+var produjsonUrl = "https://japceibal.github.io/emercado-api/cats_products/101.json";
 
 document.addEventListener("DOMContentLoaded", function(a){
     getJSONData(produjsonUrl).then(function(resultObj){
