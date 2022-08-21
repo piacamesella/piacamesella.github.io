@@ -27,10 +27,9 @@ function mostrarArrayProductos(arrayProductos){
     }
 }
 //a aca arreglar
-var produjsonUrl = "https://japceibal.github.io/emercado-api/cats_products/101.json";
 
 document.addEventListener("DOMContentLoaded", function(a){
-    getJSONData(produjsonUrl).then(function(resultObj){
+    getJSONData(PRODUCJSON_URL).then(function(resultObj){
         if (resultObj.status === "ok")
         {
             let arrayProductos=resultObj.data.products;
