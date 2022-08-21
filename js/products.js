@@ -32,7 +32,7 @@ function mostrarListaProductos(listaProductos){
 //a aca arreglar
 
 document.addEventListener("DOMContentLoaded", function(a){
-    getJSONData(PRODUCJSON_URL).then(function(resultObj){
+    getJSONData("https://japceibal.github.io/emercado-api/cats_products/101.json").then(function(resultObj){
         if (resultObj.status === "ok")
         {
             let listaProductos=resultObj.data.products;
