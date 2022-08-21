@@ -23,7 +23,7 @@ function mostrarArrayProductos(array){
             </div>
         </div>
         `
-        document.getElementById("autos").innerHTML = htmlContentToAppend;
+        document.getElementById("prod-list-container").innerHTML = htmlContentToAppend;
     }
 }
 //a aca arreglar
