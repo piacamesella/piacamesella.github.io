@@ -3,6 +3,7 @@ function mostrarArrayProducts(array){
     let htmlContentToAppend = "";
 
     for(let i = 0; i < array.length; i++){ 
+        console.log(i);
         let products = array[i];
         htmlContentToAppend += `
         <div class="list-group-item list-group-item-action">
