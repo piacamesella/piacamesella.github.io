@@ -1,4 +1,3 @@
-let arrayProductos=[];
 function mostrarArrayProductos(arrayProductos){
     let htmlContentToAppend = "";
 
