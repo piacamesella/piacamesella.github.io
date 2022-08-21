@@ -1,6 +1,4 @@
-//agregue constante con el url del json
-const PRODUCJSON_URL = "https://japceibal.github.io/emercado-api/cats_products/101.json";
-
+var produjsonUrl = "https://japceibal.github.io/emercado-api/cats_products/101.json";
 let listaProductos=[];
 function mostrarListaProductos(listaProductos){
     let htmlContentToAppend = "";
@@ -32,7 +30,7 @@ function mostrarListaProductos(listaProductos){
 //a aca arreglar
 
 document.addEventListener("DOMContentLoaded", function(a){
-    getJSONData("https://japceibal.github.io/emercado-api/cats_products/101.json").then(function(resultObj){
+    getJSONData(produjsonUrl).then(function(resultObj){
         if (resultObj.status === "ok")
         {
             let listaProductos=resultObj.data.products;
