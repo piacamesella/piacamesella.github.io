@@ -1,4 +1,4 @@
-let arrayProductos = [];
+let arrayProducts = [];
 function mostrarArrayProductos(array){
     let htmlContentToAppend = "";
 
@@ -33,8 +33,8 @@ document.addEventListener("DOMContentLoaded", function(a){
         if (resultObj.status === "ok")
         {
             arrayProductos=resultObj.data.products;
-            mostrarArrayProductos(arrayProductos);
-            console.log(arrayProductos);
+            mostrarArrayProducts(arrayProducts);
+            console.log(arrayProducts);
         }
     });
 });
