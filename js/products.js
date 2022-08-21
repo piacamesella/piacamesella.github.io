@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function(a){
     getJSONData(producjsonUrl).then(function(resultObj){
         if (resultObj.status === "ok")
         {
-            let arrayProductos=resultObj.data.products;
+            arrayProductos=resultObj.data.products;
             mostrarArrayProductos(arrayProductos);
             console.log(arrayProductos);
         }
