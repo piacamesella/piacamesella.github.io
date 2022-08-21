@@ -1,3 +1,4 @@
+let arrayProducts = [];
 function mostrarArrayProducts(array){
 
     let htmlContentToAppend = "";
@@ -32,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function(a){
     getJSONData(producjsonUrl).then(function(resultObj){
         if (resultObj.status === "ok")
         {
-            arrayProductos=resultObj.data.products;
+            arrayProducts=resultObj.data.products;
             mostrarArrayProducts(arrayProducts);
             console.log(arrayProducts);
         }
