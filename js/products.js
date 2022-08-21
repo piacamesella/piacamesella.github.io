@@ -1,8 +1,9 @@
-function mostrarArrayProductos(arrayProductos){
+let arrayProductos = [];
+function mostrarArrayProductos(array){
     let htmlContentToAppend = "";
 
-    for(let i = 0; i < arrayProductos; i++){ 
-        let products = arrayProductos[i];
+    for(let i = 0; i < array.length; i++){ 
+        let products = array[i];
         htmlContentToAppend += `
         <div class="list-group-item list-group-item-action">
             <div class="row">
