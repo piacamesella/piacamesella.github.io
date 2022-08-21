@@ -1,5 +1,5 @@
 let arrayProducts = [];
-function mostrarArrayProductos(array){
+function mostrarArrayProducts(array){
     let htmlContentToAppend = "";
 
     for(let i = 0; i < array.length; i++){ 
