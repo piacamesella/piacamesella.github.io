@@ -1,3 +1,4 @@
+//variable que contiene el array vacío donde se cargarán los datos recibidos
 let arrayProducts = [];
 function mostrarArrayProducts(array){
 
@@ -27,10 +28,10 @@ function mostrarArrayProducts(array){
     }
 
 
-//a aca arreglar
+//declaré variable que contiene el url de los productos en formato json
 var producjsonUrl="https://japceibal.github.io/emercado-api/cats_products/101.json";
 document.addEventListener("DOMContentLoaded", function(a){
-    getJSONData(producjsonUrl).then(function(resultObj){
+    getJSONData(productos_todos).then(function(resultObj){
         if (resultObj.status === "ok")
         {
             arrayProducts=resultObj.data.products;
