@@ -29,7 +29,7 @@ function mostrarArrayProducts(array){
 
 
 //declaré variable que contiene el url de los productos en formato json
-const productos_todos= `PRODUCTS_URL${localStorage.getItem("catID")}EXT_TYPE`;
+var productos_todos= `PRODUCTS_URL${localStorage.getItem("catID")}EXT_TYPE`;
 document.addEventListener("DOMContentLoaded", function(a){
     getJSONData(productos_todos).then(function(resultObj){
         if (resultObj.status === "ok")
