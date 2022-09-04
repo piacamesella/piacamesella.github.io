@@ -65,10 +65,10 @@ function mostrarArrayProducts(array){
                 </div>
             </div>
             `
-
-        document.getElementById("prod-list-container").innerHTML = htmlContentToAppend;
         }
-    }
+        document.getElementById("prod-list-container").innerHTML = htmlContentToAppend;
+     }
+  }
 
 //de aca
 function ordenarYMostrarArrayProducts(criterioDeOrden, productosArray){
