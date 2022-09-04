@@ -24,11 +24,11 @@ function ordenarLista(criterio, array){
         });
     }else if (criterio === ORDEN_DESC_RELEVANCIA){
         result = array.sort(function(a, b) {
-            let aRelevancia = a.soldCount;
-            let bRelevancia = b.soldCount;
+            let aCount = a.soldCount;
+            let bCount = b.soldCount;
 
-            if ( aRelevancia > bRelevancia ){ return -1; }
-            if ( aRelevancia < bRelevancia ){ return 1; }
+            if ( aCount > bCount){ return -1; }
+            if ( aCount < bCount ){ return 1; }
             return 0;
         });
     }
@@ -68,11 +68,11 @@ function mostrarArrayProducts(array){
     }
 
 //de aca
-function sortAndShowCategories(sortCriteria, categoriesArray){
-    criterioDeOrdenActual = sortCriteria;
+function ordenarYMostrarArrayProducts(criterioDeOrden, productosArray){
+    criterioDeOrdenActual = criterioDeOrden;
 
-    if(categoriesArray != undefined){
-        arrayProducts = categoriesArray;
+    if(productosArray != undefined){
+        arrayProducts = productosArray;
     }
 
     arrayProducts = ordenarLista(criterioDeOrdenActual, arrayProducts);
@@ -97,15 +97,15 @@ document.addEventListener("DOMContentLoaded", function(a){
 
 //de aca
 document.getElementById("ordenAsc").addEventListener("click", function(){
-    sortAndShowCategories(ORDEN_ASC_PRECIO);
+    ordenarYMostrarArrayProducts(ORDEN_ASC_PRECIO);
 });
 
 document.getElementById("ordenDesc").addEventListener("click", function(){
-    sortAndShowCategories(ORDEN_DESC_PRECIO);
+    ordenarYMostrarArrayProducts(ORDEN_DESC_PRECIO);
 });
 
 document.getElementById("ordenRelevancia").addEventListener("click", function(){
-    sortAndShowCategories(ORDEN_DESC_RELEVANCIA);
+    ordenarYMostrarArrayProducts(ORDEN_DESC_RELEVANCIA);
 });
 
 document.getElementById("limpiar").addEventListener("click", function(){
