@@ -44,45 +44,45 @@
       <div class="container">
         <div class="row">
             <div class="list-group" id="prod-list-container">
-
+              <div class="container">
+                <div class="row">
+                  <div class="col text-end">
+                    <div class="btn-group btn-group-toggle mb-4" data-bs-toggle="buttons">
+                      <input type="radio" class="btn-check" name="options" id="ordenAsc">
+                      <label class="btn btn-light" for="ordenAsc">A-Z</label>
+                      <input type="radio" class="btn-check" name="options" id="ordenDesc">
+                      <label class="btn btn-light" for="ordenDesc">Z-A</label>
+                      <input type="radio" class="btn-check" name="options" id="ordenRelevancia" checked>
+                      <label class="btn btn-light" for="ordenRelevancia"><i class="fas fa-sort-amount-down mr-1"></i></label>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-6 offset-lg-6 col-md-12 mb-1 container">
+                    <div class="row container p-0 m-0">
+                      <div class="col">
+                        <p class="font-weight-normal text-end my-2">Precio</p>
+                      </div>
+                      <div class="col">
+                        <input class="form-control" type="number" placeholder="min." id="rango-min">
+                      </div>
+                      <div class="col">
+                        <input class="form-control" type="number" placeholder="máx." id="rango-max">
+                      </div>
+                      <div class="col-3 p-0">
+                        <div class="btn-group" role="group">
+                          <button class="btn btn-light btn-block" id="filtrar">Filtrar</button>
+                          <button class="btn btn-link btn-sm" id="limpiar">Limpiar</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
             </div>
         </div>
     </div>
   </main>
 
-  <div class="container">
-    <div class="row">
-      <div class="col text-end">
-        <div class="btn-group btn-group-toggle mb-4" data-bs-toggle="buttons">
-          <input type="radio" class="btn-check" name="options" id="ordenAsc">
-          <label class="btn btn-light" for="ordenAsc">A-Z</label>
-          <input type="radio" class="btn-check" name="options" id="ordenDesc">
-          <label class="btn btn-light" for="ordenDesc">Z-A</label>
-          <input type="radio" class="btn-check" name="options" id="ordenRelevancia" checked>
-          <label class="btn btn-light" for="ordenRelevancia"><i class="fas fa-sort-amount-down mr-1"></i></label>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-6 offset-lg-6 col-md-12 mb-1 container">
-        <div class="row container p-0 m-0">
-          <div class="col">
-            <p class="font-weight-normal text-end my-2">Precio</p>
-          </div>
-          <div class="col">
-            <input class="form-control" type="number" placeholder="min." id="rango-min">
-          </div>
-          <div class="col">
-            <input class="form-control" type="number" placeholder="máx." id="rango-max">
-          </div>
-          <div class="col-3 p-0">
-            <div class="btn-group" role="group">
-              <button class="btn btn-light btn-block" id="filtrar">Filtrar</button>
-              <button class="btn btn-link btn-sm" id="limpiar">Limpiar</button>
-            </div>
-          </div>
-        </div>
-      </div>
+  
       
   <footer class="text-muted">
     <div class="container">
