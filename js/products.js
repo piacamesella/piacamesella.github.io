@@ -29,9 +29,10 @@ function mostrarArrayProducts(array){
 
 
 //declaré variable que contiene el url de los productos en formato json
+const productos_todos= `PRODUCTS_URL${localStorage.getItem("catID")}EXT_TYPE`;
+console.log("catID");
 document.addEventListener("DOMContentLoaded", function(a){
     getJSONData(productos_todos).then(function(resultObj){
-        console.log(productos_todos);
         if (resultObj.status === "ok")
         {
             arrayProducts=resultObj.data.products;
