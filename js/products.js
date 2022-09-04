@@ -45,6 +45,9 @@ function mostrarArrayProducts(array){
     let htmlContentToAppend = "";
     for(let i = 0; i < array.length; i++){
         let products = array[i];
+        products.cost;
+        if ((min==undefined && max==undefined)||(products.cost>=min && products.cost<=max)||
+        (products.cost>=min && max==undefined)||(products.cost<=max && min==undefined)){
 
             htmlContentToAppend += `
             <div onclick="setCatID(${products.id})" class="list-group-item list-group-item-action cursor-active">
@@ -62,9 +65,9 @@ function mostrarArrayProducts(array){
                 </div>
             </div>
             `
-        }
 
         document.getElementById("prod-list-container").innerHTML = htmlContentToAppend;
+        }
     }
 
 //de aca
