@@ -1,5 +1,3 @@
-//agregue constante que contiene el url de los productos en formato json
-const PRODUCJSON_URL = "https://japceibal.github.io/emercado-api/cats_products/101.json";
 const CATEGORIES_URL = "https://japceibal.github.io/emercado-api/cats/cat.json";
 const PUBLISH_PRODUCT_URL = "https://japceibal.github.io/emercado-api/sell/publish.json";
 const PRODUCTS_URL = "https://japceibal.github.io/emercado-api/cats_products/";
