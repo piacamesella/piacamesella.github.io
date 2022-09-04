@@ -44,11 +44,7 @@ function mostrarArrayProducts(array){
 
     let htmlContentToAppend = "";
     for(let i = 0; i < array.length; i++){
-        console.log(typeof max);
-        console.log(typeof min);
-        console.log(typeof products.cost);
         let products = array[i];
-        products.cost;
         if ((min==undefined && max==undefined)||(products.cost>=min && products.cost<=max)||
         (products.cost>=min && max==undefined)||(products.cost<=max && min==undefined)){
 
