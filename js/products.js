@@ -54,7 +54,7 @@ function mostrarArrayProducts(array){
                     </div>
                     <div class="col">
                         <div class="d-flex w-100 justify-content-between">
-                            <h4 class="mb-1">${products.name}</h4>
+                            <h4 class="mb-1">${products.name}${products.currency}${products.cost}</h4>
                             <small class="text-muted">${products.soldCount} artículos</small>
                         </div>
                         <p class="mb-1">${products.description}</p>
