@@ -8,7 +8,8 @@ const PRODUCT_INFO_COMMENTS_URL = "https://japceibal.github.io/emercado-api/prod
 const CART_INFO_URL = "https://japceibal.github.io/emercado-api/user_cart/";
 const CART_BUY_URL = "https://japceibal.github.io/emercado-api/cart/buy.json";
 const EXT_TYPE = ".json";
-const productos_todos= `PRODUCTS_URL${getElementById("autos")}EXT_TYPE`;
+const productos_todos= `PRODUCTS_URL${localStorage.getItem("catID")}EXT_TYPE`;
+console.log("catID");
 
 
 
