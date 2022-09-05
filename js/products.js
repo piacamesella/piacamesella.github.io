@@ -7,23 +7,23 @@ let criterioDeOrdenActual= undefined;
 let min = undefined;
 let max = undefined;
 
-function ordenarLista(criterio, array){
+function sortLista(criteria, array){
     let result = [];
-    if (criterio === ORDEN_ASC_PRECIO)
+    if (criteria === ORDEN_ASC_PRECIO)
     {
-        result = array.sort(function(a, b) {
+        result = arrayProducts.sort(function(a, b) {
             if ( a.cost < b.cost ){ return -1; }
             if ( a.cost > b.cost ){ return 1; }
             return 0;
         });
-    }else if (criterio === ORDEN_DESC_PRECIO){
-        result = array.sort(function(a, b) {
+    }else if (criteria === ORDEN_DESC_PRECIO){
+        result = arrayProducts.sort(function(a, b) {
             if ( a.cost > b.cost ){ return -1; }
             if ( a.cost < b.cost ){ return 1; }
             return 0;
         });
-    }else if (criterio === ORDEN_DESC_RELEVANCIA){
-        result = array.sort(function(a, b) {
+    }else if (criteria === ORDEN_DESC_RELEVANCIA){
+        result = arrayProducts.sort(function(a, b) {
             let aCount = a.soldCount;
             let bCount = b.soldCount;
 
@@ -69,23 +69,22 @@ function mostrarArrayProducts(array){
      }
   }
 
-//de aca
-function ordenarYMostrarArrayProducts(criterioDeOrden, productosArray){
-    criterioDeOrdenActual = criterioDeOrden;
+
+function ordenarYMostrarArrayProducts(criteriaDeOrden, productosArray){
+    criteriaDeOrdenActual = criteriaDeOrden;
 
     if(productosArray != undefined){
-        arrayProducts = productosArray;
+        array = productosArray;
     }
 
-    arrayProducts = ordenarLista(criterioDeOrdenActual, arrayProducts);
+    arrayProducts = sortLista(criteriaDeOrdenActual, arrayProducts);
 
     //Muestro las categorías ordenadas
     mostrarArrayProducts();
 }
 
-//a aca
 
-//declaré variable que contiene el url de los productos en formato json
+//paso nuevo url de los productos 
 document.addEventListener("DOMContentLoaded", function(a){
     getJSONData(PRODUCTOS_TODOS).then(function(resultObj){
         if (resultObj.status === "ok")
@@ -97,7 +96,7 @@ document.addEventListener("DOMContentLoaded", function(a){
     });
 });
 
-//de aca
+
 document.getElementById("ordenAsc").addEventListener("click", function(){
     ordenarYMostrarArrayProducts(ORDEN_ASC_PRECIO);
 });
@@ -135,4 +134,3 @@ document.getElementById("filtrar").addEventListener("click", function(){
     }
     mostrarArrayProducts();
 });
-//a aca
