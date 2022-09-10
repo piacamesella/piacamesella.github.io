@@ -3,7 +3,7 @@ const ORDEN_DESC_PRECIO = "$";
 const ORDEN_ASC_PRECIO = "$";
 const ORDEN_DESC_RELEVANCIA = "Rel.";
 let arrayProducts = [];
-let criterioDeOrdenActual= undefined;
+let criteriaDeOrdenActual= undefined;
 let min = undefined;
 let max = undefined;
 
@@ -71,7 +71,7 @@ function mostrarArrayProducts(array){
 
 
 function ordenarYMostrarArrayProducts(criteriaDeOrden, productosArray){
-    criterioDeOrdenActual = criteriaDeOrden;
+    criteriaDeOrdenActual = criteriaDeOrden;
 
     if(productosArray != undefined){
         array = productosArray;
