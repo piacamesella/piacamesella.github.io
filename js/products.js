@@ -71,7 +71,7 @@ function mostrarArrayProducts(array){
 
 
 function ordenarYMostrarArrayProducts(criteriaDeOrden, productosArray){
-    criteriaDeOrdenActual = criteriaDeOrden;
+    criterioDeOrdenActual = criteriaDeOrden;
 
     if(productosArray != undefined){
         array = productosArray;
