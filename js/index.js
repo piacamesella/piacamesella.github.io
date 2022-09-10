@@ -11,5 +11,13 @@ document.addEventListener("DOMContentLoaded", function(){
         localStorage.setItem("catID", 103);
         window.location = "products.html"
     });
-
+    
 });
+
+function mostrarUsuario(){
+    if(localStorage.getItem("usuario")){
+        email=localStorage.getItem("usuario");
+        usuario=email;
+        document.getElementById("emailIngresado").innerHTML=email;
+    }
+}
