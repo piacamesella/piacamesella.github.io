@@ -129,13 +129,13 @@ document.getElementById("filtrar").addEventListener("click", function(){
 
     //Obtengo el mínimo y máximo para filtrar por precios
     if (document.getElementById("rango-min") !=""){
-        min = document.getElementById("rango-min");
+        min = document.getElementById("rango-min").value
     }else{
         min = undefined;
     }
     
     if (document.getElementById("rango-max")!=""){
-        max = document.getElementById("rango-max");
+        max = document.getElementById("rango-max").value
     }else{
         max = undefined;
     }
