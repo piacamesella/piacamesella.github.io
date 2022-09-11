@@ -18,8 +18,8 @@ function sortLista(criteria, array){
         });
     }else if (criteria === ORDEN_DESC_PRECIO){
         result = arrayProducts.sort(function(a, b) {
-            if ( a.cost > b.cost ){ return -1; }
             if ( a.cost < b.cost ){ return 1; }
+            if ( a.cost > b.cost ){ return -1; }
             return 0;
         });
     }else if (criteria === ORDEN_DESC_RELEVANCIA){
