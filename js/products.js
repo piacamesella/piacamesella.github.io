@@ -4,8 +4,8 @@ const ORDEN_ASC_PRECIO = "$";
 const ORDEN_DESC_RELEVANCIA = "Rel.";
 let arrayProducts = [];
 let criteriaDeOrdenActual= undefined;
-let min = NaN;
-let max = NaN;
+let min = undefined;
+let max = undefined;
 
 function sortLista(criteria, array){
     let result = [];
@@ -45,8 +45,8 @@ function mostrarArrayProducts(array){
     let htmlContentToAppend = "";
     for(let i = 0; i < array.length; i++){
         let products = array[i];
-        if ((min==NaN && max==NaN)||(products.cost>=min && products.cost<=max)||
-        (products.cost>=min && max==NaN)||(products.cost<=max && min==NaN)){
+        if ((min==undefined && max==undefined)||(products.cost>=min && products.cost<=max)||
+        (products.cost>=min && max==undefined)||(products.cost<=max && min==undefined)){
             console.log(typeof products.cost);
             console.log(typeof max);
             console.log(typeof min);
@@ -116,8 +116,8 @@ document.getElementById("limpiar").addEventListener("click", function(){
     document.getElementById("rango-min").value = "";
     document.getElementById("rango-max").value = "";
 
-    min = NaN;
-    max = NaN;
+    min = undefined;
+    max = undefined;
 
     mostrarArrayProducts();
 });
@@ -129,13 +129,13 @@ document.getElementById("filtrar").addEventListener("click", function(){
     if ((document.getElementById("rango-min") !="").value){
         min = (document.getElementById("rango-min").value);
     }else{
-        min = NaN;
+        min = undefined;
     }
     
     if ((document.getElementById("rango-max")!="").value){
         max = (document.getElementById("rango-max").value);
     }else{
-        max = NaN;
+        max = undefined;
     }
     mostrarArrayProducts();
 });
