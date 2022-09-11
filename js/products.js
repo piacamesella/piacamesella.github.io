@@ -47,7 +47,7 @@ function mostrarArrayProducts(){
     for(let i = 0; i < arrayProducts.length; i++){
         let products = arrayProducts[i];
         if ((min==undefined && max==undefined)||(products.cost>=min && products.cost<=max)||
-        (products.cost>=min && max==undefined)||(products.cost<=max && min==undefined)){
+        (products.cost>=min && max===undefined)||(products.cost<=max && min==undefined)){
             console.log(typeof products.cost);
             console.log(typeof max);
             console.log(typeof min);
