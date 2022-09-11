@@ -47,6 +47,9 @@ function mostrarArrayProducts(array){
         let products = array[i];
         if ((min==undefined && max==undefined)||(products.cost>=min && products.cost<=max)||
         (products.cost>=min && max==undefined)||(products.cost<=max && min==undefined)){
+            console.log(typeof products.cost);
+            console.log(typeof max);
+            console.log(typeof min);
 
             htmlContentToAppend += `
             <div onclick="setCatID(${products.id})" class="list-group-item list-group-item-action cursor-active">
@@ -121,14 +124,14 @@ document.getElementById("limpiar").addEventListener("click", function(){
 
 document.getElementById("filtrar").addEventListener("click", function(){
     //Obtengo el mínimo y máximo para filtrar por precios
-    if (document.getElementById("rango-min") !="") {
-        min = document.getElementById("rango-min");
+    if ((document.getElementById("rango-min") !="").value){
+        min = (document.getElementById("rango-min").value);
     }else{
         min = undefined;
     }
     
-    if (document.getElementById("rango-max")!=""){
-        max = document.getElementById("rango-max");
+    if ((document.getElementById("rango-max")!="").value){
+        max = (document.getElementById("rango-max").value);
     }else{
         max = undefined;
     }
