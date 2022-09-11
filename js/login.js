@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function(){
         let email=document.getElementById("inputEmail").value;
         let password=document.getElementById("inputPassword").value;
         if (email!== "" && password!==""){
+            console.log(email);
             console.log(localStorage.setItem);
             localStorage.setItem("usuario",email);
             window.location.replace("portada.html");
