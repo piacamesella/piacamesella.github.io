@@ -131,7 +131,7 @@ document.getElementById("filtrar").addEventListener("click", function(){
     if (document.getElementById("rango-min") !=""){
         min = document.getElementById("rango-min").value
     }else{
-        min = undefined;
+        min = undefined
     }
     
     if (document.getElementById("rango-max")!=""){
