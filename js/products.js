@@ -17,7 +17,7 @@ function sortLista(criteria, array){
             return 0;
         });
    
-    }else if (criteria = ORDEN_DESC_PRECIO){
+    }else if (criteria == ORDEN_DESC_PRECIO){
         result = array.sort(function(a, b) {
             if ( a.cost > b.cost ){ return -1; }
             if ( a.cost < b.cost ){ return 1; }
