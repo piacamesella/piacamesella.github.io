@@ -9,7 +9,7 @@ let max = undefined;
 
 function sortLista(criteria, array){
     let result = [];
-    if (criteria === ORDEN_ASC_PRECIO)
+    if (criteria == ORDEN_ASC_PRECIO)
     {
         result = arrayProducts.sort(function(a, b) {
             if ( a.cost < b.cost ){ return -1; }
@@ -17,13 +17,13 @@ function sortLista(criteria, array){
             return 0;
         });
    
-    }else if (criteria = ORDEN_DESC_PRECIO){
+    }else if (criteria == ORDEN_DESC_PRECIO){
         result = array.sort(function(a, b) {
             if ( a.cost > b.cost ){ return -1; }
             if ( a.cost < b.cost ){ return 1; }
             return 0;
         });
-    } if (criteria === ORDEN_DESC_RELEVANCIA){
+    } if (criteria == ORDEN_DESC_RELEVANCIA){
         result = arrayProducts.sort(function(a, b) {
             let aCount = a.soldCount;
             let bCount = b.soldCount;
