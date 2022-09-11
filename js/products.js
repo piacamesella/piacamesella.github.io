@@ -135,7 +135,7 @@ document.getElementById("filtrar").addEventListener("click", function(){
     }
     
     if (document.getElementById("rango-max")!=""){
-        max = document.getElementById("rango-max").value
+        max = document.getElementById("rango-max").valuen
     }else{
         max = undefined;
     }
