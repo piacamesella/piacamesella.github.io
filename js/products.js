@@ -128,14 +128,14 @@ document.getElementById("filtrar").addEventListener("click", function(){
     max = document.getElementById("rango-max").value;
 
     //Obtengo el mínimo y máximo para filtrar por precios
-    if ((document.getElementById("rango-min") !="").value){
-        min = (document.getElementById("rango-min").value);
+    if (document.getElementById("rango-min") !=""){
+        min = document.getElementById("rango-min");
     }else{
         min = undefined;
     }
     
-    if ((document.getElementById("rango-max")!="").value){
-        max = (document.getElementById("rango-max").value);
+    if (document.getElementById("rango-max")!=""){
+        max = document.getElementById("rango-max");
     }else{
         max = undefined;
     }
