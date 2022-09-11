@@ -40,11 +40,11 @@ function sortLista(criteria, array){
 
 //variable que contiene el array vacío donde se cargarán los datos recibidos
 arrayProducts = [];
-function mostrarArrayProducts(array){
+function mostrarArrayProducts(){
 
     let htmlContentToAppend = "";
-    for(let i = 0; i < array.length; i++){
-        let products = array[i];
+    for(let i = 0; i < arrayProducts.length; i++){
+        let products = arrayProducts[i];
         if ((min==undefined && max==undefined)||(products.cost>=min && products.cost<=max)||
         (products.cost>=min && max==undefined)||(products.cost<=max && min==undefined)){
             console.log(typeof products.cost);
