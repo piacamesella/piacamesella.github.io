@@ -125,11 +125,6 @@ document.getElementById("limpiar").addEventListener("click", function(){
 document.getElementById("filtrar").addEventListener("click", function(){
     min = document.getElementById("rango-min").value;
     max = document.getElementById("rango-max").value;
-    console.log(min);
-    console.log(max);
-    console.log("rango-max");
-    console.log("rango-min");
-    console.log("filtrar");
 
     //Obtengo el mínimo y máximo para filtrar por precios
     if ((document.getElementById("rango-min") !="").value){
