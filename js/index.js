@@ -14,10 +14,4 @@ document.addEventListener("DOMContentLoaded", function(){
     
 });
 
-function mostrarUsuario(){
-    if(localStorage.getItem("usuario")){
-        email=localStorage.getItem("usuario");
-        usuario=email;
-        document.getElementById("emailIngresado").innerHTML=email;
-    }
-}
+

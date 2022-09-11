@@ -9,5 +9,11 @@ document.addEventListener("DOMContentLoaded", function(){
             window.location.replace("portada.html");
         }})
     })
-
+    function mostrarUsuario(){
+        if(localStorage.getItem("usuario")){
+            email=localStorage.getItem("usuario");
+            usuario=email;
+            document.getElementById("emailIngresado").innerHTML=email;
+        }
+    }
     
