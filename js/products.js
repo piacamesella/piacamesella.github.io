@@ -17,12 +17,9 @@ function sortLista(criteria, array){
             return 0;
         });
     }else if (criteria === ORDEN_DESC_PRECIO){
-        result = arrayProducts.sort(function(a, b) {
-            if ( a.cost > b.cost ){ return 1; }
-            if ( a.cost < b.cost ){ return -1; }
-            return 0;
-        });
-    }else if (criteria === ORDEN_DESC_RELEVANCIA){
+        return bCount - aCount;
+        };
+    } if (criteria === ORDEN_DESC_RELEVANCIA){
         result = arrayProducts.sort(function(a, b) {
             let aCount = a.soldCount;
             let bCount = b.soldCount;
@@ -31,7 +28,7 @@ function sortLista(criteria, array){
             if ( aCount < bCount ){ return 1; }
             return 0;
         });
-    }
+    
 
     return result;
 }
