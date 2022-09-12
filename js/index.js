@@ -21,3 +21,4 @@ function mostrarUsuario(){
         document.getElementById("emailIngresado").innerHTML=email;
     }
 }
+
