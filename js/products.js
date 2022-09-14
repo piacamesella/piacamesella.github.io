@@ -1,6 +1,6 @@
 //de aca
-const ORDEN_DESC_PRECIO = "$";
-const ORDEN_ASC_PRECIO = "$";
+const ORDEN_DESC_PRECIO = "$ desc";
+const ORDEN_ASC_PRECIO = "$ asc";
 const ORDEN_DESC_RELEVANCIA = "Rel.";
 let arrayProducts = [];
 let criteriaDeOrdenActual= undefined;
