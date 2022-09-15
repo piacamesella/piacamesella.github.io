@@ -18,7 +18,6 @@ let usuario;
 let email=localStorage.getItem("usuario");
 function mostrarUsuario(){
     if(localStorage.getItem("usuario")){
-        email=localStorage.getItem("usuario");
         usuario=email;
     }
 }
