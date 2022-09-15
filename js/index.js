@@ -21,4 +21,5 @@ function mostrarUsuario(){
         document.getElementById("emailIngresado").innerHTML=email;
     }
 }
+mostrarUsuario(getElementById("emailIngresado"));
 
