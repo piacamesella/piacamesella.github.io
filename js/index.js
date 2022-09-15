@@ -20,7 +20,6 @@ function mostrarUsuario(){
     if(localStorage.getItem("usuario")){
         email=localStorage.getItem("usuario");
         usuario=email;
-        document.getElementById("emailIngresado").innerHTML=email;
     }
 }
 document.getElementById("emailIngresado").innerHTML= email;
