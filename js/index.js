@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", function(){
     
 });
 
+let email;
 function mostrarUsuario(){
     if(localStorage.getItem("usuario")){
         email=localStorage.getItem("usuario");
