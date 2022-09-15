@@ -1,4 +1,3 @@
-//de aca
 const ORDEN_DESC_PRECIO = "$ desc";
 const ORDEN_ASC_PRECIO = "$ asc";
 const ORDEN_DESC_RELEVANCIA = "Rel.";
@@ -37,7 +36,7 @@ function sortLista(criteria, array){
     return result;
 }
 
-//a aca
+
 
 //variable que contiene el array vacío donde se cargarán los datos recibidos
 arrayProducts = [];
