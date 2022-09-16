@@ -108,3 +108,4 @@ document.addEventListener("DOMContentLoaded", function(a){
 let email=localStorage.getItem("usuario");
 document.getElementById("emailIngresado").innerHTML= email;
 
+setCatID(products.id);
