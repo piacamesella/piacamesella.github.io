@@ -114,7 +114,6 @@ function setProductI(id) {
     window.location.replace("portada.html");
 }
 localStorage.getItem("productID");
-arrayProducts[0].value
 function setProductID(id){
     localStorage.setItem("productID", arrayProducts[0])
     window.location = "products.html";
