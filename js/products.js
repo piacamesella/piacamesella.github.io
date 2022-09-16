@@ -111,10 +111,10 @@ document.getElementById("emailIngresado").innerHTML= email;
 function setProductI(id) {
     localStorage.setItem("producID", id);
     window.location = "products.html";
-    window.location.replace("portada.html");
+    window.location.replace("product-info.html");
 }
 localStorage.getItem("productID");
 function setProductID(id){
     localStorage.setItem("productID", arrayProducts[0])
-    window.location = "products.html";
+    window.location = "product-info.html";
 }
