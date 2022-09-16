@@ -2,6 +2,11 @@ let arrayProducts = [];
 let min = undefined;
 let max = undefined;
 
+function setProductID(id){
+    localStorage.setItem("productID",id);
+    window.location= "product-info.html";
+}
+
 //variable que contiene el array vacío donde se cargarán los datos recibidos
 arrayProducts = [];
 function mostrarArrayProducts(){
@@ -13,7 +18,7 @@ function mostrarArrayProducts(){
         (products.cost>=min && max==undefined)||(products.cost<=max && min==undefined)){
 
             htmlContentToAppend += `
-            <div onclick="setCatID(${products.id})" class="list-group-item list-group-item-action cursor-active">
+            <div onclick="setProductID(${products.id})" class="list-group-item list-group-item-action cursor-active">
                 <div class="row">
                     <div class="col-3">
                         <img src="${products.image}" alt="${products.description}" class="img-thumbnail">
@@ -107,15 +112,3 @@ document.addEventListener("DOMContentLoaded", function(a){
 
 let email=localStorage.getItem("usuario");
 document.getElementById("emailIngresado").innerHTML= email;
-
-function setProductI(id) {
-    localStorage.setItem("producID", id);
-    window.location = "products.html";
-    window.location.replace("product-info.html");
-}
-
-let prodid=arrayProducts[0];
-function setProductID(prodid){
-    localStorage.setItem("productID", prodid);
-    window.location = "product-info.html";
-}
