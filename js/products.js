@@ -113,3 +113,4 @@ function setProductID(id) {
     window.location = "products.html";
     window.location.replace("portada.html");
 }
+localStorage.getItem("productID");
