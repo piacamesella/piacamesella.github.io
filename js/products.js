@@ -113,7 +113,7 @@ function setProductI(id) {
     window.location = "products.html";
     window.location.replace("product-info.html");
 }
-localStorage.getItem("productID");
+
 function setProductID(id){
     localStorage.setItem("productID", arrayProducts[0])
     window.location = "product-info.html";
