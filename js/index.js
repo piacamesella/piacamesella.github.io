@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function(){
     
 });
 
-
+//obtengo y muestro email del usuario que ingresó
 let email=localStorage.getItem("usuario");
 document.getElementById("emailIngresado").innerHTML= email;
 
