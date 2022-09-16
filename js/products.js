@@ -108,4 +108,8 @@ document.addEventListener("DOMContentLoaded", function(a){
 let email=localStorage.getItem("usuario");
 document.getElementById("emailIngresado").innerHTML= email;
 
-setCatID(products.id);
+function seProductID(id) {
+    localStorage.setItem("productID", id);
+    window.location = "products.html";
+    window.location.replace("portada.html");
+}
