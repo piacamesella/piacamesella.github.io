@@ -12,3 +12,7 @@ document.addEventListener("DOMContentLoaded", function(a){
     });
     document.getElementById("productID").innerHTML= productInfo;
 });
+document.getElementById(localStorage.getItem("productID")).addEventListener("click", function(){
+   productInfo = document.getElementById(localStorage.getItem(localStorage.getItem(productInfo)));
+    mostrarArrayProducts();
+});
