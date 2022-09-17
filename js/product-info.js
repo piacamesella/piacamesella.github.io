@@ -10,5 +10,6 @@ document.addEventListener("DOMContentLoaded", function(a){
             mostrarArrayProducts(productInfo);
             console.log(productInfo);
         }
-    })
+    });
+    
 });
