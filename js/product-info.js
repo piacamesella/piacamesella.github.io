@@ -1,6 +1,5 @@
 let productInfo;
 
-document.getElementById("productID").innerHTML= productInfo;
 document.addEventListener("DOMContentLoaded", function(a){
     localStorage.getItem("productID");
     getJSONData(PRODUCTO_INFO).then(function(resultado){
@@ -11,5 +10,5 @@ document.addEventListener("DOMContentLoaded", function(a){
             console.log(productInfo);
         }
     });
-    
+    document.getElementById("productID").innerHTML= productInfo;
 });
