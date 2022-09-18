@@ -1,4 +1,4 @@
-arrayProducts = [];
+productInfo = [];
 function mostrarInfoProducts(){
 
         let htmlContentToAppend = "";
@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function(a){
         }
     });
 
-document.localStorage.getItem("productID").addEventListener("click", function(){
+localStorage.getItem("productID").addEventListener("click", function(){
     productInfo = localStorage.getItem(productInfo);
     mostrarArrayProducts();
 });
