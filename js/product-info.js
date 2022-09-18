@@ -2,26 +2,27 @@ function mostrarInfoProducts(){
 
         let htmlContentToAppend = "";
         htmlContentToAppend += `
-        <div onclick="setProductID(${product.data[0]})" class="list-group-item list-group-item-action cursor-active">
+        <div onclick="setProductID(${productInfo.data[0]})" class="list-group-item list-group-item-action cursor-active">
             <div class="row">
                 <div class="col-3">
-                    <h4 <small class="text-muted">${product.name} </small>>
+                    <h4 <small class="text-muted">${productInfo.name} </small>>
                 </div>
-                <p class="mb-1">${product.cost}</p> 
-                <p "${product.description}" >
+                <p class="mb-1">${productInfo.cost}</p> 
+                <p "${productInfo.description}" >
                 <div class="col">
                     <div class="d-flex w-100 justify-content-between">
-                        <h4 class="mb-1">${product.category}</h4>
-                        <p ${product.soldCount}>
-                        <small class="text-muted">${product.soldCount} artículos</small>
+                        <h4 class="mb-1">${productInfo.category}</h4>
+                        <p ${productInfo.soldCount}>
+                        <small class="text-muted">${productInfo.soldCount} artículos</small>
                     </div>
-                    <img src="${product.image}" class="img-thumbnail">
+                    <img src="${productInfo.image}" class="img-thumbnail">
                 </div>
             </div>
         </div>
         `   
         document.getElementById("prod-info-container").innerHTML = htmlContentToAppend;
 }
+
 let productInfo;
 
 document.addEventListener("DOMContentLoaded", function(a){
@@ -29,14 +30,14 @@ document.addEventListener("DOMContentLoaded", function(a){
     getJSONData(PRODUCTO_INFO).then(function(resultado){
         if (resultado.status === "ok")
         {
-            productInf=resultado.data;
+            productInfo=resultado.data;
             mostrarInfoProducts(productInfo);
             console.log(productInfo);
         }
     });
 
     document.getElementById(JSON.parse.localStorage.getItem("productID").value).addEventListener("click", function(){
-    productInfo = localStorage.getItem("productInfo");
+    productInfo = JSON.parse.localStorage.getItem("productInfo").value;
     mostrarInfoProducts();
 });
 })
