@@ -21,9 +21,8 @@ function mostrarArrayProducts(){
             </div>
         </div>
         `
-    }
     document.getElementById("prod-info-container").innerHTML = htmlContentToAppend;
-
+}
 let productInfo;
 
 document.addEventListener("DOMContentLoaded", function(a){
