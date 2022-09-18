@@ -2,7 +2,7 @@ function mostrarInfoProducts(){
     document.getElementById("prod-info-container").innerHTML = htmlContentToAppend;
         let htmlContentToAppend = "";
         htmlContentToAppend += `
-        <div onclick="setProductID(${product.id})" class="list-group-item list-group-item-action cursor-active">
+        <div onclick="setProductID(${product.data[0]})" class="list-group-item list-group-item-action cursor-active">
             <div class="row">
                 <div class="col-3">
                     <h4 <small class="text-muted">${product.name} </small>>
