@@ -1,6 +1,6 @@
 productInfo = [];
 function mostrarInfoProducts(){
-
+    document.getElementById("prod-info-container").innerHTML = htmlContentToAppend;
         let htmlContentToAppend = "";
         htmlContentToAppend += `
         <div onclick="setProductID(${product.id})" class="list-group-item list-group-item-action cursor-active">
@@ -20,8 +20,7 @@ function mostrarInfoProducts(){
                 </div>
             </div>
         </div>
-        `
-    document.getElementById("prod-info-container").innerHTML = htmlContentToAppend;
+        `   
 }
 let productInfo;
 
