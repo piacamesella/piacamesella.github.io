@@ -22,7 +22,7 @@ function mostrarArrayProducts(){
         </div>
         `
     }
-    document.getElementById(localStorage.getItem("productID")).innerHTML = htmlContentToAppend;
+    document.getElementById("prod-info-container").innerHTML = htmlContentToAppend;
 
 let productInfo;
 
