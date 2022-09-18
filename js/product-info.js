@@ -41,7 +41,7 @@ localStorage.getItem("productID").addEventListener("click", function(){
 })
 
 
-let productInfo=JSON.parse(localStorage.getItem("productInfo"))
+let productInf=JSON.parse(localStorage.getItem("productInfo"))
 
 document.addEventListener("DOMContentLoaded",() => {
         document.getElementById("prod-info-container")[0].innerHTML=`<p>${productInfo[0].name}</p>`       
