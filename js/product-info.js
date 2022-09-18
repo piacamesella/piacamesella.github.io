@@ -37,11 +37,7 @@ document.addEventListener("DOMContentLoaded", function(a){
     });
     document.getElementById("productID").innerHTML= productInfo;
     });
-    document.getElementById(localStorage.getItem("productID")).addEventListener("click", function(){
-        productInfo = document.getElementById(localStorage.getItem((productInfo)));
-         mostrarArrayProducts();
-});
-
+    
 document.localStorage.getItem("productID").addEventListener("click", function(){
     productInfo = localStorage.getItem(productInfo);
     mostrarArrayProducts();
