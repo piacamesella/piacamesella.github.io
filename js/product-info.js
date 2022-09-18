@@ -1,4 +1,3 @@
-productInfo = [];
 function mostrarInfoProducts(){
     document.getElementById("prod-info-container").innerHTML = htmlContentToAppend;
         let htmlContentToAppend = "";
