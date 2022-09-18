@@ -21,7 +21,7 @@ function mostrarInfoProducts(){
         </div>
         `   
 }
-let productInf;
+let productInfo;
 
 document.addEventListener("DOMContentLoaded", function(a){
     localStorage.getItem("productID");
@@ -29,14 +29,14 @@ document.addEventListener("DOMContentLoaded", function(a){
         if (resultado.status === "ok")
         {
             productInf=resultado.data;
-            mostrarInfoProducts(productInf);
-            console.log(productInf);
+            mostrarInfoProducts(productInfo);
+            console.log(productInfo);
         }
     });
 
 localStorage.getItem("productID").addEventListener("click", function(){
     productInfo = localStorage.getItem(productInfo);
-    mostrarArrayProducts();
+    mostrarInfoProducts();
 });
 })
 
