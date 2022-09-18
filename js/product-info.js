@@ -25,7 +25,7 @@ function mostrarInfoProducts(){
 let productInfo;
 
 document.addEventListener("DOMContentLoaded", function(a){
-    localStorage.getItem("productID");
+    JSON.parse.localStorage.getItem("productID").value;
     getJSONData(PRODUCTO_INFO).then(function(resultado){
         if (resultado.status === "ok")
         {
@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function(a){
         }
     });
 
-    document.getElementById(localStorage.getItem("productID").valueOf).addEventListener("click", function(){
+    document.getElementById(JSON.parse.localStorage.getItem("productID").value).addEventListener("click", function(){
     productInfo = localStorage.getItem("productInfo");
     mostrarInfoProducts();
 });
