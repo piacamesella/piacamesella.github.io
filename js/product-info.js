@@ -35,10 +35,9 @@ document.addEventListener("DOMContentLoaded", function(a){
             console.log(productInfo);
         }
     });
-    document.getElementById("productID").innerHTML= productInfo;
-    });
-    
+
 document.localStorage.getItem("productID").addEventListener("click", function(){
     productInfo = localStorage.getItem(productInfo);
     mostrarArrayProducts();
 });
+})
