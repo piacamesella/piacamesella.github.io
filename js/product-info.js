@@ -21,16 +21,16 @@ function mostrarInfoProducts(){
         </div>
         `   
 }
-let productInfo;
+let productInf;
 
 document.addEventListener("DOMContentLoaded", function(a){
     localStorage.getItem("productID");
     getJSONData(PRODUCTO_INFO).then(function(resultado){
         if (resultado.status === "ok")
         {
-            productInfo=resultado.data;
-            mostrarInfoProducts(productInfo);
-            console.log(productInfo);
+            productInf=resultado.data;
+            mostrarInfoProducts(productInf);
+            console.log(productInf);
         }
     });
 
