@@ -1,5 +1,5 @@
 function mostrarInfoProducts(){
-    document.getElementById("prod-info-container").innerHTML = htmlContentToAppend;
+
         let htmlContentToAppend = "";
         htmlContentToAppend += `
         <div onclick="setProductID(${product.data[0]})" class="list-group-item list-group-item-action cursor-active">
@@ -20,6 +20,7 @@ function mostrarInfoProducts(){
             </div>
         </div>
         `   
+        document.getElementById("prod-info-container").innerHTML = htmlContentToAppend;
 }
 let productInfo;
 
@@ -40,8 +41,6 @@ localStorage.getItem("productID").addEventListener("click", function(){
 });
 })
 
-
-let productInf=JSON.parse(localStorage.getItem("productInfo"))
 
 document.addEventListener("DOMContentLoaded",() => {
         document.getElementById("prod-info-container")[0].innerHTML=`<p>${productInfo[0].name}</p>`       
