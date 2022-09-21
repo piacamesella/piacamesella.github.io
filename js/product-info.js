@@ -1,3 +1,5 @@
+let productInfo;
+
 function mostrarInfoProducts(){
 
         let htmlContentToAppend = "";
@@ -22,8 +24,6 @@ function mostrarInfoProducts(){
         `   
         document.getElementById("prod-info-container").innerHTML = htmlContentToAppend;
 }
-
-let productInfo;
 
 document.addEventListener("DOMContentLoaded", function(a){
     JSON.parse.localStorage.getItem("productID").value;
