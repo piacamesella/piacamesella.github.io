@@ -2,20 +2,20 @@ function mostrarInfoProducts(){
 
         let htmlContentToAppend = "";
         htmlContentToAppend += `
-        <div onclick="setProductID(${productInfo.data[0]})" class="list-group-item list-group-item-action cursor-active">
+        <div onclick="setProductID(${productInfo[0].data})" class="list-group-item list-group-item-action cursor-active">
             <div class="row">
                 <div class="col-3">
-                    <h4 <small class="text-muted">${productInfo.name} </small>>
+                    <h4 <small class="text-muted">${productInfo[0].name} </small>>
                 </div>
-                <p class="mb-1">${productInfo.cost}</p> 
-                <p "${productInfo.description}" >
+                <p class="mb-1">${productInfo[0].cost}</p> 
+                <p "${productInfo[0].description}" >
                 <div class="col">
                     <div class="d-flex w-100 justify-content-between">
-                        <h4 class="mb-1">${productInfo.category}</h4>
-                        <p ${productInfo.soldCount}>
-                        <small class="text-muted">${productInfo.soldCount} artículos</small>
+                        <h4 class="mb-1">${productInfo[0].category}</h4>
+                        <p ${productInfo[0].soldCount}>
+                        <small class="text-muted">${productInfo[0].soldCount} artículos</small>
                     </div>
-                    <img src="${productInfo.image}" class="img-thumbnail">
+                    <img src="${productInfo[0].image}" class="img-thumbnail">
                 </div>
             </div>
         </div>
