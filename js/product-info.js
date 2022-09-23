@@ -6,7 +6,7 @@ function getProductID(id){
 
 
 document.addEventListener("DOMContentLoaded", function(a){
-    getJSONData(PRODUCTO_INFO).then(function(resultado){
+    getJSONData(PRODUCTO_INFO_URL).then(function(resultado){
         if (resultado.status === "ok");
         {
             productInfo=resultado.data;
