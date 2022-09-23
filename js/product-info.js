@@ -1,5 +1,5 @@
-const PRODUCTO_INFO =`https://japceibal.github.io/emercado-api/products/${localStorage.getItem("productID")}.json`;
 let productInfo;
+const PRODUCT_ID=localStorage.getItem("productID",id);
 
 function getProductID(id){
     localStorage.getItem("productID",id);
