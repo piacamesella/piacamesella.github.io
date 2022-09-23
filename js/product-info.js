@@ -15,8 +15,8 @@ document.addEventListener("DOMContentLoaded", function(a){
                     <p "${resultado.data.description}" >
                     <div class="col">
                         <div class="d-flex w-100 justify-content-between">
-                            <h4 class="mb-1">${resultado.data[resultado.data.findIndex(prinf => resultado.data.id = localStorage.getItem("productID"))].category}</h4>
-                            <p ${resultado.data.soldCount}>
+                            <h4 class="mb-1">${resultado.data[resultado.data.category}</h4>
+                            <p "${resultado.data.soldCount}">
                             <small class="text-muted">${resultado.data.soldCount} artículos</small>
                         </div>
                         <img src="${resultado.data.image}" class="img-thumbnail">
