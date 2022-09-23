@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function(a){
                     <div class="col-3">
                         <h4 <small class="text">${resultado.data.name} </small>>
                     </div>
-                    <h2 Precio </h2>
+                    <h2 "Precio" </h2>
                     <p class="mb-1">${resultado.data.cost}</p> 
                     <p "${resultado.data.description}" >
                     <div class="col">
