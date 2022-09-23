@@ -11,7 +11,6 @@ const PRODUCTO_INFO_URL =`https://japceibal.github.io/emercado-api/products/${lo
 
 
 
-
 let showSpinner = function(){
   document.getElementById("spinner-wrapper").style.display = "block";
 }
