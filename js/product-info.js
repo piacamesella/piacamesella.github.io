@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function(a){
         {
             productInfo=resultado.data;
             document.getElementById("contenedor").innerHTML += `
-                <(${resultado.data.id})" class="list-group-item list-group-item-action cursor-active">
+                <"(${resultado.data.id})" class="list-group-item list-group-item-action cursor-active">
                 <div class="row">
                     <div class="col-3">
                         <h4 <small class="text">${resultado.data.name} </small>>
