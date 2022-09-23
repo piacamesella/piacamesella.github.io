@@ -7,7 +7,7 @@ const CART_INFO_URL = "https://japceibal.github.io/emercado-api/user_cart/";
 const CART_BUY_URL = "https://japceibal.github.io/emercado-api/cart/buy.json";
 const EXT_TYPE = ".json";
 const PRODUCTOS_TODOS = `https://japceibal.github.io/emercado-api/cats_products/${localStorage.getItem("catID")}.json`;
-const PRODUCTO_INFO =`https://japceibal.github.io/emercado-api/products/${PRODUCT_ID}.json`;
+const PRODUCTO_INFO =`https://japceibal.github.io/emercado-api/products/${localStorage.getItem("productID")}.json`;
 
 
 
