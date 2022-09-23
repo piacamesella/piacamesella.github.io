@@ -9,8 +9,9 @@ document.addEventListener("DOMContentLoaded", function(a){
                 <(${resultado.data.id})" class="list-group-item list-group-item-action cursor-active">
                 <div class="row">
                     <div class="col-3">
-                        <h4 <small class="text-muted">${resultado.data.name} </small>>
+                        <h4 <small class="text-muted"${resultado.data.name} </small>>
                     </div>
+                    <h2 Precio </h2>
                     <p class="mb-1">${resultado.data.cost}</p> 
                     <p "${resultado.data.description}" >
                     <div class="col">
