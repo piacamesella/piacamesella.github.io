@@ -1,5 +1,5 @@
 let productInfo;
-getElementById("resultadoId")=resultado.data.id;
+document.getElementById("resultadoId")=resultado.data.id;
 getElementById("resultadoName")=resultado.data.name;
 getElementById("resultadoCost")=resultado.data.cost;
 getElementById("resultadoDescription")=resultado.data.description;
