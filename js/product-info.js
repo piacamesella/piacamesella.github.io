@@ -31,16 +31,34 @@ document.addEventListener("DOMContentLoaded", function(a){
         if (resultado.status === "ok")
         {
             productInfo=resultado.data;
-            mostrarInfoProducts(productInfo);
-            console.log(productInfo);
+            document.getElementById("contenedor").innerHTML += `
+                <   <div onclick="setProductID(${productInfo.id})" class="list-group-item list-group-item-action cursor-active">
+                <div class="row">
+                    <div class="col-3">
+                        <h4 <small class="text-muted">${resultado.data.name} </small>>
+                    </div>
+                    <p class="mb-1">${productInfo.cost}</p> 
+                    <p "${productInfo.description}" >
+                    <div class="col">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h4 class="mb-1">${productInfo.category}</h4>
+                            <p ${productInfo.soldCount}>
+                            <small class="text-muted">${productInfo.soldCount} artículos</small>
+                        </div>
+                        <img src="${productInfo[0].image}" class="img-thumbnail">
+                    </div>
+                </div>
+            </div>
+            `   
+            }
+        })
         }
-    });
+    );
 
     document.getElementById(JSON.parse.localStorage.getItem("productID").value).addEventListener("click", function(){
     productInfo = JSON.parse.localStorage.getItem("productInfo").value;
     mostrarInfoProducts();
 });
-})
 
 
 document.addEventListener("DOMContentLoaded",() => {
