@@ -61,8 +61,6 @@ document.addEventListener("DOMContentLoaded", function(a){
 });
 
 
-document.addEventListener("DOMContentLoaded",() => {
-        document.getElementById("prod-info-container")[0].innerHTML=`<p>${productInfo[0].name}</p>`       
-    })
+
 
 
