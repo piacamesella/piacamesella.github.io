@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function(a){
                             <p ${productInfo.soldCount}>
                             <small class="text-muted">${productInfo.soldCount} artículos</small>
                         </div>
-                        <img src="${productInfo[0].image}" class="img-thumbnail">
+                        <img src="${productInfo.image}" class="img-thumbnail">
                     </div>
                 </div>
             </div>
