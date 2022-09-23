@@ -1,9 +1,4 @@
 let productInfo;
-getElementById("resultadoId")=resultado.data.id;
-getElementById("resultadoName")=resultado.data.name;
-getElementById("resultadoCost")=resultado.data.cost;
-getElementById("resultadoDescription")=resultado.data.description;
-getElementById("resultadoSoldCount")=resultado.data.soldCount;
 
 function getProductID(id){
     localStorage.getItem("productID",id);
