@@ -26,7 +26,6 @@ function mostrarInfoProducts(){
 }
 
 document.addEventListener("DOMContentLoaded", function(a){
-    JSON.parse.localStorage.getItem("productID").value;
     getJSONData(PRODUCTO_INFO).then(function(resultado){
         if (resultado.status === "ok")
         {
@@ -52,12 +51,6 @@ document.addEventListener("DOMContentLoaded", function(a){
             `   
             }
         })
-        }
-    );
-
-    document.getElementById(JSON.parse.localStorage.getItem("productID").value).addEventListener("click", function(){
-    productInfo = JSON.parse.localStorage.getItem("productInfo").value;
-    mostrarInfoProducts();
 });
 
 
