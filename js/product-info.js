@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function(a){
                     <p "${productInfo.description}" >
                     <div class="col">
                         <div class="d-flex w-100 justify-content-between">
-                            <h4 class="mb-1">${productInfo.category}</h4>
+                            <h4 class="mb-1">${productInfo[productInfo.findIndex(prinf => productInfo.id = localStorage.getItem("productID"))].category}</h4>
                             <p ${productInfo.soldCount}>
                             <small class="text-muted">${productInfo.soldCount} artículos</small>
                         </div>
