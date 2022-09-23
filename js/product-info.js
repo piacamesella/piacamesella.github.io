@@ -5,13 +5,18 @@ getElementById("resultadoCost")=resultado.data.cost;
 getElementById("resultadoDescription")=resultado.data.description;
 getElementById("resultadoSoldCount")=resultado.data.soldCount;
 
+function getProductID(id){
+    localStorage.getItem("productID",id);
+}
+
+
 document.addEventListener("DOMContentLoaded", function(a){
     getJSONData(PRODUCTO_INFO).then(function(resultado){
-        if (resultado.status === "ok")
+        if (resultado.status === "ok");
         {
             productInfo=resultado.data;
             document.getElementById("contenedor").innerHTML += `
-                <"(${resultado.data.id})" class="list-group-item">
+                <"getProductID(${resultado.dats.id})" class="list-group-item">
                 <div class="row">
                     <div class="col-3">
                         <h4 <small class="text">${resultado.data.name} </small>>
