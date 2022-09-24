@@ -41,10 +41,30 @@ document.addEventListener("DOMContentLoaded", function(a){
 });
 
 getJSONData(PRODUCTO_INFO_COMMENTS).then(function(){
+    if (resultado.status === "ok");
+    {
+        productInfo=resultado.data;
+        let htmlContentToAppend = "";
+    for(let i = 0; i < productInfo.length; i++){
+        let products = productInfo[i];
+        
+            htmlContentToAppend += `
+            <div (${products.description}) class="list-comments-item">
+                <div class="row">
+                    <div class="col">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h4 class="mb-1">${products.user} - ${products.dateTime} ${products.score}</h4>
+                    </div>
+                </div>
+            </div>
+            `
+        }
+        document.getElementById("prod-comments-container").innerHTML = htmlContentToAppend;
+     }
+  }
+);
     
-    
-let email=localStorage.getItem("usuario");
-document.getElementById("emailIngresado").innerHTML= email;
+
 
     for(let i = 0; i < 5; i++){
         if (getElementById("estrella1")(onclick))
@@ -52,7 +72,7 @@ document.getElementById("emailIngresado").innerHTML= email;
         class="fa fa-star checked">
         <span id="estrella4" class="fa fa-star"
 }
-)
+
 
 
 
