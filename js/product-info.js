@@ -1,5 +1,12 @@
 let productInfo;
 
+document.getElementById("resultadoId").innerHTML= getProductID(resultado.data.id);
+document.getElementById("resultadoName").innerHTML= resultado.data.name;
+document.getElementById("resultadoCost").innerHTML= resultado.data.cost;
+document.getElementById("resultadoDescription").innerHTML= resultado.data.description;
+document.getElementById("resultadoCategory").innerHTML= resultado.data.category;
+document.getElementById("resultadoSoldCount").innerHTML= resultado.data.soldCount;
+
 function getProductID(id){
     localStorage.getItem("productID");
 }
@@ -22,7 +29,6 @@ document.addEventListener("DOMContentLoaded", function(a){
                     <div class="col">
                         <div class="d-flex w-100 justify-content-between">
                             <p class="mb-1">${resultado.data.category}</p>
-                            <p "${resultado.data.soldCount}">
                             <small class="text-muted">${resultado.data.soldCount} artículos</small>
                         </div>
                         <img src="${resultado.data.image}" class="img-thumbnail">
@@ -34,6 +40,19 @@ document.addEventListener("DOMContentLoaded", function(a){
         })
 });
 
+getJSONData(PRODUCT_INFO_COMMENTS_URL).then(function(){
+    
+    
+let email=localStorage.getItem("usuario");
+document.getElementById("emailIngresado").innerHTML= email;
+
+    for(let i = 0; i < 5; i++){
+        if (getElementById("estrella1")(onclick))
+        
+        class="fa fa-star checked">
+        <span id="estrella4" class="fa fa-star"
+}
+)
 
 
 
