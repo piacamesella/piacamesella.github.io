@@ -1,5 +1,4 @@
 let productInfo;
-const PRODUCT_ID=localStorage.getItem("productID",id);
 
 function getProductID(id){
     localStorage.getItem("productID");
