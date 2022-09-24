@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function(a){
         })
 });
 
-getJSONData(PRODUCT_INFO_COMMENTS_URL).then(function(){
+getJSONData(PRODUCTO_INFO_COMMENTS).then(function(){
     
     
 let email=localStorage.getItem("usuario");
