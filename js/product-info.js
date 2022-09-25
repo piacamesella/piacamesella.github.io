@@ -1,13 +1,6 @@
 let productInfo;
 let estrellasScore
 
-document.getElementById("resultadoId").innerHTML= getProductID(resultado.data.id);
-document.getElementById("resultadoName").innerHTML= resultado.data.name;
-document.getElementById("resultadoCost").innerHTML= resultado.data.cost;
-document.getElementById("resultadoDescription").innerHTML= resultado.data.description;
-document.getElementById("resultadoCategory").innerHTML= resultado.data.category;
-document.getElementById("resultadoSoldCount").innerHTML= resultado.data.soldCount;
-
 function getProductID(id){
     localStorage.getItem("productID");
 }
