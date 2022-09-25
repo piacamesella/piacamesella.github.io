@@ -8,9 +8,9 @@ function getProductID(id){
 
 document.addEventListener("DOMContentLoaded", function(a){
     getJSONData(PRODUCTO_INFO).then(function(resultado){
-        if (resultado.status === "ok");
+        if (result.status === "ok");
         {
-            productInfo=resultado.data.product;
+            productInfo=result.data.product;
             document.getElementById("contenedor").innerHTML += `
                 <"getProductID(${product.id})" class="list-group-item">
                 <div class="row">
