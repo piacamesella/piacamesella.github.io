@@ -1,6 +1,5 @@
 let productInfo;
 let estrellasScore
-let resultado
 
 function getProductID(id){
     localStorage.getItem("productID");
