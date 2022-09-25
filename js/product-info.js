@@ -51,11 +51,11 @@ document.addEventListener("DOMContentLoaded", function(a){
             let products = productInfo[i];
             
                 htmlContentToAppend += `
-                <div (${products.description}) class="list-comments-item">
+                <div (${products[0].description}) class="list-comments-item">
                     <div class="row">
                         <div class="col">
                             <div class="d-flex w-100 justify-content-between">
-                                <h4 class="mb-1">${products.user} - ${products.dateTime} ${estrellas(products.score)}</h4>
+                                <h4 class="mb-1">${products[0].user} - ${products[0].dateTime} ${estrellas(products[0].score)}</h4>
                         </div>
                     </div>
                 </div>
