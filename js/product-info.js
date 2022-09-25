@@ -69,6 +69,7 @@ document.addEventListener("DOMContentLoaded", function(a){
     function estrellas(score){
         for(let i = 0; i < 5; i++){
             let estrellasScore = score[i];
+            console.log(estrellasScore);
             if (estrellasScore>0){
                 htmlContentToAppend += `
                 <span  class="fa fa-star checked"></span>
