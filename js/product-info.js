@@ -11,22 +11,22 @@ document.addEventListener("DOMContentLoaded", function(a){
     getJSONData(PRODUCTO_INFO).then(function(resultado){
         if (resultado.status === "ok");
         {
-            productInfo=resultado.data.product;
+            productInfo=resultado.data;
             document.getElementById("contenedor").innerHTML += `
-                <"getProductID(${product.id})" class="list-group-item">
+                <"getProductID(${id})" class="list-group-item">
                 <div class="row">
                     <div class="col-3">
-                        <h4 <small class="text">${product.name} </small>>
+                        <h4 <small class="text">${name} </small>>
                     </div>
                     <h2 "Precio" </h2>
-                    <p class="mb-1">${product.cost}</p> 
-                    <p "${product.description}" >
+                    <p class="mb-1">${cost}</p> 
+                    <p "${description}" >
                     <div class="col">
                         <div class="d-flex w-100 justify-content-between">
-                            <p class="mb-1">${product.category}</p>
-                            <small class="text-muted">${product.soldCount} artículos</small>
+                            <p class="mb-1">${category}</p>
+                            <small class="text-muted">${soldCount} artículos</small>
                         </div>
-                        <img src="${product.image}" class="img-thumbnail">
+                        <img src="${image}" class="img-thumbnail">
                     </div>
                 </div>
             </div>
