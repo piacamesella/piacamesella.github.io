@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function(a){
         {
             productInfo=resultado.data;
             document.getElementById("contenedor").innerHTML += `
-                <"getProductID(${id})" class="list-group-item">
+                <"getProductID(${"productID"})" class="list-group-item">
                 <div class="row">
                     <div class="col-3">
                         <h4 <small class="text">${name} </small>>
