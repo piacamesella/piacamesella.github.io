@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function(a){
             let products = productInfo[i];
             
                 htmlContentToAppend += `
-                <div (${products[0].description}) class="list-comments-item">
+                <div (${products.description}) class="list-comments-item">
                     <div class="row">
                         <div class="col">
                             <div class="d-flex w-100 justify-content-between">
