@@ -25,9 +25,9 @@ document.addEventListener("DOMContentLoaded", function(a){
                 <"getProductID(${"productID"})" class="list-group-item">
                 <div class="row">
                     <div class="col-3">
-                        <h4 <small class="text">${name} </small>>
+                        <h4 <small class="text">${name} </small><br
                     </div>
-                    <h2 "Precio" </h2>
+                    <h2 "Precio" </h2><br
                     <p class="mb-1">${cost}</p> 
                     <p "${description}" >
                     <div class="col">
