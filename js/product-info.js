@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function(a){
 
 document.addEventListener("DOMContentLoaded", function(a){
     getJSONData(PRODUCTO_INFO_COMMENTS).then(function(){
-        if (resultado.status === "ok");
+        if (result.status === "ok");
         {
             productInfo=resultado.data;
             let htmlContentToAppend = "";
