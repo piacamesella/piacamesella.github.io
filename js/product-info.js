@@ -1,6 +1,15 @@
 let productInfo;
-let estrellasScore
 let htmlContentToAppend = "";
+let estrellasScore
+let estrellasDoradas = `
+<span  class="fa fa-star checked"></span>
+`
+let estrellasNegras =  `
+<span class="fa fa-star"></span>
+
+`
+let estrellas
+
 
 function getProductID(id){
     localStorage.getItem("productID");
@@ -65,15 +74,10 @@ document.addEventListener("DOMContentLoaded", function(){
             let estrellasScore = score[i];
             console.log(estrellasScore);
             if (estrellasScore>0){
-                htmlContentToAppend += `
-                <span  class="fa fa-star checked"></span>
-                `
-                document.getElementById("estrellas").innerHTML = htmlContentToAppend;
+               estrellasScore=5-score;
+                document.getElementById("estrellasDoradas").innerHTML = estrellasDoradas;
             }else{
-                htmlContentToAppend += `
-                <span class="fa fa-star"></span>
-                `
-                document.getElementById("estrellas").innerHTML = htmlContentToAppend;
+                document.getElementById("estrellasNegras").innerHTML = estrellasNegras;
             }
     }
   }  
