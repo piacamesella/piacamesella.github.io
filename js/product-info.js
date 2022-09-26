@@ -1,5 +1,6 @@
 let productInfo;
 let estrellasScore
+let htmlContentToAppend = "";
 
 function getProductID(id){
     localStorage.getItem("productID");
@@ -10,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function(a){
     getJSONData(PRODUCTO_INFO).then(function(resultado){
         if (resultado.status === "ok");
         {
-            productInfo=result.data.product;
+            productInfo=resultado.data.product;
             document.getElementById("contenedor").innerHTML += `
                 <"getProductID(${product.id})" class="list-group-item">
                 <div class="row">
