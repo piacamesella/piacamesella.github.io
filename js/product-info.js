@@ -8,7 +8,7 @@ function getProductID(id){
 
 document.addEventListener("DOMContentLoaded", function(a){
     getJSONData(PRODUCTO_INFO).then(function(resultado){
-        if (result.status === "ok");
+        if (resultado.status === "ok");
         {
             productInfo=result.data.product;
             document.getElementById("contenedor").innerHTML += `
@@ -35,8 +35,8 @@ document.addEventListener("DOMContentLoaded", function(a){
 });
 
 document.addEventListener("DOMContentLoaded", function(a){
-    getJSONData(PRODUCTO_INFO_COMMENTS).then(function(){
-        if (result.status === "ok");
+    getJSONData(PRODUCTO_INFO_COMMENTS).then(function(resultado){
+        if (resultado.status === "ok");
         {
             productInfo=resultado.data;
             let htmlContentToAppend = "";
