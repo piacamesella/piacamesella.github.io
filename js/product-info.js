@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function(a){
         })
 });
 
-document.addEventListener("DOMContentLoaded", function(a){
+document.addEventListener("DOMContentLoaded", function(){
     getJSONData(PRODUCTO_INFO_COMMENTS).then(function(resultado){
         if (resultado.status === "ok");
         {
