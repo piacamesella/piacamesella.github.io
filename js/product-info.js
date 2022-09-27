@@ -1,5 +1,3 @@
-const PRODUCTO_INFO = `https://japceibal.github.io/emercado-api/products/${localStorage.getItem("productID")}.json`;
-let productInfo;
 let htmlContentToAppend = "";
 let estrellasScore
 let estrellasDoradas = `
@@ -18,7 +16,7 @@ function getProductID(id){
 
 
 document.addEventListener("DOMContentLoaded", function(a){
-    getJSONData(PRODUCTO_INFO).then(function(resultado){
+    getJSONData(`https://japceibal.github.io/emercado-api/products/${localStorage.getItem("productID")}.json`).then(function(resultado){
         if (resultado.status === "ok");
         {
             productInfo=resultado.data;
