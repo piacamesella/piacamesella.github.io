@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function(a){
                 <img src="${image}" class="img-thumbnail"></img>
                 </div>
                 `
-                document.getElementById("prod-images-container").innerHTML = htmlContentToAppend;
+                document.getElementById("prod-images-container").innerHTcML = htmlContentToAppend;
             }
         }
     })
@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function(){
                 </div>
                 `
             }
-            document.getElementById("prod-comments-container").innerHTML
+            document.getElementById("prod-comments-container").innerHTML = htmlContentToAppend;
          }
       }
     );
