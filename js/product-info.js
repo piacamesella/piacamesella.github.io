@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function(a){
                 <"getProductID(${"productID"})" class="list-group-item">
                 <div class="row">
                     <div class="col-3">
-                        <h4 <small class="text">${name} </small><br
+                        <h4 <small class="text">${name}</small><br
                     </div>
                     <h2 "Precio" </h2><br
                     <p class="mb-1">${cost}</p> 
@@ -36,13 +36,20 @@ document.addEventListener("DOMContentLoaded", function(a){
                             <p class="mb-1">${category}</p>
                             <small class="text-muted">${soldCount} artículos</small>
                         </div>
-                        <img src="${image}" class="img-thumbnail">
                     </div>
                 </div>
-            </div>
             `   
+            for(let i = 0; i < images.length; i++){
+                let productInfo = images[i];
+                document.getElementById("contenedor2").innerHTML += `
+                <div class="col-3">
+                <img src="${image}" class="img-thumbnail"></img>
+                </div>
+                `
+                document.getElementById("prod-images-container").innerHTML = htmlContentToAppend;
             }
-        })
+        }
+    }
 });
 
 document.addEventListener("DOMContentLoaded", function(){
