@@ -80,18 +80,12 @@ document.addEventListener("DOMContentLoaded", function(){
     function estrellas(score){
         for(let i = 0; i < 5; i++){
             let estrellasScore = score[i];
-            console.log(estrellasScore);
-            if (estrellasScore>0){
-               estrellasScore=5-score;
-                document.getElementById("estrellasDoradas").innerHTML = estrellasDoradas;
-            }else{
-                document.getElementById("estrellasNegras").innerHTML = estrellasNegras;
+            document.getElementById("estrellasDoradas").innerHTML = estrellasDoradas;
+            estrellasScore=5-score;
+            document.getElementById("estrellasNegras").innerHTML = estrellasNegras;
             }
-    }
-  }  
+    }    
 })
-
-
 
 
 
