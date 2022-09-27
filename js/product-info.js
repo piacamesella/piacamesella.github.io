@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function(){
                 </div>
                 `
             }
-            document.getElementById("prod-comments-container").innerHTML = htmlContentToAppend;
+            document.getElementById("prod-comments-container").innerHTML
          }
       }
     );
