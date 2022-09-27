@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function(a){
                 document.getElementById("prod-images-container").innerHTML = htmlContentToAppend;
             }
         }
-    }
+    })
 });
 
 document.addEventListener("DOMContentLoaded", function(){
