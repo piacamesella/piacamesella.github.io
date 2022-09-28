@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function(a){
                 <img src="${images}" class="img-thumbnail"></img>
                 </div>
                 `
-                document.getElementById("prod-images-container").innerHTcML = htmlContentToAppend;
+                document.getElementById("prod-images-container").innerHTML = htmlContentToAppend;
             }
         }
     })
