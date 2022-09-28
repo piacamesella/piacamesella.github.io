@@ -16,17 +16,6 @@ function getProductID(id){
     localStorage.getItem("productID");
 }
 
-function estrellas(score){
-    for(let i = 0; i < 5; i++){
-        let estrellasScore = score[i];
-        console.log(estrellasScore);
-        document.getElementById("estrellasDoradas").innerHTML = estrellasDoradas;
-        estrellasScore=5-score;
-        console.log(estrellasScore);
-        document.getElementById("estrellasNegras").innerHTML = estrellasNegras;
-        }
-}   
-
 
 document.addEventListener("DOMContentLoaded", function(a){
     getJSONData(PRODUCTO_INFO).then(function(resultado){
@@ -62,6 +51,17 @@ document.addEventListener("DOMContentLoaded", function(a){
     })
 });
 
+function estrellas(score){
+    for(let i = 0; i < 5; i++){
+        let estrellasScore = score[i];
+        console.log(estrellasScore);
+        document.getElementById("estrellasDoradas").innerHTML = estrellasDoradas;
+        estrellasScore=5-score;
+        console.log(estrellasScore);
+        document.getElementById("estrellasNegras").innerHTML = estrellasNegras;
+        }
+}  
+
 document.addEventListener("DOMContentLoaded", function(){
     getJSONData(PRODUCTO_INFO_COMMENTS).then(function(resultado){
         if (resultado.status === "ok");
@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", function(){
          }
       }
     );
- 
+    
 })
 
 
