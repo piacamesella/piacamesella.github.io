@@ -8,7 +8,6 @@ let estrellasDoradas = `
 let estrellasNegras =  `
 <span class="fa fa-star"></span>
 `
-let estrellas
 
 
 function getProductID(id){
