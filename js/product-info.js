@@ -20,21 +20,24 @@ document.addEventListener("DOMContentLoaded", function(a){
         if (resultado.status === "ok");
         {
             productInfo=resultado.data;
-            document.getElementById("contenedor").innerHTML += `
-                <"getProductID(${"productID"})" class="list-group-item">
-                <div class="row">
-                    <div class="col-3">
-                        <h4 <small class="text">${name}</small><br>
-                    </div>
-                    <p ${description} ><br>
-                    <div class="col">
-                        <div class="d-flex w-100 justify-content-between">
-                            <p class="mb-1">${category}</p><br>
-                            <small class="text-muted">${soldCount} artículos</small>
-                        </div>
+            htmlContentToAppend+= `
+            <"getProductID(${"productID"})" class="list-group-item">
+            <div class="row">
+                <div class="col-3">
+                    <h4 <small class="text">${name}</small><br>
+                </div>
+                <p class="mb-1">${cost}</p><br>
+                <p ${description} ><br>
+                <div class="col">
+                    <div class="d-flex w-100 justify-content-between">
+                        <p class="mb-1">${category}</p><br>
+                        <small class="text-muted">${soldCount} artículos</small>
                     </div>
                 </div>
-            `   
+            </div>
+        `   
+        document.getElementById("contenedor").innerHTML += htmlContentToAppend;
+
             for(let i = 0; i < products.images.length; i++){
                 let images = images[i];
                 document.getElementById("contenedor2").innerHTML += `
