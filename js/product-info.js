@@ -5,7 +5,7 @@ let estrellasScore
 let estrellasDoradas = `
 <span  class="fa fa-star checked"></span>
 `
-let estrellasNegras =  `
+let estrellasNegras = `
 <span class="fa fa-star"></span>
 `
 
