@@ -24,14 +24,14 @@ document.addEventListener("DOMContentLoaded", function(a){
             <"getProductID(${"productID"})" class="list-group-item">
             <div class="row">
                 <div class="col-3">
-                    <h4 <small class="text">${name}</small><br>
+                    <h4 <small class="text">${productInfo.name}</small><br>
                 </div>
-                <p class="mb-1">${cost}</p><br>
-                <p ${description} ><br>
+                <p class="mb-1">${productInfo.cost}</p><br>
+                <p ${productInfo.description} ><br>
                 <div class="col">
                     <div class="d-flex w-100 justify-content-between">
-                        <p class="mb-1">${category}</p><br>
-                        <small class="text-muted">${soldCount} artículos</small>
+                        <p class="mb-1">${productInfo.category}</p><br>
+                        <small class="text-muted">${productInfo.soldCount} artículos</small>
                     </div>
                 </div>
             </div>
