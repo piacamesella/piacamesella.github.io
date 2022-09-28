@@ -38,10 +38,10 @@ document.addEventListener("DOMContentLoaded", function(a){
                 </div>
             `   
             for(let i = 0; i < images.length; i++){
-                let productInfo = images[i];
+                let images = images[i];
                 document.getElementById("contenedor2").innerHTML += `
                 <div class="col-3">
-                <img src="${image}" class="img-thumbnail"></img>
+                <img src="${images}" class="img-thumbnail"></img>
                 </div>
                 `
                 document.getElementById("prod-images-container").innerHTcML = htmlContentToAppend;
