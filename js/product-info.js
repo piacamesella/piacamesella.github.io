@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function(a){
         `   
         document.getElementById("contenedor").innerHTML += htmlContentToAppend;
 
-            for(let i = 0; i < products.images.length; i++){
+            for(let i = 0; i < productInfo.images.length; i++){
                 let images = images[i];
                 document.getElementById("contenedor2").innerHTML += `
                 <div class="col-3">
