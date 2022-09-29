@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function(a){
         document.getElementById("contenedor").innerHTML += htmlContentToAppend;
 
             for(let i = 0; i < productInfo.images.length; i++){
-                let images = images[i];
+                let images = productInfo.images[i];
                 document.getElementById("contenedor2").innerHTML += `
                 <div class="carousel-item active">
                 <img src="${images}" class="img-thumbnail"></img>
