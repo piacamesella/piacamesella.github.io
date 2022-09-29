@@ -40,7 +40,7 @@ function mostrarProductInfo(){
  }
 
 function mostrarProductImages(){
-    for(let i = 0; i < productInfo.images.length; i++){
+    for(let i = 0; i < images.length; i++){
         productInfo = images[i];
         htmlContentToAppend += `
         <div class="col-3">
