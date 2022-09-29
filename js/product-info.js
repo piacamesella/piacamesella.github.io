@@ -38,17 +38,29 @@ function mostrarProductInfo(){
  document.getElementById("contenedor").innerHTML += htmlContentToAppend;
  }
 
+//function mostrarProductImages(){
+    //for(let i = 0; i < productInfo.images.length; i++){
+        //images[i];
+        //htmlContentToAppend += `
+        //<div class="col-3">
+        //<img src="${productInfo.images}" class="img-thumbnail"></img>
+        //</div>
+        //`
+        //console.log(productInfo);
+        //document.getElementById("contenedorImagenes").innerHTML = htmlContentToAppend;
+    //}     
+//}
+
 function mostrarProductImages(){
-    for(let i = 0; i < productInfo.images.length; i++){
-        let productInfo = images[i];
+    for (images of productInfo){
         htmlContentToAppend += `
         <div class="col-3">
-        <img src="${productInfo}" class="img-thumbnail"></img>
+        <img src="${productInfo.images}" class="img-thumbnail"></img>
         </div>
         `
-        console.log(productInfo);
+        console.log(productInfo.images);
         document.getElementById("contenedorImagenes").innerHTML = htmlContentToAppend;
-    }     
+    }
 }
 
 document.addEventListener("DOMContentLoaded", function(a){
