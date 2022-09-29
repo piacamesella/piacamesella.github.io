@@ -1,4 +1,5 @@
 let productInfo;
+let images=[];
 let htmlContentToAppend = "";
 let estrellasScore
 let estrellasDoradas = `
@@ -40,10 +41,10 @@ function mostrarProductInfo(){
 
 function mostrarProductImages(){
     for(let i = 0; i < productInfo.images.length; i++){
-        let images = images[i];
+        productInfo = images[i];
         htmlContentToAppend += `
         <div class="col-3">
-        <img src="${productInfo.images}" class="img-thumbnail"></img>
+        <img src="${productInfo}" class="img-thumbnail"></img>
         </div>
         `
         console.log(productInfo);
