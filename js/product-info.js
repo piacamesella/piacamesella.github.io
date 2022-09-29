@@ -46,8 +46,6 @@ document.addEventListener("DOMContentLoaded", function(a){
         }
         
             for(let i = 0; i < productInfo.images.length; i++){
-                let images = images[i];
-                console.log(images);
                 htmlContentToAppend += `
                 <div class="col-3">
                 <img src="${productInfo.images}" class="img-thumbnail"></img>
