@@ -1,4 +1,3 @@
-const PRODUCTO_INFO = `https://japceibal.github.io/emercado-api/products/${localStorage.getItem("productID")}.json`;
 let productInfo;
 let htmlContentToAppend = "";
 let estrellasScore
@@ -11,7 +10,7 @@ let estrellasNegras = `
 
 
 function getProductID(id){
-    localStorage.getItem("productID");
+    localStorage.getItem("productID",id);
 }
 
 
