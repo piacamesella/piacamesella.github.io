@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function(a){
         {
             productInfo=resultado.data;
             htmlContentToAppend+= `
-            <getProductID(${"productID"}) class=list-group-item>
+            <div onclick="getProductID(${"productID"})" class="list-group-item">
             <div class="row">
                 <div class="col-3">
                     <h4 <small class="text">${productInfo.name}</small><br>
