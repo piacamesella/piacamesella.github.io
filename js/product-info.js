@@ -20,6 +20,19 @@ document.addEventListener("DOMContentLoaded", function(a){
         if (resultado.status === "ok");
         {
             productInfo=resultado.data;
+            
+            function mostrarImagenes(imagenes){
+                for(let i = 0; i < productInfo.images.length; i++){
+                    let images = productInfo.images[i];
+                    document.getElementById("contenedor2").innerHTML += `
+                    <div class="carousel-item active">
+                    <img src="${images}" class="img-thumbnail"></img>
+                    </div>
+                    `
+                    document.getElementById("prod-images-container").innerHTML = htmlContentToAppend;
+                }
+            }
+            
             htmlContentToAppend+= `
             <div onclick="getProductID(${"productID"})" class="list-group-item">
             <div class="row">
@@ -37,21 +50,12 @@ document.addEventListener("DOMContentLoaded", function(a){
                         <h4 <small class="text">Cantidad de vendidos</small><br>
                         <small class="text-muted">${productInfo.soldCount} artículos</small>
                         <h4 <small class="text">Imágenes ilustrativas</small><br>
+                        <img src="${mostrarImagenes(productoInfo.images)}" class="img-thumbnail"></img>
                     </div>
                 </div>
             </div>
         `   
         document.getElementById("contenedor").innerHTML += htmlContentToAppend;
-
-            for(let i = 0; i < productInfo.images.length; i++){
-                let images = productInfo.images[i];
-                document.getElementById("contenedor2").innerHTML += `
-                <div class="carousel-item active">
-                <img src="${images}" class="img-thumbnail"></img>
-                </div>
-                `
-                document.getElementById("prod-images-container").innerHTML = htmlContentToAppend;
-            }
         }
     })
 });
