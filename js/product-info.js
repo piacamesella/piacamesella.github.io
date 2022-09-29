@@ -16,7 +16,7 @@ function getProductID(id){
 
 function mostrarImagenes(imagenes){
     for(let i = 0; i < imagenes.length; i++){
-        let imagenes= imagenes[i];
+        [i];
         htmlContentToAppend += `
         <div class="col-3">
         <img src="${imagenes}" class="img-thumbnail"></img>
