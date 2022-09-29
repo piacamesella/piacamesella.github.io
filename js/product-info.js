@@ -14,24 +14,23 @@ function getProductID(id){
     localStorage.getItem("productID");
 }
 
+function mostrarImagenes(imagenes){
+    for(let i = 0; i < productInfo.images.length; i++){
+        let images = productInfo.images[i];
+        document.getElementById("contenedor2").innerHTML += `
+        <div class="carousel-item active">
+        <img src="${images}" class="img-thumbnail"></img>
+        </div>
+        `
+        document.getElementById("prod-images-container").innerHTML = htmlContentToAppend;
+    }
+}
 
 document.addEventListener("DOMContentLoaded", function(a){
     getJSONData(PRODUCTO_INFO).then(function(resultado){
         if (resultado.status === "ok");
         {
             productInfo=resultado.data;
-            
-            function mostrarImagenes(imagenes){
-                for(let i = 0; i < productInfo.images.length; i++){
-                    let images = productInfo.images[i];
-                    document.getElementById("contenedor2").innerHTML += `
-                    <div class="carousel-item active">
-                    <img src="${images}" class="img-thumbnail"></img>
-                    </div>
-                    `
-                    document.getElementById("prod-images-container").innerHTML = htmlContentToAppend;
-                }
-            }
             
             htmlContentToAppend+= `
             <div onclick="getProductID(${"productID"})" class="list-group-item">
