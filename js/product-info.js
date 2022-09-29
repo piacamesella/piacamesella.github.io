@@ -14,17 +14,6 @@ function getProductID(id){
     localStorage.getItem("productID");
 }
 
-function mostrarImagenes(imagenes){
-    for(let i = 0; i < imagenes.length; i++){
-        [i];
-        htmlContentToAppend += `
-        <div class="col-3">
-        <img src="${imagenes}" class="img-thumbnail"></img>
-        </div>
-        `
-        document.getElementById("contenedorImagenes").innerHTML = htmlContentToAppend;
-    }
-}
 
 document.addEventListener("DOMContentLoaded", function(a){
     getJSONData(PRODUCTO_INFO).then(function(resultado){
@@ -49,13 +38,22 @@ document.addEventListener("DOMContentLoaded", function(a){
                         <h4 <small class="text">Cantidad de vendidos</small><br>
                         <small class="text-muted">${productInfo.soldCount} artículos</small>
                         <h4 <small class="text">Imágenes ilustrativas</small><br>
-                        ${mostrarImagenes(productInfo.images)}
                     </div>
                 </div>
             </div>
         `   
         document.getElementById("contenedor").innerHTML += htmlContentToAppend;
         }
+        
+            for(let i = 0; i < productInfo.images.length; i++){
+                images[i];
+                htmlContentToAppend += `
+                <div class="col-3">
+                <img src="${images}" class="img-thumbnail"></img>
+                </div>
+                `
+                document.getElementById("contenedorImagenes").innerHTML = htmlContentToAppend;
+            }     
     })
 });
 
