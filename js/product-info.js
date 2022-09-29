@@ -49,8 +49,7 @@ document.addEventListener("DOMContentLoaded", function(a){
                         <h4 <small class="text">Cantidad de vendidos</small><br>
                         <small class="text-muted">${productInfo.soldCount} artículos</small>
                         <h4 <small class="text">Imágenes ilustrativas</small><br>
-                        <div class="col-3">
-                        <img src="${mostrarImagenes(productInfo.images)}" class="img-thumbnail"></img>
+                        ${mostrarImagenes(productInfo.images)}
                     </div>
                 </div>
             </div>
