@@ -38,30 +38,30 @@ function mostrarProductInfo(){
  document.getElementById("contenedor").innerHTML += htmlContentToAppend;
  }
 
-//function mostrarProductImages(){
-    //for(let i = 0; i < productInfo.images.length; i++){
-        //images[i];
-        //htmlContentToAppend += `
-        //<div class="col-3">
-        //<img src="${productInfo.images}" class="img-thumbnail"></img>
-        //</div>
-        //`
-        //console.log(productInfo);
-        //document.getElementById("contenedorImagenes").innerHTML = htmlContentToAppend;
-    //}     
-//}
-
 function mostrarProductImages(){
-    for (images of productInfo){
+    for(let i = 0; i < productInfo.images.length; i++){
+        let images = images[i];
         htmlContentToAppend += `
         <div class="col-3">
         <img src="${productInfo.images}" class="img-thumbnail"></img>
         </div>
         `
-        console.log(productInfo.images);
+        console.log(productInfo);
         document.getElementById("contenedorImagenes").innerHTML = htmlContentToAppend;
-    }
+    }     
 }
+
+//function mostrarProductImages(){
+    //for (images of productInfo){
+        //htmlContentToAppend += `
+        //<div class="col-3">
+        //<img src="${productInfo.images}" class="img-thumbnail"></img>
+        //</div>
+        //`
+        //console.log(productInfo.images);
+        //document.getElementById("contenedorImagenes").innerHTML = htmlContentToAppend;
+    //}
+//}
 
 document.addEventListener("DOMContentLoaded", function(a){
     getJSONData(PRODUCTO_INFO).then(function(resultado){
