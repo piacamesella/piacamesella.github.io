@@ -26,12 +26,17 @@ document.addEventListener("DOMContentLoaded", function(a){
                 <div class="col-3">
                     <h4 <small class="text">${productInfo.name}</small><br>
                 </div>
-                <p class="mb-1">${productInfo.cost}</p><br>
-                <p ${productInfo.description}</p><br>
+                <h4 <small class="text">Precio</small><br>
+                <p class="text-muted"${productInfo.cost}</p><br>
+                <h4 <small class="text">Descripción</small><br>
+                <p class="text-muted"${productInfo.description}</p><br>
                 <div class="col">
                     <div class="d-flex w-100 justify-content-between">
-                        <p class="mb-1">${productInfo.category}</p><br>
+                    <h4 <small class="text">Categoría</small><br>
+                        <p class="text-muted"${productInfo.category}</p><br>
+                        <h4 <small class="text">Cantidad de vendidos</small><br>
                         <small class="text-muted">${productInfo.soldCount} artículos</small>
+                        <h4 <small class="text">Imágenes ilustrativas</small><br>
                     </div>
                 </div>
             </div>
