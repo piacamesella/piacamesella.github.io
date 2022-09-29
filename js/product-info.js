@@ -15,11 +15,11 @@ function getProductID(id){
 }
 
 function mostrarImagenes(imagenes){
-    for(let i = 0; i < productInfo.images.length; i++){
-        let images = productInfo.images[i];
+    for(let i = 0; i < imagenes.length; i++){
+        let imagenes = imagenes[i];
         document.getElementById("contenedor2").innerHTML += `
         <div class="carousel-item active">
-        <img src="${images}" class="img-thumbnail"></img>
+        <img src="${imagenes}" class="img-thumbnail"></img>
         </div>
         `
         document.getElementById("prod-images-container").innerHTML = htmlContentToAppend;
