@@ -17,12 +17,12 @@ function getProductID(id){
 function mostrarImagenes(imagenes){
     for(let i = 0; i < imagenes.length; i++){
         imagenes[i];
-        document.getElementById("contenedorImagenes").innerHTML += `
+        htmlContentToAppend += `
         <div class="carousel-item active">
         <img src="${imagenes}" class="img-thumbnail"></img>
         </div>
         `
-        document.getElementById("prod-images-container").innerHTML = htmlContentToAppend;
+        document.getElementById("contenedorImagenes").innerHTML = htmlContentToAppend;
     }
 }
 
