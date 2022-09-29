@@ -13,48 +13,100 @@ function getProductID(id){
     localStorage.getItem("productID",id);
 }
 
+function mostrarProductInfo(){
+    htmlContentToAppend+= `
+     <div onclick="getProductID(${"productID"})" class="list-group-item">
+     <div class="row">
+         <div class="col-3">
+         <h2 <small class="text">${productInfo.name}</small><br>
+         </div>
+         <h4 <small class="text">Precio</small><br>
+         <p class="text-muted"${productInfo.cost}</p><br>
+         <h4 <small class="text">Descripción</small><br>
+         <p class="text-muted"${productInfo.descrption}</p><br>
+         <div class="col">
+             <div class="d-flex w-100 justify-content-between">
+             <h4 <small class="text">Categoría</small><br>
+                 <p class="text-muted"${productInfo.category}</p><br>
+                 <h4 <small class="text">Cantidad de vendidos</small><br>
+                 <small class="text-muted">${productInfo.soldCount} artículos</small>
+                 <h4 <small class="text">Imágenes ilustrativas</small><br>
+             </div>
+        </div>
+     </div>
+ `   
+ document.getElementById("contenedor").innerHTML += htmlContentToAppend;
+ }
+
+function mostrarProductImages(){
+    for(let i = 0; i < productInfo.images.length; i++){
+        htmlContentToAppend += `
+        <div class="col-3">
+        <img src="${productInfo.images}" class="img-thumbnail"></img>
+        </div>
+        `
+        console.log(productInfo.images);
+        document.getElementById("contenedorImagenes").innerHTML = htmlContentToAppend;
+    }     
+}
 
 document.addEventListener("DOMContentLoaded", function(a){
     getJSONData(PRODUCTO_INFO).then(function(resultado){
         if (resultado.status === "ok");
         {
             productInfo=resultado.data;
-            
-            htmlContentToAppend+= `
-            <div onclick="getProductID(${"productID"})" class="list-group-item">
-            <div class="row">
-                <div class="col-3">
-                <h2 <small class="text">${productInfo.name}</small><br>
-                </div>
-                <h4 <small class="text">Precio</small><br>
-                <p class="text-muted"${productInfo.cost}</p><br>
-                <h4 <small class="text">Descripción</small><br>
-                <p class="text-muted"${productInfo.descrption}</p><br>
-                <div class="col">
-                    <div class="d-flex w-100 justify-content-between">
-                    <h4 <small class="text">Categoría</small><br>
-                        <p class="text-muted"${productInfo.category}</p><br>
-                        <h4 <small class="text">Cantidad de vendidos</small><br>
-                        <small class="text-muted">${productInfo.soldCount} artículos</small>
-                        <h4 <small class="text">Imágenes ilustrativas</small><br>
-                    </div>
-                </div>
-            </div>
-        `   
-        document.getElementById("contenedor").innerHTML += htmlContentToAppend;
+             mostrarProductInfo(productInfo);
+             mostrarProductImages(productInfo);
+             console.log(productInfo);
         }
-        
-            for(let i = 0; i < productInfo.images.length; i++){
-                htmlContentToAppend += `
-                <div class="col-3">
-                <img src="${productInfo.images}" class="img-thumbnail"></img>
-                </div>
-                `
-                console.log(productInfo.images);
-                document.getElementById("contenedorImagenes").innerHTML = htmlContentToAppend;
-            }     
     })
 });
+     
+             
+
+
+//document.addEventListener("DOMContentLoaded", function(a){
+   // getJSONData(PRODUCTO_INFO).then(function(resultado){
+       // if (resultado.status === "ok");
+       // {
+          //  productInfo=resultado.data;
+            
+          //  htmlContentToAppend+= `
+           // <div onclick="getProductID(${"productID"})" class="list-group-item">
+           // <div class="row">
+                //<div class="col-3">
+                //<h2 <small class="text">${productInfo.name}</small><br>
+               // </div>
+                //<h4 <small class="text">Precio</small><br>
+                //<p class="text-muted"${productInfo.cost}</p><br>
+                //<h4 <small class="text">Descripción</small><br>
+                //<p class="text-muted"${productInfo.descrption}</p><br>
+                //<div class="col">
+                    //<div class="d-flex w-100 justify-content-between">
+                    //<h4 <small class="text">Categoría</small><br>
+                        //<p class="text-muted"${productInfo.category}</p><br>
+                        //<h4 <small class="text">Cantidad de vendidos</small><br>
+                        //<small class="text-muted">${productInfo.soldCount} artículos</small>
+                        //<h4 <small class="text">Imágenes ilustrativas</small><br>
+                    //</div>
+               //</div>
+            //</div>
+        //`   
+        //document.getElementById("contenedor").innerHTML += htmlContentToAppend;
+        //}
+        
+            //for(let i = 0; i < productInfo.images.length; i++){
+                //htmlContentToAppend += `
+                //<div class="col-3">
+                //<img src="${productInfo.images}" class="img-thumbnail"></img>
+                //</div>
+                //`
+                //console.log(productInfo.images);
+                //document.getElementById("contenedorImagenes").innerHTML = htmlContentToAppend;
+            //}     
+    //})
+//});
+//
 
 document.addEventListener("DOMContentLoaded", function(){
     getJSONData(PRODUCTO_INFO_COMMENTS).then(function(resultado){
