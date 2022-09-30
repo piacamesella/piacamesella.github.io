@@ -39,7 +39,7 @@ function mostrarProductInfo(){
 
  function mostrarProductImages(){
     for(let i = 0; i < images.length; i++){
-        productInfo = productInfo.images[i];
+        images = productInfo.images[i];
         htmlContentToAppend += `
         <div class="col-3">
         <img src="${productInfo}" class="img-thumbnail"></img>
