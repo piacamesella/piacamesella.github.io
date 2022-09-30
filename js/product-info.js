@@ -76,9 +76,7 @@ document.addEventListener("DOMContentLoaded", function(){
                     <div class="row">
                         <div class="col">
                             <div class="d-flex w-100 justify-content-between">
-                            <h4 class="mb-1">${products.user} - <small class="text-muted">${products.dateTime}</small> ${estrellas(products.score)}</h4><br>
-                        <div>
-                            <br><small class="text-muted">${products.description}</small>
+                            <h4 class="mb-1">${products.user} <small class="text-muted"> - ${products.dateTime} - </small> ${estrellas(products.score)}</h4><br><small class="text-muted">${products.description}</small>
                         </div>
                     </div>
                 </div>
