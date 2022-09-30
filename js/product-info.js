@@ -1,7 +1,7 @@
 let productInfo;
 let images=[];
 let htmlContentToAppend = "";
-let estrellasScore
+let estrellasScore = 0;
 let estrellasDoradas = `
 <span  class="fa fa-star checked"></span>
 `
@@ -100,32 +100,6 @@ document.addEventListener("DOMContentLoaded", function(){
       
 });
 
-//document.addEventListener("DOMContentLoaded", function(){
-    //getJSONData(PRODUCTO_INFO_COMMENTS).then(function(resultado){
-        //if (resultado.status === "ok");
-        //{
-            //productInfo=resultado.data;
-            //let htmlContentToAppend = "";
-        //for(let i = 0; i < productInfo.length; i++){
-            //let products = productInfo[i];
-            
-                //htmlContentToAppend += `
-                //<div  class="list-comments-item">
-                    //<div class="row">
-                        //<div class="col">
-                            //<div class="d-flex w-100 justify-content-between">
-                            //<h4 class="mb-1">${products.user} - ${products.dateTime} ${estrellas(products.score)}</h4><br
-                        //</div>
-                        //<div <small class="text">${products.description}
-                        //</div>
-                    //</div>
-                //</div>
-                //`
-            //}
-            //document.getElementById("prod-comments-container").innerHTML = htmlContentToAppend;
-         //}
-      //}
-      //);
 
    
     
