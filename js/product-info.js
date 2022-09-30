@@ -46,7 +46,6 @@ function mostrarProductInfo(){
         <img src="${images}" class="img-thumbnail"></img>
         </div>
         `
-        console.log(images);
         document.getElementById("contenedorImagenes").innerHTML = htmlContentToAppend;
     }     
 }
