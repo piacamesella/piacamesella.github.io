@@ -22,11 +22,11 @@ function mostrarProductInfo(){
          <h2 <small class="text">${productInfo.name}</small><br>
          </div>
          <h4 <small class="text">Precio</small><br>
-         <p class="text-muted"${productInfo.currency} ${productInfo.cost}</p><br>
+         <small class="text-muted">${productInfo.currency} ${productInfo.cost}</small><br>
          <h4 <small class="text">Descripción</small><br>
-         <p class="text-muted"${productInfo.descrption}</p><br>
+         <small class="text-muted">${productInfo.descrption}</small><br>
          <h4 <small class="text">Categoría</small><br>
-         <p class="text-muted"${productInfo.category}</p><br>
+         <small class="text-muted">${productInfo.category}</small><br>
          <h4 <small class="text">Cantidad de vendidos</small><br>
          <small class="text-muted">${productInfo.soldCount} artículos</small>
          <h4 <small class="text">Imágenes ilustrativas</small><br>
