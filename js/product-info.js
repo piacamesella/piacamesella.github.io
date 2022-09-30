@@ -42,10 +42,10 @@ function mostrarProductInfo(){
         images = productInfo.images[i];
         htmlContentToAppend += `
         <div class="col-3">
-        <img src="${productInfo}" class="img-thumbnail"></img>
+        <img src="${images}" class="img-thumbnail"></img>
         </div>
         `
-        console.log(productInfo);
+        console.log(images);
         document.getElementById("contenedorImagenes").innerHTML = htmlContentToAppend;
     }     
 }
