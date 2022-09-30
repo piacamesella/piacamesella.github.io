@@ -37,8 +37,8 @@ function mostrarProductInfo(){
  console.log(productInfo.name);
  }
 
-function mostrarProductImages(){
-    for(let i = 0; i < productInfo.images.length; i++){
+ function mostrarProductImages(){
+    for(let i = 0; i < images.length; i++){
         productInfo = productInfo.images[i];
         htmlContentToAppend += `
         <div class="col-3">
@@ -49,6 +49,19 @@ function mostrarProductImages(){
         document.getElementById("contenedorImagenes").innerHTML = htmlContentToAppend;
     }     
 }
+//esta:
+//function mostrarProductImages(){
+    //for(let i = 0; i < productInfo.images.length; i++){
+        //productInfo = productInfo.images[i];
+        //htmlContentToAppend += `
+       // <div class="col-3">
+        //<img src="${productInfo}" class="img-thumbnail"></img>
+        //</div>
+        //`
+        //console.log(productInfo);
+        //document.getElementById("contenedorImagenes").innerHTML = htmlContentToAppend;
+    //}     
+//}
 
 //function mostrarProductImages(){
     //for (images of productInfo){
