@@ -14,28 +14,28 @@ function getProductID(id){
     localStorage.getItem("productID",id);
 }
 
-//function mostrarProductInfo(){
-    //htmlContentToAppend+= `
-     //<div onclick="getProductID(${"productID"})" class="list-group-item">
-     //<div class="row">
-         //<div class="col-3">
-         //<h2 <small class="text">${productInfo.name}</small><br>
-         //</div>
-         //<h4 <small class="text">Precio</small><br>
-         //<small class="text-muted">${productInfo.currency} ${productInfo.cost}</small><br>
-         //<h4 <small class="text">Descripción</small><br>
-         //<small class="text-muted">${productInfo.descrption}</small><br>
-         //<h4 <small class="text">Categoría</small><br>
-         //<small class="text-muted">${productInfo.category}</small><br>
-         //<h4 <small class="text">Cantidad de vendidos</small><br>
-         //<small class="text-muted">${productInfo.soldCount} artículos</small>
-         //<h4 <small class="text">Imágenes ilustrativas</small><br>
-         //</div>
-     //</div>
- //`   
- //document.getElementById("contenedor").innerHTML += htmlContentToAppend;
- //console.log(productInfo.name);
- //}
+function mostrarProductInfo(){
+    htmlContentToAppend+= `
+     <div onclick="getProductID(${"productID"})" class="list-group-item">
+     <div class="row">
+         <div class="col-3">
+         <h2 <small class="text">${productInfo.name}</small><br>
+         </div>
+         <h4 <small class="text">Precio</small><br>
+         <small class="text-muted">${productInfo.currency} ${productInfo.cost}</small><br>
+         <h4 <small class="text">Descripción</small><br>
+         <small class="text-muted">${productInfo.descrption}</small><br>
+         <h4 <small class="text">Categoría</small><br>
+         <small class="text-muted">${productInfo.category}</small><br>
+         <h4 <small class="text">Cantidad de vendidos</small><br>
+         <small class="text-muted">${productInfo.soldCount} artículos</small>
+         <h4 <small class="text">Imágenes ilustrativas</small><br>
+         </div>
+     </div>
+ `   
+ document.getElementById("contenedor").innerHTML += htmlContentToAppend;
+ console.log(productInfo.name);
+ }
 
 function mostrarProductImages(){
     for(let i = 0; i < productInfo.images.length; i++){
@@ -61,48 +61,48 @@ function mostrarProductImages(){
         //document.getElementById("contenedorImagenes").innerHTML = htmlContentToAppend;
     //}
 //}
-//este:
-//document.addEventListener("DOMContentLoaded", function(a){
-    //getJSONData(PRODUCTO_INFO).then(function(resultado){
-        //if (resultado.status === "ok");
-        //{
-            //productInfo=resultado.data;
-             //mostrarProductInfo(productInfo);
-             //mostrarProductImages(productInfo);
-             //console.log(productInfo);
-        //}
-    //})
-//});
-     
+
 document.addEventListener("DOMContentLoaded", function(a){
     getJSONData(PRODUCTO_INFO).then(function(resultado){
-        if (resultado.status === "ok");{
-            function mostrarProductInfor(productInfo){
-                htmlContentToAppend+= `
-            <div onclick="getProductID(${"productID"})" class="list-group-item">
-            <div class="row">
-                <div class="col-3">
-                <h2 <small class="text">${productInfo.name}</small><br>
-                </div>
-                <h4 <small class="text">Precio</small><br>
-                <small class="text-muted">${productInfo.currency} ${productInfo.cost}</small><br>
-                <h4 <small class="text">Descripción</small><br>
-                <small class="text-muted">${productInfo.descrption}</small><br>
-                <h4 <small class="text">Categoría</small><br>
-                <small class="text-muted">${productInfo.category}</small><br>
-                <h4 <small class="text">Cantidad de vendidos</small><br>
-                <small class="text-muted">${productInfo.soldCount} artículos</small>
-                <h4 <small class="text">Imágenes ilustrativas</small><br>
-                </div>
-            </div>
-        `   
-        document.getElementById("contenedor").innerHTML += htmlContentToAppend;
-        console.log(productInfo.name);
-            }
-        mostrarProductImages(productInfo); 
+        if (resultado.status === "ok");
+        {
+            productInfo=resultado.data;
+             mostrarProductInfo(productInfo);
+             mostrarProductImages(productInfo);
+             console.log(productInfo);
         }
     })
 });
+     
+//document.addEventListener("DOMContentLoaded", function(a){
+    //getJSONData(PRODUCTO_INFO).then(function(resultado){
+        //if (resultado.status === "ok");{
+            //function mostrarProductInfor(productInfo){
+                //htmlContentToAppend+= `
+            //<div onclick="getProductID(${"productID"})" class="list-group-item">
+            //<div class="row">
+                //<div class="col-3">
+                //<h2 <small class="text">${productInfo.name}</small><br>
+                //</div>
+                //<h4 <small class="text">Precio</small><br>
+                //<small class="text-muted">${productInfo.currency} ${productInfo.cost}</small><br>
+                //<h4 <small class="text">Descripción</small><br>
+                //<small class="text-muted">${productInfo.descrption}</small><br>
+                //<h4 <small class="text">Categoría</small><br>
+                //<small class="text-muted">${productInfo.category}</small><br>
+                //<h4 <small class="text">Cantidad de vendidos</small><br>
+                //<small class="text-muted">${productInfo.soldCount} artículos</small>
+                //<h4 <small class="text">Imágenes ilustrativas</small><br>
+                //</div>
+            //</div>
+        //`   
+        //document.getElementById("contenedor").innerHTML += htmlContentToAppend;
+        //console.log(productInfo.name);
+            //}
+        //mostrarProductImages(productInfo); 
+        //}
+    //})
+//});
 
          
 
