@@ -77,7 +77,8 @@ function mostrarProductImages(){
 document.addEventListener("DOMContentLoaded", function(a){
     getJSONData(PRODUCTO_INFO).then(function(resultado){
         if (resultado.status === "ok");{
-            htmlContentToAppend+= `
+            function mostrarProductInfor(productInfo){
+                htmlContentToAppend+= `
             <div onclick="getProductID(${"productID"})" class="list-group-item">
             <div class="row">
                 <div class="col-3">
@@ -97,6 +98,7 @@ document.addEventListener("DOMContentLoaded", function(a){
         `   
         document.getElementById("contenedor").innerHTML += htmlContentToAppend;
         console.log(productInfo.name);
+            }
         mostrarProductImages(productInfo); 
         }
     })
