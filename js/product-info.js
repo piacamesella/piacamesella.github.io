@@ -14,17 +14,6 @@ function getProductID(id){
     localStorage.getItem("productID",id);
 }
 
-function estrellas(score){
-    for(let i = 0; i < 5; i++){
-        let estrellasScore = score[i];
-        console.log(estrellasScore);
-        document.getElementById("estrellasDoradas").innerHTML = estrellasDoradas;
-        estrellasScore=5-score;
-        console.log(estrellasScore);
-        document.getElementById("estrellasNegras").innerHTML = estrellasNegras;
-        }
-}    
-
 function mostrarProductInfo(){
     htmlContentToAppend+= `
      <div onclick="getProductID(${"productID"})" class="list-group-item">
@@ -97,7 +86,16 @@ document.addEventListener("DOMContentLoaded", function(){
          }
       }
       );
-      
+      function estrellas(score){
+        for(let i = 0; i < 5; i++){
+            let estrellasScore = score[i];
+            console.log(estrellasScore);
+            document.getElementById("estrellasDoradas").innerHTML = estrellasDoradas;
+            estrellasScore=5-score;
+            console.log(estrellasScore);
+            document.getElementById("estrellasNegras").innerHTML = estrellasNegras;
+            }
+    }        
 });
 
 
