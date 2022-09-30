@@ -26,13 +26,13 @@ function mostrarProductInfo(){
          <h4 <small class="text">Descripción</small><br>
          <p class="text-muted"${productInfo.descrption}</p><br>
          <div class="col">
-             <div class="d-flex w-100 justify-content-between">
-             <h4 <small class="text">Categoría</small><br>
-                 <p class="text-muted"${productInfo.category}</p><br>
-                 <h4 <small class="text">Cantidad de vendidos</small><br>
-                 <small class="text-muted">${productInfo.soldCount} artículos</small>
-                 <h4 <small class="text">Imágenes ilustrativas</small><br>
-             </div>
+         <div class="d-flex w-100 justify-content-between">
+         <h4 <small class="text">Categoría</small><br>
+        <p class="text-muted"${productInfo.category}</p><br>
+        <h4 <small class="text">Cantidad de vendidos</small><br>
+        <small class="text-muted">${productInfo.soldCount} artículos</small>
+        <h4 <small class="text">Imágenes ilustrativas</small><br>
+        </div>
         </div>
      </div>
  `   
