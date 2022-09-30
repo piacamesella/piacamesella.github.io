@@ -22,7 +22,7 @@ function mostrarProductInfo(){
          <h2 <small class="text">${productInfo.name}</small><br>
          </div>
          <h4 <small class="text">Precio</small><br>
-         <p class="text-muted"${productInfo.cost}</p><br>
+         <p class="text-muted"${productInfo.currency} ${productInfo.cost}</p><br>
          <h4 <small class="text">Descripción</small><br>
          <p class="text-muted"${productInfo.descrption}</p><br>
          <div class="col">
@@ -40,8 +40,8 @@ function mostrarProductInfo(){
  }
 
 function mostrarProductImages(){
-    for(let i = 0; i < images.length; i++){
-        productInfo = images[i];
+    for(let i = 0; i < productInfo.images.length; i++){
+        productInfo = productInfo.images[i];
         htmlContentToAppend += `
         <div class="col-3">
         <img src="${productInfo}" class="img-thumbnail"></img>
