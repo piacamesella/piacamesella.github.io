@@ -43,7 +43,7 @@ function mostrarProductInfo(){
         let htmlContentToAppend = "";
         htmlContentToAppend += `
         <div class="col-3">
-        <img src="${productInfo.images[i]}" class="img-thumbnail"></img>
+        <img src="${productInfo.images[i]}"</img>
         </div>
         `
         document.getElementById("contenedorImagenes").innerHTML = htmlContentToAppend;
