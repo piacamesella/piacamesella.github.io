@@ -8,7 +8,7 @@ let estrellasNegras = `
 <span class="fa fa-star"></span>
 `
 
-
+//función que obtiene el productID que guardé anteriormente en products.js con la ayuda de setItem:
 function getProductID(id){
     localStorage.getItem("productID",id);
 }

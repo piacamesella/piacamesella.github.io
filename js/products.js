@@ -1,7 +1,7 @@
 let arrayProducts = [];
 let min = undefined;
 let max = undefined;
-
+//función que guarda el identificador de un producto en el almacenamiento local y se redirige a product-info.html:
 function setProductID(id){
     localStorage.setItem("productID",id);
     window.location= "product-info.html";
