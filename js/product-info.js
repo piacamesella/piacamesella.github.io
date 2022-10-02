@@ -40,10 +40,11 @@ function mostrarProductInfo(){
  function mostrarProductImages(){
     images=productInfo.images;
     for(let i = 0; i < images.length; i++){
+        images=productInfo.images[i];
         let htmlContentToAppend = "";
         htmlContentToAppend += `
         <div class="col-3">
-        <img src="${images[i]}"class="img-thumbnail"></img>
+        <img src="${images}"class="img-thumbnail"></img>
         </div>
         `
         document.getElementById("contenedorImagenes").innerHTML = htmlContentToAppend;
