@@ -55,7 +55,8 @@ document.addEventListener("DOMContentLoaded", function(a){
         if (resultado.status === "ok");
         {
             productInfo=resultado.data;
-             mostrarProductInfo(productInfo).then(mostrarProductImages(productInfo));
+             mostrarProductInfo(productInfo);
+             mostrarProductImages(productInfo);
              console.log(productInfo);
         }
     })
