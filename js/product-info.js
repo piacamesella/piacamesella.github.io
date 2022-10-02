@@ -13,61 +13,9 @@ function getProductID(id){
     localStorage.getItem("productID",id);
 }
 
-function mostrarProductInfo(){
-    let htmlContentToAppend = "";
-    htmlContentToAppend+= `
-     <div onclick="getProductID(${"productID"})" class="list-group-item">
-     <div class="row">
-         <div class="col-3">
-         <h2 <small class="text">${productInfo.name}</small><br>
-         </div>
-         <h4 <small class="text">Precio</small><br>
-         <small class="text-muted">${productInfo.currency} ${productInfo.cost}</small><br>
-         <h4 <small class="text">Descripción</small><br>
-         <small class="text-muted">${productInfo.description}</small><br>
-         <h4 <small class="text">Categoría</small><br>
-         <small class="text-muted">${productInfo.category}</small><br>
-         <h4 <small class="text">Cantidad de vendidos</small><br>
-         <small class="text-muted">${productInfo.soldCount} artículos</small>
-         <h4 <small class="text">Imágenes ilustrativas</small><br>
-         </div>
-     </div>
- `   
- document.getElementById("contenedor").innerHTML += htmlContentToAppend;
- console.log(productInfo.name);
- }
-
- function mostrarProductImages(){
-    images=productInfo.images;
-    for(let i = 0; i < images.length; i++){
-        let htmlContentToAppend = "";
-        htmlContentToAppend += `
-        <div class="col-3">
-        <img src="${productInfo.images[i]}"class="img-thumbnail"></img>
-        </div>
-        `
-        document.getElementById("contenedorImagenes").innerHTML = htmlContentToAppend;
-    }     
-}
-
-document.addEventListener("DOMContentLoaded", function(a){
-    getJSONData(PRODUCTO_INFO).then(function(resultado){
-        if (resultado.status === "ok");
-        {
-            productInfo=resultado.data;
-             mostrarProductInfo(productInfo);
-             mostrarProductImages(productInfo);
-             console.log(productInfo);
-        }
-    })
-});
-
-//document.addEventListener("DOMContentLoaded", function(a){
-    //getJSONData(PRODUCTO_INFO).then(function(resultado){
-        //if (resultado.status === "ok");
-        //{
-            //productInfo=resultado.data;
-            //htmlContentToAppend+= `
+//function mostrarProductInfo(){
+    //let htmlContentToAppend = "";
+    //htmlContentToAppend+= `
      //<div onclick="getProductID(${"productID"})" class="list-group-item">
      //<div class="row">
          //<div class="col-3">
@@ -86,11 +34,64 @@ document.addEventListener("DOMContentLoaded", function(a){
      //</div>
  //`   
  //document.getElementById("contenedor").innerHTML += htmlContentToAppend;
+ //console.log(productInfo.name);
+ //}
+
+ function mostrarProductImages(){
+    images=productInfo.images;
+    for(let i = 0; i < images.length; i++){
+        let htmlContentToAppend = "";
+        htmlContentToAppend += `
+        <div class="col-3">
+        <img src="${productInfo.images[i]}"class="img-thumbnail"></img>
+        </div>
+        `
+        document.getElementById("contenedorImagenes").innerHTML = htmlContentToAppend;
+    }     
+}
+
+//document.addEventListener("DOMContentLoaded", function(a){
+    //getJSONData(PRODUCTO_INFO).then(function(resultado){
+        //if (resultado.status === "ok");
+        //{
+            //productInfo=resultado.data;
+             //mostrarProductInfo(productInfo);
              //mostrarProductImages(productInfo);
              //console.log(productInfo);
         //}
     //})
 //});
+
+document.addEventListener("DOMContentLoaded", function(a){
+    getJSONData(PRODUCTO_INFO).then(function(resultado){
+        if (resultado.status === "ok");
+        {
+            productInfo=resultado.data;
+            let htmlContentToAppend = "";
+            htmlContentToAppend+= `
+     <div onclick="getProductID(${"productID"})" class="list-group-item">
+     <div class="row">
+         <div class="col-3">
+         <h2 <small class="text">${productInfo.name}</small><br>
+         </div>
+         <h4 <small class="text">Precio</small><br>
+         <small class="text-muted">${productInfo.currency} ${productInfo.cost}</small><br>
+         <h4 <small class="text">Descripción</small><br>
+         <small class="text-muted">${productInfo.description}</small><br>
+         <h4 <small class="text">Categoría</small><br>
+         <small class="text-muted">${productInfo.category}</small><br>
+         <h4 <small class="text">Cantidad de vendidos</small><br>
+         <small class="text-muted">${productInfo.soldCount} artículos</small>
+         <h4 <small class="text">Imágenes ilustrativas</small><br>
+         </div>
+     </div>
+ `   
+ document.getElementById("contenedor").innerHTML += htmlContentToAppend;
+             mostrarProductImages(productInfo);
+             console.log(productInfo);
+        }
+    })
+});
 
 document.addEventListener("DOMContentLoaded", function(){
     getJSONData(PRODUCTO_INFO_COMMENTS).then(function(resultado){
