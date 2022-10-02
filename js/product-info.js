@@ -38,8 +38,8 @@ function mostrarProductInfo(){
  }
 
  function mostrarProductImages(){
-    images=productInfo.images;
     for(let i = 0; i < images.length; i++){
+        images=productInfo.images;
         let htmlContentToAppend = "";
         htmlContentToAppend += `
         <div class="col-3">
