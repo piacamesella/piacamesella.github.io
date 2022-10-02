@@ -38,7 +38,6 @@ function mostrarProductInfo(){
  }
 
  function mostrarProductImages(){
-    images=productInfo.images;
     for(let i = 0; i < images.length; i++){
         let htmlContentToAppend = "";
         htmlContentToAppend += `
