@@ -1,6 +1,5 @@
 let productInfo;
 let images=[];
-let htmlContentToAppend = "";
 let estrellasScore = 0;
 let estrellasDoradas = `
 <span  class="fa fa-star checked"></span>
@@ -15,6 +14,7 @@ function getProductID(id){
 }
 
 function mostrarProductInfo(){
+    let htmlContentToAppend = "";
     htmlContentToAppend+= `
      <div onclick="getProductID(${"productID"})" class="list-group-item">
      <div class="row">
@@ -40,10 +40,10 @@ function mostrarProductInfo(){
  function mostrarProductImages(){
     images=productInfo.images;
     for(let i = 0; i < images.length; i++){
-        images = productInfo.images[i];
+        let htmlContentToAppend = "";
         htmlContentToAppend += `
         <div class="col-3">
-        <img src="${images}" class="img-thumbnail"></img>
+        <img src="${productInfo.images[i]}" class="img-thumbnail"></img>
         </div>
         `
         document.getElementById("contenedorImagenes").innerHTML = htmlContentToAppend;
