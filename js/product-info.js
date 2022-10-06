@@ -59,8 +59,8 @@ function mostrarProductosRelacionados(){
         <div onclick="getProductID(${"productID"})" class="list-group-item">
         <div class="row">
             <div class="col-3">
-            <h4 <small class="text">Productos relacionados</small><br>
-            <h2 <small class="text">${productInfo.relatedProducts[i].name}</small><br>
+            <h2 <small class="text">Productos relacionados</small><br>
+            <h4 <small class="text">${productInfo.relatedProducts[i].name}</small><br>
             </div>
         <div class="col-3">
         <img src="${productInfo.relatedProducts[i].image}"class="img-thumbnail"></img>
