@@ -79,6 +79,7 @@ document.addEventListener("DOMContentLoaded", function(a){
         {
             productInfo=resultado.data;
              mostrarProductInfo(productInfo);
+             then.mostrarProductImages(productInfo);
              mostrarProductosRelacionados(productInfo);
              console.log(productInfo);
         }
