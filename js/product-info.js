@@ -68,6 +68,9 @@ function mostrarProductosRelacionados(){
     }
       
  document.getElementById("relatedProducts").innerHTML += htmlContentToAppend;
+ console.log(productInfo.relatedProducts);
+ console.log(productInfo.relatedProducts[0].name);
+ console.log(productInfo.relatedProducts[0].image);
 }
 
 document.addEventListener("DOMContentLoaded", function(a){
