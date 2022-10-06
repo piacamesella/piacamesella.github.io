@@ -53,7 +53,7 @@ function mostrarProductInfo(){
 
 function mostrarProductosRelacionados(){
     productosRelacionados=productInfo.relatedProducts;
-    for(let i = 0; i < images.length; i++){
+    for(let i = 0; i < productInfo.relatedProducts.length; i++){
         let htmlContentToAppend = "";
         htmlContentToAppend += `
         <div onclick="getProductID(${"productID"})" class="list-group-item">
