@@ -14,9 +14,11 @@ document.addEventListener("DOMContentLoaded", function(){
     
 });
 
+//Menú desplegable:
 //obtengo y muestro email del usuario que ingresó
-//let email=localStorage.getItem("usuario");
-//document.getElementById("emailIngresado").innerHTML= email;
+//redirijo a mi carrito
+//redirijo a mi perfil
+//redirijo al inicio de sesión y borro el usuario del almacenamiento local
 
 document.addEventListener("DOMContentLoaded", function(){
     let email=localStorage.getItem("usuario");
@@ -34,4 +36,3 @@ document.addEventListener("DOMContentLoaded", function(){
     
 });
 
-//<a class="nav-link"  role="button" id="emailIngresado" data-bs-toggle="dropdown" aria-expanded="false">

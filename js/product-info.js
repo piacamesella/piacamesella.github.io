@@ -31,6 +31,7 @@ function mostrarProductInfo(){
          <h4 <small class="text">Cantidad de vendidos</small><br>
          <small class="text-muted">${productInfo.soldCount} artículos</small>
          <h4 <small class="text">Imágenes ilustrativas</small><br>
+         <${mostrarProductImages(productInfo)}>
          </div>
      </div>
  `   
@@ -79,7 +80,6 @@ document.addEventListener("DOMContentLoaded", function(a){
         {
             productInfo=resultado.data;
              mostrarProductInfo(productInfo);
-             mostrarProductImages(productInfo);
              mostrarProductosRelacionados(productInfo);
              console.log(productInfo);
         }
