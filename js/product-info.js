@@ -59,6 +59,7 @@ function mostrarProductosRelacionados(){
         <div onclick="getProductID(${"productID"})" class="list-group-item">
         <div class="row">
             <div class="col-3">
+            <h4 <small class="text">Productos relacionados</small><br>
             <h2 <small class="text">${productosRelacionados[i].name}</small><br>
             </div>
         <div class="col-3">
