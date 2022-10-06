@@ -1,6 +1,6 @@
 let productInfo;
 let images=[];
-let relatedProducts=[];
+let productosRelacionados=[];
 let estrellasScore = 0;
 let estrellasDoradas = `
 <span  class="fa fa-star checked"></span>
@@ -53,23 +53,23 @@ function mostrarProductInfo(){
 
 function mostrarProductosRelacionados(){
     let htmlContentToAppend="";
-    relatedProducts=productInfo.relatedProducts;
-    for(let i = 0; i < relatedProducts.length; i++){
+    productosRelacionados=productInfo.relatedProducts;
+    for(let i = 0; i < productosRelacionados.length; i++){
         htmlContentToAppend += `
         <div onclick="getProductID(${"productID"})" class="list-group-item">
         <div class="row">
             <div class="col-3">
             <h4 <small class="text">Productos relacionados</small><br>
-            <h2 <small class="text">${productInfo.relatedProducts[i].name}</small><br>
+            <h2 <small class="text">${productosRelacionados[i].name}</small><br>
             </div>
         <div class="col-3">
-        <img src="${productInfo.relatedProducts[i].image}"class="img-thumbnail"></img>
+        <img src="${productosRelacionados[i].image}"class="img-thumbnail"></img>
         </div>
         `
     }
       
  document.getElementById("relatedProducts").innerHTML += htmlContentToAppend;
- console.log(relatedProducts);
+ console.log(productosRelacionados);
 }
 
 document.addEventListener("DOMContentLoaded", function(a){
