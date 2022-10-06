@@ -59,15 +59,16 @@ function mostrarProductosRelacionados(){
         <div onclick="getProductID(${"productID"})" class="list-group-item">
         <div class="row">
             <div class="col-3">
-            <h2 <small class="text">${productInfo.relatedProducts[i].name}</small><br>
+            <h2 <small class="text">${productosRelacionados[i].name}</small><br>
             </div>
         <div class="col-3">
-        <img src="${productInfo.relatedProducts[i].image}"class="img-thumbnail"></img>
+        <img src="${productosRelacionados[i].image}"class="img-thumbnail"></img>
         </div>
         `
     }
       
  document.getElementById("relatedProducts").innerHTML += htmlContentToAppend;
+ console.log(productosRelacionados);
  console.log(productInfo.relatedProducts);
  console.log(productInfo.relatedProducts[0].name);
  console.log(productInfo.relatedProducts[0].image);
