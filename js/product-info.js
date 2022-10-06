@@ -52,18 +52,18 @@ function mostrarProductInfo(){
 }
 
 function mostrarProductosRelacionados(){
+    let htmlContentToAppend="";
     relatedProducts=productInfo.relatedProducts;
     for(let i = 0; i < relatedProducts.length; i++){
-        let htmlContentToAppend = "";
         htmlContentToAppend += `
         <div onclick="getProductID(${"productID"})" class="list-group-item">
         <div class="row">
             <div class="col-3">
             <h4 <small class="text">Productos relacionados</small><br>
-            <h2 <small class="text">${relatedProducts[i].name}</small><br>
+            <h2 <small class="text">${productInfo.relatedProducts[i].name}</small><br>
             </div>
         <div class="col-3">
-        <img src="${relatedProducts[i].image}"class="img-thumbnail"></img>
+        <img src="${productInfo.relatedProducts[i].image}"class="img-thumbnail"></img>
         </div>
         `
     }
