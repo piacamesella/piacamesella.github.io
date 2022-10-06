@@ -30,8 +30,7 @@ function mostrarProductInfo(){
          <small class="text-muted">${productInfo.category}</small><br>
          <h4 <small class="text">Cantidad de vendidos</small><br>
          <small class="text-muted">${productInfo.soldCount} artículos</small>
-         <h4 <small class="text">Imágenes ilustrativas<br>
-         ${mostrarProductImages(productInfo)}/small>
+         <h4 <small class="text">Imágenes ilustrativas<br>${mostrarProductImages(productInfo)}/small>
          </div>
      </div>
  `   
