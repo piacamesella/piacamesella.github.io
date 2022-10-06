@@ -1,4 +1,5 @@
 let productInfo;
+let htmlContentToAppend;
 let images=[];
 let productosRelacionados=[];
 let estrellasScore = 0;
@@ -15,7 +16,6 @@ function getProductID(id){
 }
 
 function mostrarProductInfo(){
-    let htmlContentToAppend = "";
     htmlContentToAppend+= `
      <div onclick="getProductID(${"productID"})" class="list-group-item">
      <div class="row">
@@ -41,7 +41,6 @@ function mostrarProductInfo(){
  function mostrarProductImages(){
     images=productInfo.images;
     for(let i = 0; i < images.length; i++){
-        let htmlContentToAppend = "";
         htmlContentToAppend += `
         <div class="col-3">
         <img src="${productInfo.images[i]}"class="img-thumbnail"></img>
@@ -54,7 +53,6 @@ function mostrarProductInfo(){
 function mostrarProductosRelacionados(){
     productosRelacionados=productInfo.relatedProducts;
     for(let i = 0; i < productInfo.relatedProducts.length; i++){
-        let htmlContentToAppend = "";
         htmlContentToAppend += `
         <div onclick="getProductID(${"productID"})" class="list-group-item">
         <div class="row">
