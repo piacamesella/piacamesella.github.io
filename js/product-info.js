@@ -81,6 +81,7 @@ document.addEventListener("DOMContentLoaded", function(a){
             productInfo=resultado.data;
              mostrarProductInfo(productInfo);
              mostrarProductImages(productInfo);
+             mostrarProductosRelacionados(productInfo);
              console.log(productInfo);
         }
     })
@@ -121,8 +122,6 @@ document.addEventListener("DOMContentLoaded", function(){
             }
     }        
 });
-
-document.addEventListener("DOMContentLoaded", mostrarProductosRelacionados(productInfo));
 
 let email=localStorage.getItem("usuario");
 document.getElementById("emailIngresado").innerHTML= email;
