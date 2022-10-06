@@ -54,7 +54,7 @@ function mostrarProductInfo(){
 function mostrarProductosRelacionados(){
     let htmlContentToAppend="";
     relatedProducts=productInfo.relatedProducts;
-    for(let i = 0; i < productInfo.relatedProducts.length; i++){
+    for(let i = 0; i < relatedProducts.length; i++){
         htmlContentToAppend += `
         <div onclick="getProductID(${"productID"})" class="list-group-item">
         <div class="row">
@@ -85,37 +85,6 @@ document.addEventListener("DOMContentLoaded", function(a){
         }
     })
 });
-
-//document.addEventListener("DOMContentLoaded", function(a){
-    //getJSONData(PRODUCTO_INFO).then(function(resultado){
-        //if (resultado.status === "ok");
-        //{
-            //productInfo=resultado.data;
-            //let htmlContentToAppend = "";
-            //htmlContentToAppend+= `
-     //<div onclick="getProductID(${"productID"})" class="list-group-item">
-     //<div class="row">
-         //<div class="col-3">
-         //<h2 <small class="text">${productInfo.name}</small><br>
-         //</div>
-         //<h4 <small class="text">Precio</small><br>
-         //<small class="text-muted">${productInfo.currency} ${productInfo.cost}</small><br>
-         //<h4 <small class="text">Descripción</small><br>
-         //<small class="text-muted">${productInfo.description}</small><br>
-         //<h4 <small class="text">Categoría</small><br>
-         //<small class="text-muted">${productInfo.category}</small><br>
-         //<h4 <small class="text">Cantidad de vendidos</small><br>
-         //<small class="text-muted">${productInfo.soldCount} artículos</small>
-         //<h4 <small class="text">Imágenes ilustrativas</small><br>
-         //</div>
-     //</div>
- //`   
- //document.getElementById("contenedor").innerHTML += htmlContentToAppend;
-             //mostrarProductImages(productInfo);
-             //console.log(productInfo);
-        //}
-    //})
-//});
 
 document.addEventListener("DOMContentLoaded", function(){
     getJSONData(PRODUCTO_INFO_COMMENTS).then(function(resultado){
