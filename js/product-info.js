@@ -1,5 +1,6 @@
 let productInfo;
 let images=[];
+let productosRelacionados=[];
 let estrellasScore = 0;
 let estrellasDoradas = `
 <span  class="fa fa-star checked"></span>
@@ -50,6 +51,25 @@ function mostrarProductInfo(){
     }     
 }
 
+function mostrarProductosRelacionados(){
+    productosRelacionados=productInfo.relatedProducts;
+    for(let i = 0; i < images.length; i++){
+        let htmlContentToAppend = "";
+        htmlContentToAppend += `
+        <div onclick="getProductID(${"productID"})" class="list-group-item">
+        <div class="row">
+            <div class="col-3">
+            <h2 <small class="text">${productInfo.relatedProducts[i].name}</small><br>
+            </div>
+        <div class="col-3">
+        <img src="${productInfo.relatedProducts[i].image}"class="img-thumbnail"></img>
+        </div>
+        `
+    }
+      
+ document.getElementById("relatedProducts").innerHTML += htmlContentToAppend;
+}
+
 document.addEventListener("DOMContentLoaded", function(a){
     getJSONData(PRODUCTO_INFO).then(function(resultado){
         if (resultado.status === "ok");
@@ -57,6 +77,7 @@ document.addEventListener("DOMContentLoaded", function(a){
             productInfo=resultado.data;
              mostrarProductInfo(productInfo);
              mostrarProductImages(productInfo);
+             mostrarProductosRelacionados(productInfo);
              console.log(productInfo);
         }
     })
