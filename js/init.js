@@ -11,6 +11,7 @@ const PRODUCTO_INFO = `https://japceibal.github.io/emercado-api/products/${local
 const PRODUCTO_INFO_COMMENTS = `https://japceibal.github.io/emercado-api/products_comments/${localStorage.getItem("productID")}.json`
 
 
+
 let showSpinner = function(){
   document.getElementById("spinner-wrapper").style.display = "block";
 }
