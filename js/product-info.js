@@ -71,7 +71,7 @@ function mostrarProductosRelacionados(){
  console.log(productosRelacionados);
  console.log(productInfo.relatedProducts);
  console.log(productInfo.relatedProducts[0].name);
- console.log(productInfo.relatedProducts[0].image);
+ console.log(productosRelacionados[0].image);
 }
 
 document.addEventListener("DOMContentLoaded", function(a){
