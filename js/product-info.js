@@ -71,7 +71,6 @@ function mostrarProductosRelacionados(){
         <img src="${productInfo.relatedProducts[i].image}"class="img-thumbnail"></img>
         </div>
         `
-        mostrarInfoDeUnProductoRelacionado(relatedProducts);
     }
       
  document.getElementById("relatedProducts").innerHTML += htmlContentToAppend;
