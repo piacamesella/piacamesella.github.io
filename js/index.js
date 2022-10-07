@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function(){
 //obtengo y muestro email del usuario que ingresó
 //redirijo a mi carrito
 //redirijo a mi perfil
-//redirijo al inicio de sesión y borro el usuario del almacenamiento local
+//borro el usuario del almacenamiento local y redirijo al inicio de sesión
 
 document.addEventListener("DOMContentLoaded", function(){
     let email=localStorage.getItem("usuario");
@@ -30,8 +30,8 @@ document.addEventListener("DOMContentLoaded", function(){
         window.location = "my-profile.html"
     });
     document.getElementById("cerrarSesion").addEventListener("click", function() {
-        window.location = "index.html"
         localStorage.removeItem("usuario");
+        window.location = "index.html"
     });
     
 });

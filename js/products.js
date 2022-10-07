@@ -120,8 +120,8 @@ document.addEventListener("DOMContentLoaded", function(){
         window.location = "my-profile.html"
     });
     document.getElementById("cerrarSesion").addEventListener("click", function() {
-        window.location = "index.html"
         localStorage.removeItem("usuario");
+        window.location = "index.html"
     });
     
 });
