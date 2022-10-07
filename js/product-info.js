@@ -23,7 +23,7 @@ function getProductID(id){
 function mostrarProductInfo(){
     let htmlContentToAppend = "";
     htmlContentToAppend+= `
-     <div onclick="getProductID(${"productID"})" class="list-group-item">
+     <div "getProductID(${"productID"})" class="list-group-item">
      <div class="row">
          <div class="col-3">
          <h2 <small class="text">${productInfo.name}</small><br>
