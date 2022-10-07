@@ -65,6 +65,12 @@ function mostrarProductosRelacionados(){
         <img src="${productInfo.relatedProducts[i].image}"class="img-thumbnail"></img>
         </div>
         `
+        for (product of relatedProducts){
+            if(product.addEventListener("click",function(){
+                window.location="product-info.html";
+                mostrarProductInfo(productInfo);
+            }))
+        }
     }
       
  document.getElementById("relatedProducts").innerHTML += htmlContentToAppend;
