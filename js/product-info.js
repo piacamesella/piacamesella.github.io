@@ -14,6 +14,13 @@ function getProductID(id){
     localStorage.getItem("productID",id);
 }
 
+function mostrarInfoDeUnProductoRelacionado(){
+    if(document.getElementsByName("relatedProducts").addEventListener("click")){
+        window.location="product-info.html";
+        mostrarProductInfo(productInfo);
+    }
+}
+
 function mostrarProductInfo(){
     let htmlContentToAppend = "";
     htmlContentToAppend+= `
@@ -70,14 +77,6 @@ function mostrarProductosRelacionados(){
       
  document.getElementById("relatedProducts").innerHTML += htmlContentToAppend;
 }
-
-function mostrarInfoDeUnProductoRelacionado(){
-        if(document.getElementsByName("relatedProducts").addEventListener("click", function(){
-            window.location="product-info.html";
-            mostrarProductInfo(productInfo);
-        }))
-}
-
 
 document.addEventListener("DOMContentLoaded", function(a){
     getJSONData(PRODUCTO_INFO).then(function(resultado){
