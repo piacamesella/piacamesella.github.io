@@ -72,8 +72,6 @@ function mostrarProductosRelacionados(){
         </div>
         `
     }
-      console.log(productInfo.relatedProducts[0].id);
-      console.log(productInfo.relatedProducts[1].id);
 
  document.getElementById("relatedProducts").innerHTML += htmlContentToAppend;
 }
@@ -87,7 +85,6 @@ document.addEventListener("DOMContentLoaded", function(a){
              mostrarProductImages(productInfo);
              mostrarProductosRelacionados(productInfo);
              console.log(productInfo);
-             console.log(mostrarProductosRelacionados(productInfo));
         }
     })
 });
