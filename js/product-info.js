@@ -72,7 +72,7 @@ function mostrarProductosRelacionados(){
 }
 
 function mostrarInfoDeUnProductoRelacionado(){
-        if(document.getElementById(getProductID("productID")).addEventListener("click", function(){
+        if(document.getElementsByName("relatedProducts").addEventListener("click", function(){
             window.location="product-info.html";
             mostrarProductInfo(productInfo);
         }))
