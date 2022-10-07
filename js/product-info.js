@@ -8,17 +8,16 @@ let estrellasDoradas = `
 let estrellasNegras = `
 <span class="fa fa-star"></span>
 `
+//función que guarda el productID en el almacenamiento local y recarga la página
+
+function setProductID(id){
+    localStorage.setItem("productID",id);
+    window.location="product-info.html";
+}
 
 //función que obtiene el productID que guardé anteriormente en products.js con la ayuda de setItem:
 function getProductID(id){
     localStorage.getItem("productID",id);
-}
-
-function mostrarInfoDeUnProductoRelacionado(){
-    if(document.getElementsByName("relatedProducts").addEventListener("click")){
-        window.location="product-info.html";
-        mostrarProductInfo(productInfo);
-    }
 }
 
 function mostrarProductInfo(){
