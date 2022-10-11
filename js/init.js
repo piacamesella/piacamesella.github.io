@@ -9,6 +9,8 @@ const EXT_TYPE = ".json";
 const PRODUCTOS_TODOS = `https://japceibal.github.io/emercado-api/cats_products/${localStorage.getItem("catID")}.json`;
 const PRODUCTO_INFO = `https://japceibal.github.io/emercado-api/products/${localStorage.getItem("productID")}.json`;
 const PRODUCTO_INFO_COMMENTS = `https://japceibal.github.io/emercado-api/products_comments/${localStorage.getItem("productID")}.json`
+const CARRITO_INFO = `https://japceibal.github.io/emercado-api/user_cart/${localStorage.getItem("userID")}.json`;
+const CARRITO_INFO_USUARIO_25801 = `https://japceibal.github.io/emercado-api/user_cart/25801.json`;
 
 
 
