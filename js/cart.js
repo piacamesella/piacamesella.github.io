@@ -1,4 +1,5 @@
 let carritoInfo = [];
+let productoCarrito;
 
 function setUserID(id){
     localStorage.setItem("userID",id);
