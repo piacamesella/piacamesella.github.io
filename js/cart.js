@@ -11,7 +11,9 @@ function getProductID(id){
 
 function mostrarCarritoInfo(){
     let htmlContentToAppend = "";
-    htmlContentToAppend+=`
+    for(let i = 0; i < carritoInfo.length; i++){
+        let productoCarrito = carritoInfo[i];
+        htmlContentToAppend+=`
     <section class="h-100 h-custom" style="background-color: #d2c9ff;">
   <div "getProductID(${"userID"})" class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
@@ -29,19 +31,19 @@ function mostrarCarritoInfo(){
 
                   <div class="row mb-4 d-flex justify-content-between align-items-center">
                     <div class="col-md-2 col-lg-2 col-xl-2">
-                      <img src="${carritoInfo.image}"class="img-thumbnail"></img>
+                      <img src="${productoCarrito.image}"class="img-thumbnail"></img>
                     </div>
                     <div class="col-md-3 col-lg-3 col-xl-3">
-                      <h6 <small class="text">${carritoInfo.name}</small></h6>
+                      <h6 <small class="text">${productoCarrito.name}</small></h6>
                     </div>
                     <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
 
-                      <input id="form1" min="0" name="quantity" value="${carritoInfo.count}" type="number"
+                      <input id="form1" min="0" name="quantity" value="${productoCarrito.count}" type="number"
                         class="form-control form-control-sm" />
 
                     </div>
                     <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                      <h6 class="mb-0">${carritoInfo.currency} ${carritoInfo.unitCost}</h6>
+                      <h6 class="mb-0">${productoCarrito.currency} ${productoCarrito.unitCost}</h6>
                     </div>
                     <div class="col-md-1 col-lg-1 col-xl-1 text-end">
                       <a href="#!" class="text-muted"><i class="fas fa-times"></i></a>
@@ -97,7 +99,8 @@ function mostrarCarritoInfo(){
 </section>
     `
 document.getElementById("contenedor").innerHTML += htmlContentToAppend;
-console.log(carritoInfo.name);
+    }
+console.log(productoCarrito.name);
 }
 
 // function mostrarCarritoInfo(){
