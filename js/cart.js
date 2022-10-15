@@ -13,7 +13,7 @@ function mostrarCarritoInfo(){
     let htmlContentToAppend = "";
     htmlContentToAppend+=`
     <section class="h-100 h-custom" style="background-color: #d2c9ff;">
-  <div div "getProductID(${"userID"})" class="container py-5 h-100">
+  <div "getProductID(${"userID"})" class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-12">
         <div class="card card-registration card-registration-2" style="border-radius: 15px;">
@@ -35,18 +35,10 @@ function mostrarCarritoInfo(){
                       <h6 <small class="text">${carritoInfo.name}</small></h6>
                     </div>
                     <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
-                      <button class="btn btn-link px-2"
-                        onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
-                        <i class="fas fa-minus"></i>
-                      </button>
 
-                      <input id="form1" min="0" name="quantity" value="1" type="number"
+                      <input id="form1" min="0" name="quantity" value="${carritoInfo.count}" type="number"
                         class="form-control form-control-sm" />
 
-                      <button class="btn btn-link px-2"
-                        onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
-                        <i class="fas fa-plus"></i>
-                      </button>
                     </div>
                     <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
                       <h6 class="mb-0">${carritoInfo.currency} ${carritoInfo.unitCost}</h6>
