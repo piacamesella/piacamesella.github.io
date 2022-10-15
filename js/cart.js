@@ -129,7 +129,8 @@ document.addEventListener("DOMContentLoaded", function(a){
         if (resultado.status==="ok");
         {
             carritoInfo=resultado.data;
-
+            mostrarCarritoInfo(carritoInfo);
+            console.log(carritoInfo);
         }
     })
 })
