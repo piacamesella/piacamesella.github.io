@@ -4,6 +4,11 @@ function setUserID(id){
 
 setUserID(25801);
 
+function getProductID(id){
+    localStorage.getItem("userID",id);
+}
+
+
 // function mostrarCarritoInfo(){
 //     let htmlContentToAppend = "";
 //     htmlContentToAppend+=`
@@ -107,7 +112,7 @@ setUserID(25801);
 function mostrarCarritoInfo(){
     let htmlContentToAppend = "";
     htmlContentToAppend+= `
-     <div "25801" class="list-group-item">
+     <div "getProductID(${"userID"})" class="list-group-item">
      <div class="row">
          <div class="col-3">
          <img src="${carritoInfo.image}"class="img-thumbnail"></img>
