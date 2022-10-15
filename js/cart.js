@@ -1,3 +1,5 @@
+let carritoInfo = [];
+
 function setUserID(id){
     localStorage.setItem("userID",id);
 }
@@ -7,7 +9,6 @@ setUserID(25801);
 function getProductID(id){
     localStorage.getItem("userID",id);
 }
-
 
 function mostrarCarritoInfo(){
     let htmlContentToAppend = "";
@@ -99,8 +100,8 @@ function mostrarCarritoInfo(){
 </section>
     `
 document.getElementById("contenedor").innerHTML += htmlContentToAppend;
-    }
 console.log(productoCarrito.name);
+    }
 }
 
 // function mostrarCarritoInfo(){
