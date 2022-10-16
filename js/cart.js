@@ -5,21 +5,13 @@ function setUserID(id){
     localStorage.setItem("userID",id);
 }
 
-setUserID(25801);
-
-let user = 25801;
-
-function getUserID(id){
-    localStorage.getItem("userID",id);
-}
-
 function mostrarCarritoInfo(){
     let htmlContentToAppend = "";
     for(let i = 0; i < carritoInfo.length; i++){
         let articles = carritoInfo[i];
-        htmlContentToAppend+=`
+        htmlContentToAppend +=`
     <section class="h-100 h-custom" style="background-color: #d2c9ff;">
-  <div class="container py-5 h-100">
+  <div onclick="setUserID(${articles.id})" class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-12">
         <div class="card card-registration card-registration-2" style="border-radius: 15px;">
@@ -47,7 +39,7 @@ function mostrarCarritoInfo(){
 
                     </div>
                     <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                      <h6 class="mb-0">${getUserID("userID").articles.currency} ${user.articles.unitCost}</h6>
+                      <h6 class="mb-0">${articles.currency} ${articles.unitCost}</h6>
                     </div>
                     <div class="col-md-1 col-lg-1 col-xl-1 text-end">
                       <a href="#!" class="text-muted"><i class="fas fa-times"></i></a>
