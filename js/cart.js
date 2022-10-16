@@ -107,7 +107,7 @@ function getUserID(id){
 //     for(let i = 0; i < carritoInfo.length; i++){
 //       let articles = carritoInfo[i];
 //       htmlContentToAppend +=`
-//      <div onclick="setProductID"setUserID(${25801})" class="list-group-item">
+//      <div onclick="setUserID(${25801})" class="list-group-item">
 //      <div class="row">
 //          <div class="col-3">
 //          <img src="${articles.image}"class="img-thumbnail"></img>
@@ -128,7 +128,7 @@ function getUserID(id){
 function mostrarCarritoInfo(){
   let htmlContentToAppend = "";
  htmlContentToAppend +=`
-<div "getUserID(${carritoInfo.articles.id})" class="list-group-item">
+<div onclick="setUserID(${carritoInfo.articles.id})" class="list-group-item">
 <div class="row">
     <div class="col-3">
     <img src="${carritoInfo.articles.image}"class="img-thumbnail"></img>
