@@ -102,47 +102,47 @@ function getUserID(id){
 //     }
 // }
 
-function mostrarCarritoInfo(){
-       let htmlContentToAppend = "";
-    for(let i = 0; i < carritoInfo.length; i++){
-      let articles = carritoInfo[i];
-      htmlContentToAppend +=`
-     <div onclick="setProductID"setUserID(${25801})" class="list-group-item">
-     <div class="row">
-         <div class="col-3">
-         <img src="${articles.image}"class="img-thumbnail"></img>
-         <h2 <small class="text">${articles.name}</small><br>
-         </div>
-         <h4 <small class="text">Precio</small><br>
-         <small class="text-muted">${articles.currency} ${articles.unitCost}</small><br>
-         <small class="text-muted">${articles.count} artículos</small>
-         </div>
-     </div>
- `   
- document.getElementById("contenedor").innerHTML += htmlContentToAppend;
- console.log(articles.name);
-    }
- }
+// function mostrarCarritoInfo(){
+//        let htmlContentToAppend = "";
+//     for(let i = 0; i < carritoInfo.length; i++){
+//       let articles = carritoInfo[i];
+//       htmlContentToAppend +=`
+//      <div onclick="setProductID"setUserID(${25801})" class="list-group-item">
+//      <div class="row">
+//          <div class="col-3">
+//          <img src="${articles.image}"class="img-thumbnail"></img>
+//          <h2 <small class="text">${articles.name}</small><br>
+//          </div>
+//          <h4 <small class="text">Precio</small><br>
+//          <small class="text-muted">${articles.currency} ${articles.unitCost}</small><br>
+//          <small class="text-muted">${articles.count} artículos</small>
+//          </div>
+//      </div>
+//  `   
+//  document.getElementById("contenedor").innerHTML += htmlContentToAppend;
+//  console.log(articles.name);
+//     }
+//  }
 
 //no usar función, solo usarla para intentar encontrar error de las de arriba
-// function mostrarCarritoInfo(){
-//   let htmlContentToAppend = "";
-//  htmlContentToAppend +=`
-// <div "getUserID(${carritoInfo.id})" class="list-group-item">
-// <div class="row">
-//     <div class="col-3">
-//     <img src="${carritoInfo.image}"class="img-thumbnail"></img>
-//     <h2 <small class="text">${carritoInfo.name}</small><br>
-//     </div>
-//     <h4 <small class="text">Precio</small><br>
-//     <small class="text-muted">${carritoInfo.currency} ${carritoInfo.unitCost}</small><br>
-//     <small class="text-muted">${carritoInfo.count} artículos</small>
-//     </div>
-// </div>
-// `   
-// document.getElementById("contenedor").innerHTML += htmlContentToAppend;
-// console.log(carritoInfo.name);
-// }
+function mostrarCarritoInfo(){
+  let htmlContentToAppend = "";
+ htmlContentToAppend +=`
+<div "getUserID(${carritoInfo.articles.id})" class="list-group-item">
+<div class="row">
+    <div class="col-3">
+    <img src="${carritoInfo.articles.image}"class="img-thumbnail"></img>
+    <h2 <small class="text">${carritoInfo.name}</small><br>
+    </div>
+    <h4 <small class="text">Precio</small><br>
+    <small class="text-muted">${carritoInfo.articles.currency} ${carritoInfo.articles.unitCost}</small><br>
+    <small class="text-muted">${carritoInfo.articles.count} artículos</small>
+    </div>
+</div>
+`   
+document.getElementById("contenedor").innerHTML += htmlContentToAppend;
+console.log(carritoInfo.articles.name);
+}
 
 document.addEventListener("DOMContentLoaded", function(a){
     getJSONData(CARRITO_INFO_USUARIO_25801).then(function(resultado){
