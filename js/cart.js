@@ -132,7 +132,7 @@ function mostrarCarritoInfo(){
 <div class="row">
     <div class="col-3">
     <img src="${carritoInfo.articles.image}"class="img-thumbnail"></img>
-    <h2 <small class="text">${carritoInfo.name}</small><br>
+    <h2 <small class="text">${carritoInfo.articles.name}</small><br>
     </div>
     <h4 <small class="text">Precio</small><br>
     <small class="text-muted">${carritoInfo.articles.currency} ${carritoInfo.articles.unitCost}</small><br>
