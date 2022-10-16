@@ -7,7 +7,7 @@ function setUserID(id){
 
 setUserID(25801);
 
-function getProductID(id){
+function getUserID(id){
     localStorage.getItem("userID",id);
 }
 
@@ -45,7 +45,7 @@ function mostrarCarritoInfo(){
 
                     </div>
                     <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                      <h6 class="mb-0">${articles.currency} ${articles.unitCost}</h6>
+                      <h6 class="mb-0">${getUserID("userID").articles.currency} ${articles.unitCost}</h6>
                     </div>
                     <div class="col-md-1 col-lg-1 col-xl-1 text-end">
                       <a href="#!" class="text-muted"><i class="fas fa-times"></i></a>
