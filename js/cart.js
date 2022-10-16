@@ -17,7 +17,7 @@ function mostrarCarritoInfo(){
         let productoCarrito = carritoInfo[i];
         htmlContentToAppend+=`
     <section class="h-100 h-custom" style="background-color: #d2c9ff;">
-  <div "getProductID(${"userID"})" class="container py-5 h-100">
+  <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-12">
         <div class="card card-registration card-registration-2" style="border-radius: 15px;">
