@@ -120,6 +120,7 @@ function setUserID(id){
 //     }
 //  }
 
+//no usar función, solo usarla para intentar encontrar error de las de arriba
 
 function mostrarCarritoInfo(){
   let htmlContentToAppend = "";
