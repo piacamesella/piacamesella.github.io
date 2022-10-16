@@ -117,6 +117,7 @@ function mostrarCarritoInfo(){
  `   
  document.getElementById("contenedor").innerHTML += htmlContentToAppend;
  console.log(articles.name);
+    }
  }
 
 document.addEventListener("DOMContentLoaded", function(a){
