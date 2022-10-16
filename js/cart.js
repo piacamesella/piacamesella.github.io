@@ -7,6 +7,8 @@ function setUserID(id){
 
 setUserID(25801);
 
+let user = 25801;
+
 function getUserID(id){
     localStorage.getItem("userID",id);
 }
