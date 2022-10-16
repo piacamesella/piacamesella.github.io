@@ -154,6 +154,7 @@ document.addEventListener("DOMContentLoaded", function(a){
             carritoInfo=resultado.data;
             mostrarCarritoInfo(carritoInfo);
             console.log(carritoInfo);
+            console.log(carritoInfo.image);
         }
     })
 })
