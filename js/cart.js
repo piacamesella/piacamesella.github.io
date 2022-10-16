@@ -125,24 +125,45 @@ function getUserID(id){
 //  }
 
 //no usar función, solo usarla para intentar encontrar error de las de arriba
+// function mostrarCarritoInfo(){
+//   let htmlContentToAppend = "";
+//  htmlContentToAppend +=`
+// <div onclick="setUserID(${carritoInfo.articles.id})" class="list-group-item">
+// <div class="row">
+//     <div class="col-3">
+//     <img src="${carritoInfo.articles.image}"class="img-thumbnail"></img>
+//     <h2 <small class="text">${carritoInfo.articles.name}</small><br>
+//     </div>
+//     <h4 <small class="text">Precio</small><br>
+//     <small class="text-muted">${carritoInfo.articles.currency} ${carritoInfo.articles.unitCost}</small><br>
+//     <small class="text-muted">${carritoInfo.articles.count} artículos</small>
+//     </div>
+// </div>
+// `   
+// document.getElementById("contenedor").innerHTML += htmlContentToAppend;
+// console.log(carritoInfo.articles.name);
+// }
+
+// no usar función, solo usar pa error
 function mostrarCarritoInfo(){
-  let htmlContentToAppend = "";
- htmlContentToAppend +=`
-<div onclick="setUserID(${carritoInfo.articles.id})" class="list-group-item">
-<div class="row">
-    <div class="col-3">
-    <img src="${carritoInfo.articles.image}"class="img-thumbnail"></img>
-    <h2 <small class="text">${carritoInfo.articles.name}</small><br>
-    </div>
-    <h4 <small class="text">Precio</small><br>
-    <small class="text-muted">${carritoInfo.articles.currency} ${carritoInfo.articles.unitCost}</small><br>
-    <small class="text-muted">${carritoInfo.articles.count} artículos</small>
-    </div>
-</div>
-`   
-document.getElementById("contenedor").innerHTML += htmlContentToAppend;
-console.log(carritoInfo.articles.name);
-}
+    let htmlContentToAppend = "";
+    let articles = carritoInfo;
+   htmlContentToAppend +=`
+  <div onclick="setUserID(${articles.id})" class="list-group-item">
+  <div class="row">
+      <div class="col-3">
+      <img src="${articles.image}"class="img-thumbnail"></img>
+      <h2 <small class="text">${articles.name}</small><br>
+      </div>
+      <h4 <small class="text">Precio</small><br>
+      <small class="text-muted">${articles.currency} ${articles.unitCost}</small><br>
+      <small class="text-muted">${articles.count} artículos</small>
+      </div>
+  </div>
+  `   
+  document.getElementById("contenedor").innerHTML += htmlContentToAppend;
+  console.log(articles.name);
+  }
 
 document.addEventListener("DOMContentLoaded", function(a){
     getJSONData(CARRITO_INFO_USUARIO_25801).then(function(resultado){
