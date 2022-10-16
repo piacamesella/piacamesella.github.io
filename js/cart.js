@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function(a){
             for(let i = 0; i < carritoInfo.length; i++){
                 let articles = carritoInfo[i];
                 htmlContentToAppend +=`
-                <section class="h-100 h-custom" style="background-color: #d2c9ff;">
+<section class="h-100 h-custom" style="background-color: #d2c9ff;">
   <div "setUserID(${25801})" class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-12">
