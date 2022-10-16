@@ -8,6 +8,8 @@ function getUserID(id){
     localStorage.getItem("userID",id);
 }
 
+setUserID(25801);
+
 // function mostrarCarritoInfo(){
 //     let htmlContentToAppend = "";
 //     for(let i = 0; i < carritoInfo.length; i++){
