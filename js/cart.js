@@ -8,8 +8,6 @@ function getUserID(id){
     localStorage.getItem("userID",id);
 }
 
-setUserID(25801);
-
 // function mostrarCarritoInfo(){
 //     let htmlContentToAppend = "";
 //     for(let i = 0; i < carritoInfo.length; i++){
@@ -104,48 +102,47 @@ setUserID(25801);
 //     }
 // }
 
-// function mostrarCarritoInfo(){
-//        let htmlContentToAppend = "";
-//     for(let i = 0; i < carritoInfo.length; i++){
-//       let articles = carritoInfo[i];
-//       htmlContentToAppend +=`
-//      <div "setUserID(${25801})" class="list-group-item">
-//      <div class="row">
-//          <div class="col-3">
-//          <img src="${articles.image}"class="img-thumbnail"></img>
-//          <h2 <small class="text">${articles.name}</small><br>
-//          </div>
-//          <h4 <small class="text">Precio</small><br>
-//          <small class="text-muted">${articles.currency} ${articles.unitCost}</small><br>
-//          <small class="text-muted">${articles.count} artículos</small>
-//          </div>
-//      </div>
-//  `   
-//  document.getElementById("contenedor").innerHTML += htmlContentToAppend;
-//  console.log(articles.name);
-//     }
-//  }
+function mostrarCarritoInfo(){
+       let htmlContentToAppend = "";
+    for(let i = 0; i < carritoInfo.length; i++){
+      let articles = carritoInfo[i];
+      htmlContentToAppend +=`
+     <div onclick="setProductID"setUserID(${25801})" class="list-group-item">
+     <div class="row">
+         <div class="col-3">
+         <img src="${articles.image}"class="img-thumbnail"></img>
+         <h2 <small class="text">${articles.name}</small><br>
+         </div>
+         <h4 <small class="text">Precio</small><br>
+         <small class="text-muted">${articles.currency} ${articles.unitCost}</small><br>
+         <small class="text-muted">${articles.count} artículos</small>
+         </div>
+     </div>
+ `   
+ document.getElementById("contenedor").innerHTML += htmlContentToAppend;
+ console.log(articles.name);
+    }
+ }
 
 //no usar función, solo usarla para intentar encontrar error de las de arriba
-
-function mostrarCarritoInfo(){
-  let htmlContentToAppend = "";
- htmlContentToAppend +=`
-<div "getUserID(${carritoInfo.id})" class="list-group-item">
-<div class="row">
-    <div class="col-3">
-    <img src="${carritoInfo.image}"class="img-thumbnail"></img>
-    <h2 <small class="text">${carritoInfo.name}</small><br>
-    </div>
-    <h4 <small class="text">Precio</small><br>
-    <small class="text-muted">${carritoInfo.currency} ${carritoInfo.unitCost}</small><br>
-    <small class="text-muted">${carritoInfo.count} artículos</small>
-    </div>
-</div>
-`   
-document.getElementById("contenedor").innerHTML += htmlContentToAppend;
-console.log(carritoInfo.name);
-}
+// function mostrarCarritoInfo(){
+//   let htmlContentToAppend = "";
+//  htmlContentToAppend +=`
+// <div "getUserID(${carritoInfo.id})" class="list-group-item">
+// <div class="row">
+//     <div class="col-3">
+//     <img src="${carritoInfo.image}"class="img-thumbnail"></img>
+//     <h2 <small class="text">${carritoInfo.name}</small><br>
+//     </div>
+//     <h4 <small class="text">Precio</small><br>
+//     <small class="text-muted">${carritoInfo.currency} ${carritoInfo.unitCost}</small><br>
+//     <small class="text-muted">${carritoInfo.count} artículos</small>
+//     </div>
+// </div>
+// `   
+// document.getElementById("contenedor").innerHTML += htmlContentToAppend;
+// console.log(carritoInfo.name);
+// }
 
 document.addEventListener("DOMContentLoaded", function(a){
     getJSONData(CARRITO_INFO_USUARIO_25801).then(function(resultado){
@@ -154,7 +151,6 @@ document.addEventListener("DOMContentLoaded", function(a){
             carritoInfo=resultado.data;
             mostrarCarritoInfo(carritoInfo);
             console.log(carritoInfo);
-            console.log(carritoInfo.image);
         }
     })
 })
