@@ -202,35 +202,55 @@ function getUserID(id){
 //     }
 // }
 
+
+
 // function mostrarCarritoInfo(){
-//        let htmlContentToAppend = "";
-//     for(let i = 0; i < carritoInfo.length; i++){
-//       let articles = carritoInfo[i];
-//       htmlContentToAppend +=`
-//      <div onclick="setUserID(${25801})" class="list-group-item">
-//      <div class="row">
-//          <div class="col-3">
-//          <img src="${articles.image}"class="img-thumbnail"></img>
-//          <h2 <small class="text">${articles.name}</small><br>
-//          </div>
-//          <h4 <small class="text">Precio</small><br>
-//          <small class="text-muted">${articles.currency} ${articles.unitCost}</small><br>
-//          <small class="text-muted">${articles.count} artículos</small>
-//          </div>
-//      </div>
-//  `   
-//  document.getElementById("contenedor").innerHTML += htmlContentToAppend;
-//  console.log(articles.name);
-//     }
-//  }
+//   let htmlContentToAppend = "";
+//   for(let i = 0; i < carritoInfo.length; i++){
+//     let articles = carritoInfo[i];
+//     htmlContentToAppend +=`
+//     <div class="container">
+//    <div class="table-responsive">
+//      <table class="table">
+//        <thead>
+//          <tr>
+//            <th></th>
+//            <th><h3>Nombre</h3></th>
+//            <th><h3>Costo</h3></th>
+//            <th><h3>Cantidad</h3></th>
+//            <th><h3>Subtotal</h3></th>
+//          </tr>
+//        </thead>
+//        <tbody>
+//          <tr>
+//            <td><img src="${articles.image}"class="img-thumbnail"></img></td>
+//            <td><h2 <small class="text">${articles.name}</small></td>
+//            <td> <small class="text-muted">${articles.currency} ${articles.unitCost}</small></td>
+//            <td><input id="form1" min="0" name="quantity" value="${articles.count}" type="number"
+//                  class="form-control form-control-sm" /></td>
+//            <td><small class="text-muted">${articles.count*articles.unitCost}</small>.}</td>
+//          </tr>
+//        </tbody>
+//      </table>
+//    </div>
+//    </div>
+//    `   
+//    document.getElementById("contenedor").innerHTML += htmlContentToAppend;
+//   }
+// }
 
 
-//no usar función, solo usarla para intentar encontrar error de las de arriba
-function mostrarCarritoInfo(){
-  let htmlContentToAppend = "";
-  for(let i = 0; i < carritoInfo.length; i++){
-    let articles = carritoInfo[i];
-    htmlContentToAppend +=`
+//probando:
+document.addEventListener("DOMContentLoaded", function(a){
+    getJSONData(CARRITO_INFO_USUARIO_25801).then(function(resultado){
+        if (resultado.status==="ok");
+        {
+            carritoInfo=resultado.data;
+            let htmlContentToAppend = "";
+            for(let i = 0; i < carritoInfo.length; i++){
+                let articles = carritoInfo[i];
+
+                htmlContentToAppend +=`
     <div class="container">
    <div class="table-responsive">
      <table class="table">
@@ -258,71 +278,23 @@ function mostrarCarritoInfo(){
    </div>
    `   
    document.getElementById("contenedor").innerHTML += htmlContentToAppend;
-  }
-}
+                console.log(articles.name);
+            }
+        }
+    })
+})
 
-// no usar función, solo usar pa error
-// function mostrarCarritoInfo(){
-//     let htmlContentToAppend = "";
-//     let articles = carritoInfo;
-//    htmlContentToAppend +=`
-//   <div onclick="setUserID(${articles.id})" class="list-group-item">
-//   <div class="row">
-//       <div class="col-3">
-//       <img src="${articles.image}"class="img-thumbnail"></img>
-//       <h2 <small class="text">${articles.name}</small><br>
-//       </div>
-//       <h4 <small class="text">Precio</small><br>
-//       <small class="text-muted">${articles.currency} ${articles.unitCost}</small><br>
-//       <small class="text-muted">${articles.count} artículos</small>
-//       </div>
-//   </div>
-//   `   
-//   document.getElementById("contenedor").innerHTML += htmlContentToAppend;
-//   console.log(articles.name);
-//   }
 
-//probando:
 // document.addEventListener("DOMContentLoaded", function(a){
 //     getJSONData(CARRITO_INFO_USUARIO_25801).then(function(resultado){
 //         if (resultado.status==="ok");
 //         {
 //             carritoInfo=resultado.data;
-//             let htmlContentToAppend = "";
-//             for(let i = 0; i < carritoInfo.length; i++){
-//                 let articles = carritoInfo[i];
-
-//                 htmlContentToAppend +=`
-//                 <div onclick="setUserID(${articles.id})" class="list-group-item">
-//                 <div class="row">
-//                     <div class="col-3">
-//                     <img src="${articles.image}"class="img-thumbnail"></img>
-//                     <h2 <small class="text">${articles.name}</small><br>
-//                     </div>
-//                     <h4 <small class="text">Precio</small><br>
-//                     <small class="text-muted">${articles.currency} ${articles.unitCost}</small><br>
-//                     <small class="text-muted">${articles.count} artículos</small>
-//                     </div>
-//                 </div>
-//                 `
-//                 document.getElementById("contenedor").innerHTML += htmlContentToAppend;
-//                 console.log(articles.name);
-//             }
+//             mostrarCarritoInfo(carritoInfo);
+//             console.log(carritoInfo);
 //         }
 //     })
 // })
-
-
-document.addEventListener("DOMContentLoaded", function(a){
-    getJSONData(CARRITO_INFO_USUARIO_25801).then(function(resultado){
-        if (resultado.status==="ok");
-        {
-            carritoInfo=resultado.data;
-            mostrarCarritoInfo(carritoInfo);
-            console.log(carritoInfo);
-        }
-    })
-})
 
 document.addEventListener("DOMContentLoaded", function(){
     let email=localStorage.getItem("usuario");
