@@ -228,34 +228,37 @@ function getUserID(id){
 //no usar función, solo usarla para intentar encontrar error de las de arriba
 function mostrarCarritoInfo(){
   let htmlContentToAppend = "";
- htmlContentToAppend +=`
- <div class="container">
-<div class="table-responsive">
-  <table class="table">
-    <thead>
-      <tr>
-        <th></th>
-        <th><h3>Nombre</h3></th>
-        <th><h3>Costo</h3></th>
-        <th><h3>Cantidad</h3></th>
-        <th><h3>Subtotal</h3></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-</div>
-`   
-document.getElementById("contenedor").innerHTML += htmlContentToAppend;
-console.log(carritoInfo.articles.name);
+  for(let i = 0; i < carritoInfo.length; i++){
+    let articles = carritoInfo[i];
+    htmlContentToAppend +=`
+    <div class="container">
+   <div class="table-responsive">
+     <table class="table">
+       <thead>
+         <tr>
+           <th></th>
+           <th><h3>Nombre</h3></th>
+           <th><h3>Costo</h3></th>
+           <th><h3>Cantidad</h3></th>
+           <th><h3>Subtotal</h3></th>
+         </tr>
+       </thead>
+       <tbody>
+         <tr>
+           <td><img src="${articles.image}"class="img-thumbnail"></img></td>
+           <td><h2 <small class="text">${articles.name}</small></td>
+           <td> <small class="text-muted">${articles.currency} ${articles.unitCost}</small></td>
+           <td><small class="text-muted">${articles.count} artículos</small></td>
+           <td><input id="form1" min="0" name="quantity" value="${articles.count*articles.unitCost}" type="number"
+                 class="form-control form-control-sm" /></td>
+         </tr>
+       </tbody>
+     </table>
+   </div>
+   </div>
+   `   
+   document.getElementById("contenedor").innerHTML += htmlContentToAppend;
+  }
 }
 
 // no usar función, solo usar pa error
@@ -310,16 +313,16 @@ console.log(carritoInfo.articles.name);
 // })
 
 
-// document.addEventListener("DOMContentLoaded", function(a){
-//     getJSONData(CARRITO_INFO_USUARIO_25801).then(function(resultado){
-//         if (resultado.status==="ok");
-//         {
-//             carritoInfo=resultado.data;
-//             mostrarCarritoInfo(carritoInfo);
-//             console.log(carritoInfo);
-//         }
-//     })
-// })
+document.addEventListener("DOMContentLoaded", function(a){
+    getJSONData(CARRITO_INFO_USUARIO_25801).then(function(resultado){
+        if (resultado.status==="ok");
+        {
+            carritoInfo=resultado.data;
+            mostrarCarritoInfo(carritoInfo);
+            console.log(carritoInfo);
+        }
+    })
+})
 
 document.addEventListener("DOMContentLoaded", function(){
     let email=localStorage.getItem("usuario");
