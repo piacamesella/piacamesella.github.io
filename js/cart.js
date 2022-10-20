@@ -127,7 +127,7 @@ function mostrarCarritoInfo(){
            <td> <small class="text-muted">${articles.currency} ${articles.unitCost}</small></td>
            <td><input id="form1" min="0" name="quantity" value="${articles.count}" type="number"
                  class="form-control form-control-sm" /></td>
-           <td><small class="text-muted">${articles.count*articles.unitCost}</small>.}</td>
+           <td><small class="text-muted">${articles.count*articles.unitCost}</small></td>
          </tr>
        </tbody>
      </table>
