@@ -113,7 +113,7 @@ function mostrarCarritoInfo(){
     <div "setUserID(${25801})" class="container">
        <thead>
          <tr>
-           <th></th>
+           <th> </th>
            <th><h3>Nombre</h3></th>
            <th><h3>Costo</h3></th>
            <th><h3>Cantidad</h3></th>
