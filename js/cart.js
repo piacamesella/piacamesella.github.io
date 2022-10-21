@@ -186,6 +186,7 @@ function mostrarCarritoInfo(){
 
                   <div class="d-flex justify-content-between mb-5">
                   <h5 class="text-uppercase mb-3">Dirección de envío</h5>
+                  
                   <div class="container">
                     <form class="row g-3">
                       <div class="col-6">
@@ -205,8 +206,6 @@ function mostrarCarritoInfo(){
             
                       </div>
                     </form>
-                  </div>
-              </div>
                   </div>
 
                   <button type="button" class="btn btn-dark btn-block btn-lg"
