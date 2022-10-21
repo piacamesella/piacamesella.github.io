@@ -189,7 +189,8 @@ a.custom-card:hover {
   color: orange;
 }
 
-/* @media (min-width: 1025px) {
+/* probar */
+@media (min-width: 1025px) {
   .h-custom {
   height: 100vh !important;
   }
@@ -222,4 +223,4 @@ a.custom-card:hover {
   border-bottom-left-radius: 16px;
   border-bottom-right-radius: 16px;
   }
-  } */
+  }
