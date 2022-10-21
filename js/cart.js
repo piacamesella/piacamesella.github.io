@@ -177,10 +177,36 @@ function mostrarCarritoInfo(){
                   </div>
 
                   <hr class="my-4">
+                  
 
                   <div class="d-flex justify-content-between mb-5">
                     <h5 class="text-uppercase">Total</h5>
                     <h5>agregartotal(subtotales,envio)</h5>
+                  </div>
+
+                  <div class="d-flex justify-content-between mb-5">
+                  <h2>Dirección de envío</h3>
+                  <div class="container">
+                    <form class="row g-3">
+                      <div class="col-6">
+                        <label for="inputCalle">Calle</label>
+                        <input type="text" name="calle" id="inputCalle">
+                      </div>
+            
+                      <div class="col-6">
+                        <label for="inputNumero">Número</label>
+                        <input type="text" name="numero" id="inputNumero">
+                      </div>
+            
+                      <div class="col-6">
+                        <label for="inputEsquina">Esquina</label>
+                        <input type="text" name="esquina" id="inputEsquina">
+                      </div>
+            
+                      </div>
+                    </form>
+                  </div>
+              </div>
                   </div>
 
                   <button type="button" class="btn btn-dark btn-block btn-lg"
