@@ -1,5 +1,5 @@
 let carritoInfo = [];
-
+let htmlContentToAppend;
 function setUserID(id){
     localStorage.setItem("userID",id);
 }
@@ -243,8 +243,7 @@ document.addEventListener("DOMContentLoaded", function(a){
       {
           carritoInfo=resultado.data;
           let htmlContentToAppend = "";
-         
-          htmlContentToAppend +=`
+         htmlContentToAppend +=`
           <div class="container">
              <thead>
                <tr>
