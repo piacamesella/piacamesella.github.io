@@ -9,7 +9,7 @@ function getUserID(id){
 }
 
 
-function mostrarCarritoInfo(){
+function mostrarCarritoInfo(carritoInfo){
     let htmlContentToAppend = "";
     for(let i = 0; i < carritoInfo.length; i++){
         let articles = carritoInfo[i];
