@@ -1,5 +1,5 @@
 let carritoInfo = [];
-let htmlContentToAppend;
+
 function setUserID(id){
     localStorage.setItem("userID",id);
 }
@@ -243,7 +243,8 @@ document.addEventListener("DOMContentLoaded", function(a){
       {
           carritoInfo=resultado.data;
           let htmlContentToAppend = "";
-         htmlContentToAppend +=`
+          for(let i = 0; i < carritoInfo.articles.length; i++){
+            htmlContentToAppend +=`
           <div class="container">
              <thead>
                <tr>
@@ -256,17 +257,18 @@ document.addEventListener("DOMContentLoaded", function(a){
              </thead>
              <tbody>
                <tr>
-                 <td><img src="${carritoInfo[0].articles.image}"class="img-thumbnail"></img></td>
-                 <td><h2 <small class="text">${carritoInfo[0].articles.name}</small></td>
-                 <td> <small class="text-muted">${carritoInfo[0].articles.currency} ${carritoInfo[0].articles.unitCost}</small></td>
-                 <td><input id="form1" min="0" name="quantity" value="${carritoInfo[0].articles.count}" type="number"
+                 <td><img src="${carritoInfo.articles[i].image}"class="img-thumbnail"></img></td>
+                 <td><h2 <small class="text">${carritoInfo.articles[i].name}</small></td>
+                 <td> <small class="text-muted">${carritoInfo.articles[i].currency} ${carritoInfo.articles[i].unitCost}</small></td>
+                 <td><input id="form1" min="0" name="quantity" value="${carritoInfo.articles[i].count}" type="number"
                        class="form-control form-control-sm"/></td>
-                 <td><small class="text-muted">${carritoInfo[0].articles.count*carritoInfo[0].articles.unitCost}</small></td>
+                 <td><small class="text-muted">${carritoInfo.articles[i].count*carritoInfo.articles[i].unitCost}</small></td>
                </tr>
              </tbody>
            </table>
          </div>
          `   
+          }
       }
       document.getElementById("contenedor").innerHTML += htmlContentToAppend;
   })
