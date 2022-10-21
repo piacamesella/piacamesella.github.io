@@ -162,7 +162,7 @@ function mostrarCarritoInfo(){
                   <hr class="my-4">
 
                   <div class="d-flex justify-content-between mb-4">
-                    <h5 class="text-uppercase">${carritoInfo.articles[i.count]}items</h5>
+                    <h5 class="text-uppercase">${carritoInfo.articles[i].count}items</h5>
                     <h5>${carritoInfo.articles[i].currency} ${carritoInfo.articles[i].count*carritoInfo.articles[i].unitCost}</h5>
                   </div>
 
