@@ -244,7 +244,7 @@ document.addEventListener("DOMContentLoaded", function(a){
           carritoInfo=resultado.data;
           let htmlContentToAppend = "";
           htmlContentToAppend +=`
-          <div "setUserID(${25801})" class="container">
+          <div class="container">
              <thead>
                <tr>
                  <th> </th>
