@@ -257,12 +257,12 @@ document.addEventListener("DOMContentLoaded", function(a){
              </thead>
              <tbody>
                <tr>
-                 <td><img src="${carritoInfo.image}"class="img-thumbnail"></img></td>
-                 <td><h2 <small class="text">${carritoInfo.name}</small></td>
-                 <td> <small class="text-muted">${carritoInfo.currency} ${carritoInfo.unitCost}</small></td>
-                 <td><input id="form1" min="0" name="quantity" value="${carritoInfo.count}" type="number"
+                 <td><img src="${carritoInfo.articles.image}"class="img-thumbnail"></img></td>
+                 <td><h2 <small class="text">${carritoInfo.articles.name}</small></td>
+                 <td> <small class="text-muted">${carritoInfo.articles.currency} ${carritoInfo.articles.unitCost}</small></td>
+                 <td><input id="form1" min="0" name="quantity" value="${carritoInfo.articles.count}" type="number"
                        class="form-control form-control-sm"/></td>
-                 <td><small class="text-muted">${carritoInfo.count*carritoInfo.unitCost}</small></td>
+                 <td><small class="text-muted">${carritoInfo.articles.count*carritoInfo.articles.unitCost}</small></td>
                </tr>
              </tbody>
            </table>
