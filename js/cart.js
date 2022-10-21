@@ -189,17 +189,17 @@ function mostrarCarritoInfo(){
                   <div class="container">
                     <form class="row g-3">
                       <div class="col-6">
-                        <label for="inputCalle">Calle</label>
+                        <label for="inputCalle"><h5 class="text-uppercase mb-3">Calle</h5></label>
                         <input type="text" name="calle" id="inputCalle">
                       </div>
             
                       <div class="col-6">
-                        <label for="inputNumero">Número</label>
+                        <label for="inputNumero"><h5 class="text-uppercase mb-3">Número</h5></label>
                         <input type="text" name="numero" id="inputNumero">
                       </div>
             
                       <div class="col-6">
-                        <label for="inputEsquina">Esquina</label>
+                        <label for="inputEsquina"><h5 class="text-uppercase mb-3">Esquina</h5></label>
                         <input type="text" name="esquina" id="inputEsquina">
                       </div>
             
