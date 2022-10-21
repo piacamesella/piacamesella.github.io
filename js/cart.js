@@ -123,7 +123,7 @@ function mostrarCarritoInfo(){
                 <div class="p-5">
                   <div class="d-flex justify-content-between align-items-center mb-5">
                     <h1 class="fw-bold mb-0 text-black">Carrito de compras</h1>
-                    <h6 class="mb-0 text-muted">3 items</h6>
+                    <h6 class="mb-0 text-muted">${carritoInfo.articles[i].count} items</h6>
                   </div>
                   <hr class="my-4">
 
@@ -185,7 +185,7 @@ function mostrarCarritoInfo(){
                   </div>
 
                   <div class="d-flex justify-content-between mb-5">
-                  <h5 class="text-uppercase mb-3"Dirección de envío</h5>
+                  <h5 class="text-uppercase mb-3">Dirección de envío</h5>
                   <div class="container">
                     <form class="row g-3">
                       <div class="col-6">
