@@ -116,11 +116,11 @@ function mostrarCarritoInfo(){
                     <h5>AgregarCalculoTotal</h5>
                   </div>
 
+                  <hr class="my-4">
 
                   <button type="button" class="btn btn-dark btn-block btn-lg"
                     data-mdb-ripple-color="dark">Comprar</button>
                   
-                    <hr class="my-4">
 
                 </div>
               </div>
