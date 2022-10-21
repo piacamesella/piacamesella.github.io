@@ -269,8 +269,8 @@ document.addEventListener("DOMContentLoaded", function(a){
          </div>
          `   
           }
+          document.getElementById("contenedor").innerHTML += htmlContentToAppend;
       }
-      document.getElementById("contenedor").innerHTML += htmlContentToAppend;
   })
 })
 
