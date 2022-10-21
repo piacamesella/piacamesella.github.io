@@ -186,25 +186,31 @@ function mostrarCarritoInfo(){
 
                   <div class="d-flex justify-content-between mb-5">
                   <h5 class="text-uppercase mb-3">Dirección de envío</h5>
-                  <hr class="my-4">
+                  </div>
                   <div class="container">
                     <form class="row g-3">
-                      <div class="col-6">
-                        <label for="inputCalle"><h5 class="text-uppercase mb-3">Calle</h5></label>
-                        <input type="text" name="calle" id="inputCalle">
+
+                      <div class="mb-4 pb-2">
+                        <div class="col-6">
+                          <label for="inputCalle"><h5 class="text-uppercase mb-3">Calle</h5></label>
+                          <input type="text" name="calle" id="inputCalle">
+                        </div>
                       </div>
             
-                      <div class="col-6">
-                        <label for="inputNumero"><h5 class="text-uppercase mb-3">Número</h5></label>
-                        <input type="text" name="numero" id="inputNumero">
+                      <div class="mb-4 pb-2">
+                        <div class="col-6">
+                          <label for="inputNumero"><h5 class="text-uppercase mb-3">Número</h5></label>
+                          <input type="text" name="numero" id="inputNumero">
+                        </div>
                       </div>
             
-                      <div class="col-6">
-                        <label for="inputEsquina"><h5 class="text-uppercase mb-3">Esquina</h5></label>
-                        <input type="text" name="esquina" id="inputEsquina">
+                      <div class="mb-4 pb-2">
+                        <div class="col-6">
+                          <label for="inputEsquina"><h5 class="text-uppercase mb-3">Esquina</h5></label>
+                          <input type="text" name="esquina" id="inputEsquina">
+                        </div>
                       </div>
             
-                      </div>
                     </form>
                   </div>
 
