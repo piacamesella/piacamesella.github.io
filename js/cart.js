@@ -176,13 +176,7 @@ function mostrarCarritoInfo(){
                     </select>
                   </div>
 
-                  <hr class="my-4">
-                  
-
-                  <div class="d-flex justify-content-between mb-5">
-                    <h5 class="text-uppercase">Total</h5>
-                    <h5>agregartotal(subtotales,envio)</h5>
-                  </div>
+                  <hr class="my-4">   
 
                   <div class="d-flex justify-content-between mb-5">
                   <h5 class="text-uppercase mb-3">Dirección de envío</h5>
@@ -213,6 +207,12 @@ function mostrarCarritoInfo(){
             
                     </form>
                   </div>
+
+                  <div class="d-flex justify-content-between mb-5">
+                    <h5 class="text-uppercase">Total</h5>
+                    <h5>agregartotal(subtotales,envio)</h5>
+                  </div>
+
 
                   <button type="button" class="btn btn-dark btn-block btn-lg"
                     data-mdb-ripple-color="dark">Comprar</button>
