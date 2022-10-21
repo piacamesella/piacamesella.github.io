@@ -109,14 +109,18 @@ function mostrarCarritoInfo(){
                     </form>
                   </div>
 
+                  <hr class="my-4">
+
                   <div class="d-flex justify-content-between mb-5">
                     <h5 class="text-uppercase">Total</h5>
-                    <h5>agregartotal(subtotales,envio)</h5>
+                    <h5>AgregarCalculoTotal</h5>
                   </div>
 
 
                   <button type="button" class="btn btn-dark btn-block btn-lg"
                     data-mdb-ripple-color="dark">Comprar</button>
+                  
+                    <hr class="my-4">
 
                 </div>
               </div>
