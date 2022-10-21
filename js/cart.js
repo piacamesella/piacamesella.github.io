@@ -243,6 +243,7 @@ document.addEventListener("DOMContentLoaded", function(a){
       {
           carritoInfo=resultado.data;
           let htmlContentToAppend = "";
+         
           htmlContentToAppend +=`
           <div class="container">
              <thead>
@@ -256,12 +257,12 @@ document.addEventListener("DOMContentLoaded", function(a){
              </thead>
              <tbody>
                <tr>
-                 <td><img src="${carritoInfo[0].image}"class="img-thumbnail"></img></td>
-                 <td><h2 <small class="text">${carritoInfo[0].name}</small></td>
-                 <td> <small class="text-muted">${carritoInfo[0].currency} ${carritoInfo[0].unitCost}</small></td>
-                 <td><input id="form1" min="0" name="quantity" value="${carritoInfo[0].count}" type="number"
+                 <td><img src="${carritoInfo.image}"class="img-thumbnail"></img></td>
+                 <td><h2 <small class="text">${carritoInfo.name}</small></td>
+                 <td> <small class="text-muted">${carritoInfo.currency} ${carritoInfo.unitCost}</small></td>
+                 <td><input id="form1" min="0" name="quantity" value="${carritoInfo.count}" type="number"
                        class="form-control form-control-sm"/></td>
-                 <td><small class="text-muted">${carritoInfo[0].count*carritoInfo[0].unitCost}</small></td>
+                 <td><small class="text-muted">${carritoInfo.count*carritoInfo.unitCost}</small></td>
                </tr>
              </tbody>
            </table>
