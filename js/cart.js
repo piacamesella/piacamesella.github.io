@@ -108,7 +108,7 @@ function getUserID(id){
 function mostrarCarritoInfo(){
   let htmlContentToAppend = "";
   for(let i = 0; i < carritoInfo.length; i++){
-    let articles = carritoInfo;
+    let articles = carritoInfo[i];
     htmlContentToAppend +=`
     <div "setUserID(${25801})" class="container">
        <thead>
@@ -122,12 +122,12 @@ function mostrarCarritoInfo(){
        </thead>
        <tbody>
          <tr>
-           <td><img src="${articles[i].image}"class="img-thumbnail"></img></td>
-           <td><h2 <small class="text">${articles[i].name}</small></td>
-           <td> <small class="text-muted">${articles[i].currency} ${articles[i].unitCost}</small></td>
-           <td><input id="form1" min="0" name="quantity" value="${articles[i].count}" type="number"
+           <td><img src="${articles.image}"class="img-thumbnail"></img></td>
+           <td><h2 <small class="text">${articles.name}</small></td>
+           <td> <small class="text-muted">${articles.currency} ${articles.unitCost}</small></td>
+           <td><input id="form1" min="0" name="quantity" value="${articles.count}" type="number"
                  class="form-control form-control-sm" /></td>
-           <td><small class="text-muted">${articles[i].count*articles[i].unitCost}</small></td>
+           <td><small class="text-muted">${articles.count*articles.unitCost}</small></td>
          </tr>
        </tbody>
      </table>
