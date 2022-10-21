@@ -162,8 +162,8 @@ function mostrarCarritoInfo(){
                   <hr class="my-4">
 
                   <div class="d-flex justify-content-between mb-4">
-                    <h5 class="text-uppercase">items 3</h5>
-                    <h5>€ 132.00</h5>
+                    <h5 class="text-uppercase">${carritoInfo.articles[i.count]}items</h5>
+                    <h5>${carritoInfo.articles[i].currency} ${carritoInfo.articles[i].count*carritoInfo.articles[i].unitCost}</h5>
                   </div>
 
                   <h5 class="text-uppercase mb-3">Tipo de envío</h5>
@@ -179,8 +179,8 @@ function mostrarCarritoInfo(){
                   <hr class="my-4">
 
                   <div class="d-flex justify-content-between mb-5">
-                    <h5 class="text-uppercase">Subtotal</h5>
-                    <h5>€ 137.00</h5>
+                    <h5 class="text-uppercase">Total</h5>
+                    <h5>agregartotal(subtotales,envio)</h5>
                   </div>
 
                   <button type="button" class="btn btn-dark btn-block btn-lg"
