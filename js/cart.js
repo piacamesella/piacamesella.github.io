@@ -102,8 +102,6 @@ document.addEventListener("DOMContentLoaded", function(a){
   </div>
 </section>
     `
-    console.log(articles);
-    console.log(articles.name);
             }
             document.getElementById("contenedor").innerHTML += htmlContentToAppend;
       }
