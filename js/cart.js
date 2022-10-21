@@ -1,4 +1,5 @@
 let carritoInfo = [];
+let articles;
 
 function setUserID(id){
     localStorage.setItem("userID",id);
@@ -9,7 +10,7 @@ function getUserID(id){
 }
 
 
-function mostrarCarritoInfo(carritoInfo){
+function mostrarCarritoInfo(){
     let htmlContentToAppend = "";
     for(let i = 0; i < carritoInfo.length; i++){
         let articles = carritoInfo[i];
