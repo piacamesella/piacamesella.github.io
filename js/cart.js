@@ -1,5 +1,5 @@
 let carritoInfo = [];
-let articles = carritoInfo[i];
+let articles = carritoInfo;
 
 function setUserID(id){
     localStorage.setItem("userID",id);
@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", function(a){
           carritoInfo=resultado.data;
             let htmlContentToAppend = "";
             for(let i = 0; i < carritoInfo.length; i++){
+              let articles = carritoInfo[i];
 
               htmlContentToAppend +=`
               <section class="h-100 h-custom" style="background-color: #d2c9ff;">
