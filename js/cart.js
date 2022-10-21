@@ -1,5 +1,4 @@
 let carritoInfo = [];
-let articles;
 
 function setUserID(id){
     localStorage.setItem("userID",id);
@@ -103,9 +102,10 @@ document.addEventListener("DOMContentLoaded", function(a){
   </div>
 </section>
     `
+    console.log(articles);
+    console.log(articles.name);
             }
             document.getElementById("contenedor").innerHTML += htmlContentToAppend;
-            console.log(articles);
       }
   })
 })
