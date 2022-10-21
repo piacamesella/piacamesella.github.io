@@ -133,8 +133,8 @@ function mostrarCarritoInfo(){
      </table>
    </div>
    `   
-   document.getElementById("contenedor").innerHTML += htmlContentToAppend;
   }
+  document.getElementById("contenedor").innerHTML += htmlContentToAppend;
 }
 
 document.addEventListener("DOMContentLoaded", function(a){
