@@ -202,7 +202,9 @@ a.custom-card:hover {
   padding-left: .75em;
   padding-right: .75em;
   }
-  
+/*   
+  modificar padding y probar otros colores */
+
   .card-registration .select-arrow {
   top: 13px;
   }
