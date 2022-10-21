@@ -158,11 +158,11 @@ function mostrarCarritoInfo(){
               </div>
               <div class="col-lg-4 bg-grey">
                 <div class="p-5">
-                  <h3 class="fw-bold mb-5 mt-2 pt-1">Subtotal</h3>
+                  <h3 class="fw-bold mb-5 mt-2 pt-1">Sumario</h3>
                   <hr class="my-4">
 
                   <div class="d-flex justify-content-between mb-4">
-                    <h5 class="text-uppercase">${carritoInfo.articles[i].count}items</h5>
+                    <h5 class="text-uppercase">Subtotal</h5>
                     <h5>${carritoInfo.articles[i].currency} ${carritoInfo.articles[i].count*carritoInfo.articles[i].unitCost}</h5>
                   </div>
 
