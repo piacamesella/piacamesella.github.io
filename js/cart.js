@@ -14,6 +14,7 @@ function mostrarCarritoInfo(){
     let htmlContentToAppend = "";
     for(let i = 0; i < carritoInfo.length; i++){
         let articles = carritoInfo[i];
+        
         htmlContentToAppend +=`
     <section class="h-100 h-custom" style="background-color: #d2c9ff;">
   <div "setUserID(${25801})" class="container py-5 h-100">
