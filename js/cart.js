@@ -85,23 +85,23 @@ function mostrarCarritoInfo(){
                   <div class="container">
                     <form class="row g-3">
 
-                      <div class="mb-2 pb-2">
+                      <div class="mb-1 pb-2">
                         <div class="col-6">
-                          <label for="inputCalle"><h5 class="text-uppercase mb-3">Calle</h5></label>
+                          <label for="inputCalle"><h6 class="text-uppercase mb-3">Calle</h5></label>
                           <input type="text" name="calle" id="inputCalle">
                         </div>
                       </div>
             
-                      <div class="mb-2 pb-2">
+                      <div class="mb-1 pb-2">
                         <div class="col-6">
-                          <label for="inputNumero"><h5 class="text-uppercase mb-3">Número</h5></label>
+                          <label for="inputNumero"><h6 class="text-uppercase mb-3">Número</h5></label>
                           <input type="text" name="numero" id="inputNumero">
                         </div>
                       </div>
             
-                      <div class="mb-2 pb-2">
+                      <div class="mb-1 pb-2">
                         <div class="col-6">
-                          <label for="inputEsquina"><h5 class="text-uppercase mb-3">Esquina</h5></label>
+                          <label for="inputEsquina"><h6 class="text-uppercase mb-3">Esquina</h5></label>
                           <input type="text" name="esquina" id="inputEsquina">
                         </div>
                       </div>
