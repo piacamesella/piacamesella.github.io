@@ -1,4 +1,7 @@
 let carritoInfo = [];
+let cantidad;
+let precioUnidad;
+let subtotal;
 
 function setUserID(id){
     localStorage.setItem("userID",id);
@@ -8,9 +11,27 @@ function getUserID(id){
     localStorage.getItem("userID",id);
 }
 
+function subtotal(cantidad,precioUnidad){
+  subtotal = cantidad*precioUnidad
+}
+
+/* <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
+
+<input id="form1" min="0" name="quantity" value="${carritoInfo.articles[i].count}" type="number"
+  class="form-control form-control-sm" oninput="subtotal()"/>
+
+</div> */
+
+/* <div class="d-flex justify-content-between mb-4">
+<h5 class="text-uppercase">Subtotal</h5>
+<h5>${carritoInfo.articles[i].currency} ${carritoInfo.articles[i].count*carritoInfo.articles[i].unitCost}</h5>
+</div> */
+
 function mostrarCarritoInfo(){
     let htmlContentToAppend = "";
     for(let i = 0; i < carritoInfo.articles.length; i++){
+      cantidad = carritoInfo.articles[i].count
+      precioUnidad = carritoInfo.articles[i].unitCost
 
         htmlContentToAppend +=`
     <section class="h-100 h-custom" style="background-color: #d2c9ff;">
@@ -38,7 +59,7 @@ function mostrarCarritoInfo(){
                     <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
 
                       <input id="form1" min="0" name="quantity" value="${carritoInfo.articles[i].count}" type="number"
-                        class="form-control form-control-sm" />
+                        class="form-control form-control-sm" oninput="subtotal()"/>
 
                     </div>
                     <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
