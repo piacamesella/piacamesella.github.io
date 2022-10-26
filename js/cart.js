@@ -79,7 +79,7 @@ function mostrarCarritoInfo(){
 
                   <hr class="my-4">   
 
-                  <div class="d-flex justify-content-between mb-5">
+                  <div class="d-flex justify-content-between mb-2">
                   <h5 class="text-uppercase mb-3">Dirección de envío</h5>
                   </div>
                   <div class="container">
