@@ -16,6 +16,7 @@ function subtotal(cantidad,precioUnidad){
     cantidad = document.getElementById("form1").value
     return cantidad*precioUnidad
   }
+  subtotal = cantidad*precioUnidad
 }
 
 /* <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
