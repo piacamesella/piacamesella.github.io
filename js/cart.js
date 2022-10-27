@@ -1,6 +1,4 @@
 let carritoInfo = [];
-let cantidad;
-let precioUnidad;
 let subtotal;
 
 function setUserID(id){
@@ -19,10 +17,15 @@ function getUserID(id){
 //   }
 // }
 
+// function subtotal(cantidad,precioUnidad){
+//     cantidad = document.getElementById("form1").value
+//     subtotal = cantidad*precioUnidad
+//     document.getElementById("subtotal").htmlContentToAppend= subtotal
+// }
+
 function subtotal(cantidad,precioUnidad){
-    cantidad = document.getElementById("form1").value
-    subtotal = cantidad*precioUnidad
-    document.getElementById("subtotal").htmlContentToAppend= subtotal
+  subtotal= cantidad*precioUnidad
+  document.getElementById("subtotal").htmlContentToAppend= subtotal
 }
 
 // document.getElementById("form1").addEventListener("click",function{
@@ -42,8 +45,6 @@ function subtotal(cantidad,precioUnidad){
 function mostrarCarritoInfo(){
     let htmlContentToAppend = "";
     for(let i = 0; i < carritoInfo.articles.length; i++){
-      cantidad = carritoInfo.articles[i].count
-      precioUnidad = carritoInfo.articles[i].unitCost
 
         htmlContentToAppend +=`
     <section class="h-100 h-custom" style="background-color: #d2c9ff;">
@@ -70,7 +71,7 @@ function mostrarCarritoInfo(){
                     </div>
                     <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
 
-                      <input id="form1" min="0" name="quantity" value="${carritoInfo.articles[i].count}" type="number" oninput="subtotal("event",${carritoInfo.articles[i].unitCost})"
+                      <input id="form1" min="0" name="quantity" value="${carritoInfo.articles[i].count}" type="number" oninput="subtotal(${document.getElementById("form1").value},${carritoInfo.articles[i].unitCost})"
                         class="form-control form-control-sm"/>
 
                     </div>
