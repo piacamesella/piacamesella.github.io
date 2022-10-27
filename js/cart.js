@@ -11,13 +11,25 @@ function getUserID(id){
     localStorage.getItem("userID",id);
 }
 
+// function subtotal(){
+//   if (document.getElementById("form1").addEventListener("click")){
+//     cantidad = document.getElementById("form1").value
+//     subtotal = cantidad*precioUnidad
+//     document.getElementById("subtotal").htmlContentToAppend= subtotal
+//   }
+// }
+
 function subtotal(cantidad,precioUnidad){
-  if (document.getElementById("form1").addEventListener("click")){
     cantidad = document.getElementById("form1").value
-    return cantidad*precioUnidad
-  }
-  subtotal = cantidad*precioUnidad
+    subtotal = cantidad*precioUnidad
+    document.getElementById("subtotal").htmlContentToAppend= subtotal
 }
+
+// document.getElementById("form1").addEventListener("click",function{
+//   document.getElementById("form1").onchange = function(){
+//     subtotal();
+//   }
+// })
 
 /* <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
 
@@ -26,10 +38,6 @@ function subtotal(cantidad,precioUnidad){
 
 </div> */
 
-/* <div class="d-flex justify-content-between mb-4">
-<h5 class="text-uppercase">Subtotal</h5>
-<h5>${carritoInfo.articles[i].currency} ${carritoInfo.articles[i].count*carritoInfo.articles[i].unitCost}</h5>
-</div> */
 
 function mostrarCarritoInfo(){
     let htmlContentToAppend = "";
@@ -62,7 +70,7 @@ function mostrarCarritoInfo(){
                     </div>
                     <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
 
-                      <input id="form1" min="0" name="quantity" value="${carritoInfo.articles[i].count}" type="number"
+                      <input id="form1" min="0" name="quantity" value="${carritoInfo.articles[i].count}" type="number" oninput="subtotal("event",${carritoInfo.articles[i].unitCost})"
                         class="form-control form-control-sm"/>
 
                     </div>
@@ -87,9 +95,9 @@ function mostrarCarritoInfo(){
                   <h3 class="fw-bold mb-5 mt-2 pt-1">Sumario</h3>
                   <hr class="my-4">
 
-                  <div class="d-flex justify-content-between mb-4">
+                  <div class="d-flex justify-content-between mb-4" id="subtotal">
                     <h5 class="text-uppercase">Subtotal</h5>
-                    <input type="number" oninput="subtotal(${carritoInfo.articles[i].count},${carritoInfo.articles[i].unitCost})">
+                    <h5>${carritoInfo.articles[i].currency} ${carritoInfo.articles[i].count*carritoInfo.articles[i].unitCost}</h5>
                   </div>
 
                   <h5 class="text-uppercase mb-3">Tipo de envío</h5>
