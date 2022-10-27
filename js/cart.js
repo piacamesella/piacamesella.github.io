@@ -25,7 +25,7 @@ function getUserID(id){
 
 function subtotal(cantidad,precio){
   subtotal= cantidad*precio
-  document.getElementById("subtotal").innerHTML= subtotal
+  document.getElementById("subtotalID").innerHTML= subtotal
 }
 
 // document.getElementById("form1").addEventListener("click",function{
@@ -96,7 +96,7 @@ function mostrarCarritoInfo(){
                   <h3 class="fw-bold mb-5 mt-2 pt-1">Sumario</h3>
                   <hr class="my-4">
 
-                  <div class="d-flex justify-content-between mb-4" id="subtotal">
+                  <div class="d-flex justify-content-between mb-4" id="subtotalID">
                     <h5 class="text-uppercase">Subtotal</h5>
                     <h5>${carritoInfo.articles[i].currency} ${carritoInfo.articles[i].count*carritoInfo.articles[i].unitCost}</h5>
                   </div>
