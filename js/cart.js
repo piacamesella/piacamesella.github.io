@@ -1,5 +1,5 @@
 let carritoInfo = [];
-let subtotal;
+let subtotalResultado;
 
 function setUserID(id){
     localStorage.setItem("userID",id);
@@ -24,8 +24,8 @@ function getUserID(id){
 // }
 
 function subtotal(cantidad,precio){
-  subtotal= cantidad*precio
-  document.getElementById("subtotalID").innerHTML= subtotal
+  subtotalResultado= cantidad*precio
+  document.getElementById("subtotalID").innerHTML= subtotalResultado
 }
 
 // document.getElementById("form1").addEventListener("click",function{
