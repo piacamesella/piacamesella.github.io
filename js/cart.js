@@ -12,7 +12,10 @@ function getUserID(id){
 }
 
 function subtotal(cantidad,precioUnidad){
-  subtotal = cantidad*precioUnidad
+  if (document.getElementById("form1").addEventListener("click")){
+    cantidad = document.getElementById("form1").value
+    return cantidad*precioUnidad
+  }
 }
 
 /* <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
@@ -59,7 +62,7 @@ function mostrarCarritoInfo(){
                     <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
 
                       <input id="form1" min="0" name="quantity" value="${carritoInfo.articles[i].count}" type="number"
-                        class="form-control form-control-sm" oninput="subtotal()"/>
+                        class="form-control form-control-sm"/>
 
                     </div>
                     <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
@@ -85,7 +88,7 @@ function mostrarCarritoInfo(){
 
                   <div class="d-flex justify-content-between mb-4">
                     <h5 class="text-uppercase">Subtotal</h5>
-                    <h5>${carritoInfo.articles[i].currency} ${carritoInfo.articles[i].count*carritoInfo.articles[i].unitCost}</h5>
+                    <input type="number" oninput="subtotal(${carritoInfo.articles[i].count},${carritoInfo.articles[i].unitCost})">
                   </div>
 
                   <h5 class="text-uppercase mb-3">Tipo de envío</h5>
