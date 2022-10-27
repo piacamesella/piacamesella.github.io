@@ -71,7 +71,7 @@ function mostrarCarritoInfo(){
                     </div>
                     <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
 
-                      <input id="form1" min="0" name="quantity" value="${carritoInfo.articles[i].count}" type="number" oninput="subtotal(${document.getElementById("form1").value},${carritoInfo.articles[i].unitCost})"
+                      <input id="form1" min="0" name="quantity" value="${carritoInfo.articles[i].count}" type="number" oninput="subtotal(${carritoInfo.articles[i].count},${carritoInfo.articles[i].unitCost})"
                         class="form-control form-control-sm"/>
 
                     </div>
