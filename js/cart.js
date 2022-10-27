@@ -23,9 +23,9 @@ function getUserID(id){
 //     document.getElementById("subtotal").htmlContentToAppend= subtotal
 // }
 
-function subtotal(cantidad,precioUnidad){
-  subtotal= cantidad*precioUnidad
-  document.getElementById("subtotal").htmlContentToAppend= subtotal
+function subtotal(cantidad,precio){
+  subtotal= cantidad*precio
+  document.getElementById("subtotal").innerHTML= subtotal
 }
 
 // document.getElementById("form1").addEventListener("click",function{
