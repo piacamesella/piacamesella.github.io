@@ -27,7 +27,7 @@ function subtotal(cantidad,precio){
     subtotalResultado=cantidad*precio
     document.getElementById("subtotalID").innerHTML=`
     <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-      <h6>${subtotalResultado}</h6>
+      <h6 class="mb-4">${subtotalResultado}</h6>
     </div>
     `
   })
