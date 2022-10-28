@@ -14,10 +14,9 @@ function subtotal(cantidad,precio){
     cantidad=document.getElementById("form1").value;
     subtotalResultado=cantidad*precio
     document.getElementById("subtotalID").innerHTML=`
-    <div class="d-flex justify-content-between mb-4" id="subtotalID">
-      <h5 class="text-uppercase">Subtotal</h5>
-      <h5>${subtotalResultado}</h5>
-     </div>
+    <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1" id="subtotalID">
+      <h6 class="mb-0">${subtotalResultado}</h6>
+    </div>
     `
   })
 }
@@ -68,7 +67,7 @@ function mostrarCarritoInfo(){
                         class="form-control form-control-sm"/>
 
                     </div>
-                    <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
+                    <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1" id="subtotalID">
                       <h6 class="mb-0">${carritoInfo.articles[i].currency} ${carritoInfo.articles[i].unitCost}</h6>
                     </div>
                     <div class="col-md-1 col-lg-1 col-xl-1 text-end">
@@ -89,7 +88,7 @@ function mostrarCarritoInfo(){
                   <h3 class="fw-bold mb-5 mt-2 pt-1">Sumario</h3>
                   <hr class="my-4">
 
-                  <div class="d-flex justify-content-between mb-4" id="subtotalID">
+                  <div class="d-flex justify-content-between mb-4">
                     <h5 class="text-uppercase">Subtotal</h5>
                     <h5>${carritoInfo.articles[i].currency} ${carritoInfo.articles[i].count*carritoInfo.articles[i].unitCost}</h5>
                   </div>
