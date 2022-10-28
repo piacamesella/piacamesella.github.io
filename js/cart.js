@@ -9,13 +9,25 @@ function getUserID(id){
     localStorage.getItem("userID",id);
 }
 
+// function subtotal(cantidad,precio){
+//   document.getElementById("form1").addEventListener("click", function(){
+//     cantidad=document.getElementById("form1").value;
+//     subtotalResultado=cantidad*precio
+//     document.getElementById("subtotalID").innerHTML=`
+//     <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
+//       <h6 class="mb-0">${subtotalResultado}</h6>
+//     </div>
+//     `
+//   })
+// }
+
 function subtotal(cantidad,precio){
   document.getElementById("form1").addEventListener("click", function(){
     cantidad=document.getElementById("form1").value;
     subtotalResultado=cantidad*precio
     document.getElementById("subtotalID").innerHTML=`
-    <div class="col-md-3 col-lg-2 col-xl-2">
-      <h6 class="mb-0">${subtotalResultado}</h6>
+    <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
+      <h6>${subtotalResultado}</h6>
     </div>
     `
   })
