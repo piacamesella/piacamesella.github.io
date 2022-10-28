@@ -20,12 +20,25 @@ function getUserID(id){
 // function subtotal(cantidad,precioUnidad){
 //     cantidad = document.getElementById("form1").value
 //     subtotal = cantidad*precioUnidad
-//     document.getElementById("subtotal").htmlContentToAppend= subtotal
+//     document.getElementById("subtotal").innerHTML= subtotal
+// }
+
+// function subtotal(cantidad,precio){
+//   subtotalResultado= cantidad*precio
+//   document.getElementById("subtotalID").innerHTML= subtotalResultado
 // }
 
 function subtotal(cantidad,precio){
-  subtotalResultado= cantidad*precio
-  document.getElementById("subtotalID").innerHTML= subtotalResultado
+  document.getElementById("form1").addEventListener("click", function({
+    cantidad=document.getElementById("form1").value
+    subtotalResultado=cantidad*precio
+    document.getElementById("subtotalID").innerHTML=`
+    <div class="d-flex justify-content-between mb-4" id="subtotalID">
+      <h5 class="text-uppercase">Subtotal</h5>
+      <h5>${subtotalResultado}</h5>
+     </div>
+    `
+  })
 }
 
 // document.getElementById("form1").addEventListener("click",function{
