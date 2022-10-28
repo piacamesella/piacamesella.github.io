@@ -16,7 +16,7 @@ function subtotal(cantidad,precio){
     document.getElementById("subtotalID").innerHTML=`
     <div class="d-flex justify-content-between mb-4" id="subtotalID">
       <h5 class="text-uppercase">Subtotal</h5>
-      <h5>${carritoInfo.articles[i].currency} ${subtotalResultado}</h5>
+      <h5>${carritoInfo.articles[i].currency + subtotalResultado}</h5>
      </div>
     `
   })
