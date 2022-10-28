@@ -14,7 +14,7 @@ function subtotal(cantidad,precio){
     cantidad=document.getElementById("form1").value;
     subtotalResultado=cantidad*precio
     document.getElementById("subtotalID").innerHTML=`
-    <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
+    <div class="col-md-3 col-lg-2 col-xl-2">
       <h6 class="mb-0">${subtotalResultado}</h6>
     </div>
     `
