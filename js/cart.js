@@ -9,26 +9,6 @@ function getUserID(id){
     localStorage.getItem("userID",id);
 }
 
-// function subtotal(){
-//   if (document.getElementById("form1").addEventListener("click")){
-//     cantidad = document.getElementById("form1").value
-//     subtotal = cantidad*precioUnidad
-//     document.getElementById("subtotal").htmlContentToAppend= subtotal
-//   }
-// }
-
-// function subtotal(cantidad,precioUnidad){
-//     cantidad = document.getElementById("form1").value
-//     subtotal = cantidad*precioUnidad
-//     document.getElementById("subtotal").innerHTML= subtotal
-// }
-
-// function subtotal(cantidad,precio){
-//   subtotalResultado= cantidad*precio
-//   document.getElementById("subtotalID").innerHTML= subtotalResultado
-// }
-
-
 function subtotal(cantidad,precio){
   document.getElementById("form1").addEventListener("click", function(){
     cantidad=document.getElementById("form1").value;
@@ -36,7 +16,7 @@ function subtotal(cantidad,precio){
     document.getElementById("subtotalID").innerHTML=`
     <div class="d-flex justify-content-between mb-4" id="subtotalID">
       <h5 class="text-uppercase">Subtotal</h5>
-      <h5>${subtotalResultado}</h5>
+      <h5> ${carritoInfo.articles[i].currency}${subtotalResultado}</h5>
      </div>
     `
   })
