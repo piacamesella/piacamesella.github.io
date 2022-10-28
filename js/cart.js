@@ -23,6 +23,7 @@ function getUserID(id){
 
 function subtotal(cantidad,precio){
   document.getElementById("form1").addEventListener("click", function(){
+    cantidad=document.getElementById("form1").value;
     subtotalResultado=cantidad*precio
     document.getElementById("subtotalID").innerHTML=`
     <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
