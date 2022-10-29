@@ -52,7 +52,7 @@ function mostrarCarritoInfo(){
     for(let i = 0; i < carritoInfo.articles.length; i++){
 
         htmlContentToAppend +=`
-    <section class="h-100 h-custom" style="background-color: #726f68;">
+    <section class="h-100 h-custom" style="background-color: #998b87;">
   <div "setUserID(${25801})" class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-12">
