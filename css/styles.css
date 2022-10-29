@@ -70,9 +70,8 @@ nav a {
 footer {
   padding-top: 3rem;
   padding-bottom: 3rem;
-  width: 100%;
 }
-/* le agregué el width al footer */
+
 
 footer p {
   margin-bottom: .25rem;
@@ -203,7 +202,9 @@ a.custom-card:hover {
   line-height: 2.15;
   padding-left: .75em;
   padding-right: .75em;
+  width: 100vh;
   }
+  /* le agregué el width */
 /*   
   modificar padding y probar otros colores */
 
