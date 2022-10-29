@@ -52,7 +52,7 @@ function mostrarCarritoInfo(){
     for(let i = 0; i < carritoInfo.articles.length; i++){
 
         htmlContentToAppend +=`
-    <section class="h-100 h-custom" style="background-color: #d2c9ff;">
+    <section class="h-100 h-custom" style="background-color: #988e78;">
   <div "setUserID(${25801})" class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-12">
@@ -63,7 +63,6 @@ function mostrarCarritoInfo(){
                 <div class="p-5">
                   <div class="d-flex justify-content-between align-items-center mb-5">
                     <h1 class="fw-bold mb-0 text-black">Carrito de compras</h1>
-                    <h6 class="mb-0 text-muted">${carritoInfo.articles[i].count} items</h6>
                   </div>
                   <hr class="my-4">
 
@@ -96,7 +95,7 @@ function mostrarCarritoInfo(){
               <div class="col-lg-4 bg-grey">
                 <div class="p-5">
                 
-                
+
                   <h5 class="text-uppercase mb-3">Tipo de envío</h5>
 
                   <div class="mb-4 pb-2">
