@@ -83,9 +83,6 @@ function mostrarCarritoInfo(){
                     <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1" id="subtotalID">
                       <h6 class="mb-0">${carritoInfo.articles[i].currency} ${carritoInfo.articles[i].unitCost}</h6>
                     </div>
-                    <div class="col-md-1 col-lg-1 col-xl-1 text-end">
-                      <a href="#!" class="text-muted"><i class="fas fa-times"></i></a>
-                    </div>
                   </div>
 
                   <hr class="my-4">
@@ -101,10 +98,6 @@ function mostrarCarritoInfo(){
                   <h3 class="fw-bold mb-5 mt-2 pt-1">Sumario</h3>
                   <hr class="my-4">
 
-                  <div class="d-flex justify-content-between mb-4">
-                    <h5 class="text-uppercase">Subtotal</h5>
-                    <h5>${carritoInfo.articles[i].currency} ${carritoInfo.articles[i].count*carritoInfo.articles[i].unitCost}</h5>
-                  </div>
 
                   <h5 class="text-uppercase mb-3">Tipo de envío</h5>
 
@@ -148,12 +141,6 @@ function mostrarCarritoInfo(){
                     </form>
                   </div>
 
-                  <hr class="my-4">
-
-                  <div class="d-flex justify-content-between mb-5">
-                    <h5 class="text-uppercase">Total</h5>
-                    <h5>AgregarCalculoTotal</h5>
-                  </div>
 
                   <hr class="my-4">
 
