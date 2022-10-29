@@ -95,10 +95,8 @@ function mostrarCarritoInfo(){
               </div>
               <div class="col-lg-4 bg-grey">
                 <div class="p-5">
-                  <h3 class="fw-bold mb-5 mt-2 pt-1">Sumario</h3>
-                  <hr class="my-4">
-
-
+                
+                
                   <h5 class="text-uppercase mb-3">Tipo de envío</h5>
 
                   <div class="mb-4 pb-2">
