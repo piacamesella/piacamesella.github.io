@@ -70,7 +70,9 @@ nav a {
 footer {
   padding-top: 3rem;
   padding-bottom: 3rem;
+  width: 100%;
 }
+/* le agregué el width al footer */
 
 footer p {
   margin-bottom: .25rem;
