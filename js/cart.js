@@ -171,6 +171,8 @@ function mostrarCarritoInfo(){
   </div>
 </section>
     `
+    console.log(carritoInfo.articles[i].count * carritoInfo.articles[i].unitCost)
+    console.log(carritoInfo.articles[0].count * carritoInfo.articles[0].unitCost)
     }
 document.getElementById("contenedor").innerHTML += htmlContentToAppend;
 }
