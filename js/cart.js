@@ -30,7 +30,7 @@ function subtotal(cantidad,precio){
       <h6 class="mb-4">${subtotalResultado}</h6>
     </div>
     `
-    console.log(subtotalResultado);
+    console.log(typeof subtotalResultado);
   })
 }
 
@@ -171,7 +171,7 @@ function mostrarCarritoInfo(){
   </div>
 </section>
     `
-    console.log(carritoInfo.articles[i].count * carritoInfo.articles[i].unitCost)
+    console.log(typeof carritoInfo.articles[i].count * carritoInfo.articles[i].unitCost)
     console.log(carritoInfo.articles[0].count * carritoInfo.articles[0].unitCost)
     }
 document.getElementById("contenedor").innerHTML += htmlContentToAppend;
