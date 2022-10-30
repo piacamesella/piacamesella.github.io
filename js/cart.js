@@ -33,7 +33,7 @@ function mostrarCarritoInfo(){
         <div class="card card-registration card-registration-2" style="border-radius: 15px;">
           <div class="card-body p-0">
             <div class="row g-0">
-              <div class="col-lg-8" style="background-color:#f7dab5">
+              <div class="col-lg-8" style="background-color:#f4ddc1">
                 <div class="p-5">
                   <div class="d-flex justify-content-between align-items-center mb-5">
                     <h1 class="fw-bold mb-0 text-black">Carrito de compras</h1>
