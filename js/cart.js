@@ -9,18 +9,6 @@ function getUserID(id){
     localStorage.getItem("userID",id);
 }
 
-// function subtotal(cantidad,precio){
-//   document.getElementById("form1").addEventListener("click", function(){
-//     cantidad=document.getElementById("form1").value;
-//     subtotalResultado=cantidad*precio
-//     document.getElementById("subtotalID").innerHTML=`
-//     <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-//       <h6 class="mb-0">${subtotalResultado}</h6>
-//     </div>
-//     `
-//   })
-// }
-
 function subtotal(cantidad,precio){
   document.getElementById("form1").addEventListener("click", function(){
     cantidad=document.getElementById("form1").value;
@@ -30,22 +18,8 @@ function subtotal(cantidad,precio){
       <h6 class="mb-0">${subtotalResultado}</h6>
     </div>
     `
-    console.log(typeof subtotalResultado);
   })
 }
-
-
-/* <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
-
-<input id="form1" min="0" name="quantity" value="${carritoInfo.articles[i].count}" type="number"
-  class="form-control form-control-sm" oninput="subtotal()"/>
-
-</div> */
-
-/* <div class="d-flex justify-content-between mb-4" id="subtotalID">
-<h5 class="text-uppercase">Subtotal</h5>
-<h5>${carritoInfo.articles[i].currency} ${carritoInfo.articles[i].count*carritoInfo.articles[i].unitCost}</h5>
-</div> */
 
 function mostrarCarritoInfo(){
     let htmlContentToAppend = "";
@@ -160,44 +134,6 @@ function mostrarCarritoInfo(){
     }
 document.getElementById("contenedor").innerHTML += htmlContentToAppend;
 }
-
-// document.addEventListener("DOMContentLoaded", function(a){
-//   getJSONData(CARRITO_INFO_USUARIO_25801).then(function(resultado){
-//       if (resultado.status==="ok");
-//       {
-//           carritoInfo=resultado.data;
-//           let htmlContentToAppend = "";
-//           for(let i = 0; i < carritoInfo.articles.length; i++){
-//             htmlContentToAppend +=`
-//           <div class="container">
-//              <thead>
-//                <tr>
-//                  <th> </th>
-//                  <th><h3>Nombre</h3></th>
-//                  <th><h3>Costo</h3></th>
-//                  <th><h3>Cantidad</h3></th>
-//                  <th><h3>Subtotal</h3></th>
-//                </tr>
-//              </thead>
-//              <tbody>
-//                <tr>
-//                  <td><img src="${carritoInfo.articles[i].image}"class="img-thumbnail"></img></td>
-//                  <td><h2 <small class="text">${carritoInfo.articles[i].name}</small></td>
-//                  <td> <small class="text-muted">${carritoInfo.articles[i].currency} ${carritoInfo.articles[i].unitCost}</small></td>
-//                  <td><input id="form1" min="0" name="quantity" value="${carritoInfo.articles[i].count}" type="number"
-//                        class="form-control form-control-sm"/></td>
-//                  <td><small class="text-muted">${carritoInfo.articles[i].count*carritoInfo.articles[i].unitCost}</small></td>
-//                </tr>
-//              </tbody>
-//            </table>
-//          </div>
-//          `   
-//           }
-//           document.getElementById("contenedor").innerHTML += htmlContentToAppend;
-//       }
-//   })
-// })
-
 
 document.addEventListener("DOMContentLoaded", function(a){
     getJSONData(CARRITO_INFO_USUARIO_25801).then(function(resultado){
