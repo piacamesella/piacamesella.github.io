@@ -26,14 +26,14 @@ function mostrarCarritoInfo(){
     for(let i = 0; i < carritoInfo.articles.length; i++){
 
         htmlContentToAppend +=`
-    <section class="h-100 h-custom" style="background-color: #fafbf4;">
+    <section class="h-100 h-custom" style="background-color: #fdfcfa;">
   <div "setUserID(${25801})" class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-12">
         <div class="card card-registration card-registration-2" style="border-radius: 15px;">
           <div class="card-body p-0">
             <div class="row g-0">
-              <div class="col-lg-8" style="background-color:#ecd6a3">
+              <div class="col-lg-8" style="background-color:#f7dab5">
                 <div class="p-5">
                   <div class="d-flex justify-content-between align-items-center mb-5">
                     <h1 class="fw-bold mb-0 text-black">Carrito de compras</h1>
