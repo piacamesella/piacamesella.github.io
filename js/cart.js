@@ -66,7 +66,7 @@ function mostrarCarritoInfo(){
                   </div>
                 </div>
               </div>
-              <div class="col-lg-4 bg-grey">
+              <div class="col-lg-4 bg-mostaza">
                 <div class="p-5">
                 
 
