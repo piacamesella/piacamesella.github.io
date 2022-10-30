@@ -5,9 +5,9 @@ function setUserID(id){
     localStorage.setItem("userID",id);
 }
 
-function getUserID(id){
-    localStorage.getItem("userID",id);
-}
+// function getUserID(id){
+//     localStorage.getItem("userID",id);
+// }
 
 function subtotal(cantidad,precio){
   document.getElementById("form1").addEventListener("click", function(){
