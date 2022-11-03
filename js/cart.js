@@ -70,11 +70,6 @@ function mostrarCarritoInfo(){
                 <div class="p-5">
                   <h3 class="fw-bold mb-5 mt-2 pt-1">Costos</h3>
                   <hr class="my-4">
-
-                  <div class="d-flex justify-content-between mb-4" id="subtotalID">
-                    <h5 class="text-uppercase">Subtotal</h5>
-                    <h5>${carritoInfo.articles[i].currency} ${carritoInfo.articles[i].count*carritoInfo.articles[i].unitCost}</h5>
-                  </div>
                 
                   <h5 class="text-uppercase mb-3">Tipo de envío</h5>
 
@@ -116,6 +111,20 @@ function mostrarCarritoInfo(){
                       </div>
             
                     </form>
+                  </div>
+
+                  <hr class="my-4">
+
+                  <div class="d-flex justify-content-between mb-4" id="subtotalID">
+                    <h5 class="text-uppercase">Subtotal</h5>
+                    <h5>${carritoInfo.articles[i].currency} ${carritoInfo.articles[i].count*carritoInfo.articles[i].unitCost}</h5>
+                  </div>
+
+                  <hr class="my-4">
+
+                  <div class="d-flex justify-content-between mb-5">
+                    <h5 class="text-uppercase">Costo Envío</h5>
+                    <h5>AgregarCalculoEnvío</h5>
                   </div>
 
                   <hr class="my-4">
