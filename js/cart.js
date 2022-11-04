@@ -60,11 +60,11 @@ function subtotal(cantidad,precio){
 function sumaSubtotales(){
     let subtotales = subtotal(carritoInfo.articles[i].count, carritoInfo.articles[i].unitCost)
       sumaSubtotalesResultado = 0 + subtotales;
-      document.getElementById("totalID").innerHTML=`
-      <div class="d-flex justify-content-between mb-5" id="totalID">
-        <h5 class="text-uppercase">Total</h5>
+      document.getElementById("subtotalesID").innerHTML=`
+      <div class="d-flex justify-content-between mb-4" id="subtotalesID">
+        <h5 class="text-uppercase">Subtotal</h5>
         <h5>${sumaSubtotalesResultado}</h5>
-      </div>
+       </div>
       `
 }
 
@@ -162,7 +162,7 @@ function mostrarCarritoInfo(){
 
                   <hr class="my-4">
 
-                  <div class="d-flex justify-content-between mb-4" id="subtotalID">
+                  <div class="d-flex justify-content-between mb-4" id="subtotalesID">
                     <h5 class="text-uppercase">Subtotal</h5>
                     <h5>${carritoInfo.articles[i].currency} ${carritoInfo.articles[i].count*carritoInfo.articles[i].unitCost}</h5>
                   </div>
