@@ -19,6 +19,8 @@ function subtotal(cantidad,precio){
       <h6 class="mb-0">${subtotalResultado}</h6>
     </div>
     `
+    console.log(subtotalResultado);
+    console.log(typeof subtotalResultado);
   })
 }
 
