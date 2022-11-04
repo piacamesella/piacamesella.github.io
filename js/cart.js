@@ -37,7 +37,7 @@ function costoEnvio(){
     </div>
     `
     console.log(costoEnvioResultado);
-    console.log(typeof costoEnvio);
+    console.log(typeof costoEnvioResultado);
     console.log(document.getElementById("tiposDeEnvio").value);
     console.log(typeof document.getElementById("tiposDeEnvio").value);
 }
