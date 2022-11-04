@@ -2,6 +2,7 @@ let carritoInfo = [];
 let subtotalResultado = 0;
 let costoEnvioResultado = 0;
 let sumaSubtotalesResultado = 0;
+let totalCarritoResultado = 0;
 
 function setUserID(id){
     localStorage.setItem("userID",id);
@@ -55,6 +56,7 @@ function subtotal(cantidad,precio){
     `
     costoEnvio(subtotalResultado);
     sumaSubtotales(subtotalResultado);
+    totalCarrito(subtotalResultado)
   })
 }
 
@@ -67,6 +69,16 @@ function sumaSubtotales(){
         <h5>${sumaSubtotalesResultado}</h5>
        </div>
       `
+}
+
+function totalCarrito(){
+  totalCarritoResultado = sumaSubtotalesResultado + costoEnvioResultado;
+  document.getElementById("totalID").innerHTML=`
+  <div class="d-flex justify-content-between mb-5" id="totalID">
+    <h5 class="text-uppercase">Total</h5>
+    <h5>${totalCarritoResultado}</h5>
+  </div>
+  `
 }
 
 function mostrarCarritoInfo(){
