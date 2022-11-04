@@ -1,6 +1,7 @@
 let carritoInfo = [];
 let subtotalResultado = 0;
 let costoEnvioResultado = 0;
+let sumaSubtotalesResultado = 0;
 
 function setUserID(id){
     localStorage.setItem("userID",id);
@@ -57,10 +58,14 @@ function subtotal(cantidad,precio){
 }
 
 function sumaSubtotales(){
-  for(let i = 0; i < carritoInfo.articles.length; i++){
-    subtotalResultado
-
-  }
+    let subtotales = subtotal(carritoInfo.articles[i].count, carritoInfo.articles[i].unitCost)
+      sumaSubtotalesResultado = 0 + subtotales;
+      document.getElementById("totalID").innerHTML=`
+      <div class="d-flex justify-content-between mb-5" id="totalID">
+        <h5 class="text-uppercase">Total</h5>
+        <h5>${sumaSubtotalesResultado}</h5>
+      </div>
+      `
 }
 
 function mostrarCarritoInfo(){
@@ -170,7 +175,7 @@ function mostrarCarritoInfo(){
 
                   <hr class="my-4">
 
-                  <div class="d-flex justify-content-between mb-5">
+                  <div class="d-flex justify-content-between mb-5" id="totalID">
                     <h5 class="text-uppercase">Total</h5>
                     <h5>AgregarCalculoTotal</h5>
                   </div>
