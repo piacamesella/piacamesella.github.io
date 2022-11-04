@@ -146,7 +146,7 @@ function mostrarCarritoInfo(){
                   <h5 class="text-uppercase mb-3">Tipo de envío</h5>
 
                   <div class="mb-4 pb-2">
-                    <select id="tiposDeEnvio" class="select" required onchange="costoEnvio()">
+                    <select id="tiposDeEnvio" class="select" required onchange="costoEnvio(${subtotalGeneral(subtotal(carritoInfo.articles[i].count,carritoInfo.articles[i].unitCost)),document.getElementById("tiposDeEnvio").value})">
                       <option value="1">Premium 2 a 5 días (15%)</option>
                       <option value="2">Express 5 a 8 días (7%)</option>
                       <option value="3">Standard 12 a 15 días (5%)</option>
