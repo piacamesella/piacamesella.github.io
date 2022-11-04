@@ -23,9 +23,9 @@ function subtotal(cantidad,precio){
 }
 
 function costoEnvio(){
-    if (document.getElementById("tiposDeEnvio").value = "1"){
+    if (document.getElementById("tiposDeEnvio").value == "1"){
       costoEnvioResultado= (subtotalResultado* 15)/100
-    }else if (document.getElementById("tiposDeEnvio").value = "2"){
+    }else if (document.getElementById("tiposDeEnvio").value == "2"){
       costoEnvioResultado= (subtotalResultado * 7)/100
     }else{
       costoEnvioResultado=(subtotalResultado*5)/100
