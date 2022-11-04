@@ -1,6 +1,6 @@
 let carritoInfo = [];
 let subtotalResultado;
-let costoEnvioResultado;
+let costoEnvioResultado = 0;
 
 function setUserID(id){
     localStorage.setItem("userID",id);
