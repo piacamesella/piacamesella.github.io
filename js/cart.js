@@ -24,7 +24,7 @@ function setUserID(id){
 //   })
 // }
 
-
+//función que calcula el costo de envío dependiendo el tipo de envío y el subtotal(porque es de donde se saca el porcentaje)
 function costoEnvio(){
     if (document.getElementById("tiposDeEnvio").value == "1"){
       costoEnvioCarrito= (subtotalCarrito* 15)/100
@@ -45,6 +45,7 @@ function costoEnvio(){
     console.log(typeof document.getElementById("tiposDeEnvio").value);
 }
 
+//función que calcula el subtotal dependiendo del precio y la cantidad
 function subtotal(cantidad,precio){
   document.getElementById("form1").addEventListener("click", function(){
     cantidad=document.getElementById("form1").value;
@@ -69,7 +70,7 @@ function subtotalGeneral(){
        </div>
       `
 }
-
+//función que suma el subtotal general y el costo del envío
 function totalCarritoDeCompra(){
   totalCarrito = subtotalGeneralCarrito + costoEnvioCarrito;
   document.getElementById("totalID").innerHTML=`
