@@ -183,6 +183,7 @@ function mostrarCarritoInfo(){
 
                   <div id="costoEnvioID" class="d-flex justify-content-between mb-5">
                     <h5 class="text-uppercase">Costo Envío</h5>
+                    <h5>${costoEnvioCarrito}</h5>
                   </div>
 
                   <hr class="my-4">
