@@ -55,13 +55,12 @@ function subtotal(cantidad,precio){
     </div>
     `
     costoEnvio(subtotalCarrito);
-    sumaSubtotales(subtotalCarrito);
+    subtotalGeneral(subtotalCarrito);
     totalCarrito(subtotalCarrito)
   })
 }
-
-function sumaSubtotales(){
-    // let subtotales = subtotal(carritoInfo.articles[i].count, carritoInfo.articles[i].unitCost)
+//función que suma los subtotales:
+function subtotalGeneral(){
       subtotalGeneralCarrito= 0 + subtotalCarrito;
       document.getElementById("subtotalesID").innerHTML=`
       <div class="d-flex justify-content-between mb-4" id="subtotalesID">
