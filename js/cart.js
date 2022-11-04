@@ -14,6 +14,10 @@ function subtotal(cantidad,precio){
   document.getElementById("form1").addEventListener("click", function(){
     cantidad=document.getElementById("form1").value;
     subtotalResultado=cantidad*precio
+    console.log(subtotalResultado);
+    console.log(typeof subtotalResultado);
+    console.log(cantidad);
+    console.log(typeof cantidad);
     document.getElementById("subtotalID").innerHTML=`
     <div>
       <h6 class="mb-0">${subtotalResultado}</h6>
