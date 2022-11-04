@@ -10,17 +10,18 @@ function setUserID(id){
 //     localStorage.getItem("userID",id);
 // }
 
-function subtotal(cantidad,precio){
-  document.getElementById("form1").addEventListener("click", function(){
-    cantidad=document.getElementById("form1").value;
-    subtotalResultado=cantidad*precio
-    document.getElementById("subtotalID").innerHTML=`
-    <div>
-      <h6 class="mb-0">${subtotalResultado}</h6>
-    </div>
-    `
-  })
-}
+// function subtotal(cantidad,precio){
+//   document.getElementById("form1").addEventListener("click", function(){
+//     cantidad=document.getElementById("form1").value;
+//     subtotalResultado=cantidad*precio
+//     document.getElementById("subtotalID").innerHTML=`
+//     <div>
+//       <h6 class="mb-0">${subtotalResultado}</h6>
+//     </div>
+//     `
+//   })
+// }
+
 
 function costoEnvio(){
     if (document.getElementById("tiposDeEnvio").value == "1"){
@@ -40,6 +41,19 @@ function costoEnvio(){
     console.log(typeof costoEnvioResultado);
     console.log(document.getElementById("tiposDeEnvio").value);
     console.log(typeof document.getElementById("tiposDeEnvio").value);
+}
+
+function subtotal(cantidad,precio){
+  document.getElementById("form1").addEventListener("click", function(){
+    cantidad=document.getElementById("form1").value;
+    subtotalResultado=cantidad*precio
+    document.getElementById("subtotalID").innerHTML=`
+    <div>
+      <h6 class="mb-0">${subtotalResultado}</h6>
+    </div>
+    `
+    costoEnvio(subtotalResultado);
+  })
 }
 
 function sumaSubtotales(){
