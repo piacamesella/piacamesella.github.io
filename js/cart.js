@@ -1,5 +1,6 @@
 let carritoInfo = [];
 let subtotalResultado;
+let costoEnvio;
 
 function setUserID(id){
     localStorage.setItem("userID",id);
@@ -19,6 +20,24 @@ function subtotal(cantidad,precio){
     </div>
     `
   })
+}
+
+function costoEnvio(){
+    if (document.getElementById("tiposDeEnvio").value = "1"){
+      costoEnvioResultado= (subtotalResultado* 15)/100
+    }else if (document.getElementById("tiposDeEnvio").value = "2"){
+      costoEnvioResultado= (subtotalResultado * 7)/100
+    }else{
+      costoEnvioResultado=(subtotalResultado*5)/100
+    }
+    return costoEnvioResultado;
+}
+
+function sumaSubtotales(){
+  for(let i = 0; i < carritoInfo.articles.length; i++){
+    subtotalResultado
+
+  }
 }
 
 function mostrarCarritoInfo(){
@@ -74,7 +93,7 @@ function mostrarCarritoInfo(){
                   <h5 class="text-uppercase mb-3">Tipo de envío</h5>
 
                   <div class="mb-4 pb-2">
-                    <select class="select" required>
+                    <select id="tiposDeEnvio" class="select" required onchange="costoEnvio()">
                       <option value="1">Premium 2 a 5 días (15%)</option>
                       <option value="2">Express 5 a 8 días (7%)</option>
                       <option value="3">Standard 12 a 15 días (5%)</option>
