@@ -54,6 +54,7 @@ function subtotal(cantidad,precio){
     </div>
     `
     costoEnvio(subtotalResultado);
+    sumaSubtotales(subtotalResultado);
   })
 }
 
