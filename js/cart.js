@@ -41,10 +41,10 @@ function setUserID(id){
 //     `
 // }
 
-function costoEnvio(subtotalGeneralCarrito,valor){
-  if (valor=document.getElementById("tiposDeEnvio").value == "1"){
+function costoEnvio(subtotalGeneralCarrito){
+  if (document.getElementById("tiposDeEnvio").value == "1"){
     costoEnvioCarrito= (subtotalGeneralCarrito* 15)/100
-  }else if (valor=document.getElementById("tiposDeEnvio").value == "2"){
+  }else if (document.getElementById("tiposDeEnvio").value == "2"){
     costoEnvioCarrito= (subtotalGeneralCarrito * 7)/100
   }else{
     costoEnvioCarrito=(subtotalGeneralCarrito*5)/100
@@ -146,7 +146,7 @@ function mostrarCarritoInfo(){
                   <h5 class="text-uppercase mb-3">Tipo de envío</h5>
 
                   <div class="mb-4 pb-2">
-                    <select id="tiposDeEnvio" class="select" required onchange="costoEnvio(${subtotalGeneral(subtotal(carritoInfo.articles[i].count,carritoInfo.articles[i].unitCost)),document.getElementById("tiposDeEnvio").value})">
+                    <select id="tiposDeEnvio" class="select" required onchange="costoEnvio(${subtotalGeneral(subtotal(carritoInfo.articles[i].count,carritoInfo.articles[i].unitCost))})">
                       <option value="1">Premium 2 a 5 días (15%)</option>
                       <option value="2">Express 5 a 8 días (7%)</option>
                       <option value="3">Standard 12 a 15 días (5%)</option>
@@ -195,7 +195,7 @@ function mostrarCarritoInfo(){
 
                   <div id="costoEnvioID" class="d-flex justify-content-between mb-5">
                     <h5 class="text-uppercase">Costo Envío</h5>
-                    <h5>${costoEnvio(subtotalGeneral(subtotal(carritoInfo.articles[i].count,carritoInfo.articles[i].unitCost)),valor)}</h5>
+                    <h5>${costoEnvio(subtotalGeneral(subtotal(carritoInfo.articles[i].count,carritoInfo.articles[i].unitCost)))}</h5>
                   </div>
 
                   <hr class="my-4">
