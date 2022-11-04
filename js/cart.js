@@ -41,13 +41,13 @@ function setUserID(id){
 //     `
 // }
 
-function costoEnvio(subtotalCarrito,valor){
+function costoEnvio(subtotalGeneralCarrito,valor){
   if (valor=document.getElementById("tiposDeEnvio").value == "1"){
-    costoEnvioCarrito= (subtotalCarrito* 15)/100
+    costoEnvioCarrito= (subtotalGeneralCarrito* 15)/100
   }else if (valor=document.getElementById("tiposDeEnvio").value == "2"){
-    costoEnvioCarrito= (subtotalCarrito * 7)/100
+    costoEnvioCarrito= (subtotalGeneralCarrito * 7)/100
   }else{
-    costoEnvioCarrito=(subtotalCarrito*5)/100
+    costoEnvioCarrito=(subtotalGeneralCarrito*5)/100
   }
   document.getElementById("costoEnvioID").innerHTML=`
   <div id="costoEnvioID" class="d-flex justify-content-between mb-5">
