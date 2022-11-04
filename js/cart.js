@@ -1,8 +1,8 @@
 let carritoInfo = [];
-let subtotalResultado = 0;
-let costoEnvioResultado = 0;
-let sumaSubtotalesResultado = 0;
-let totalCarritoResultado = 0;
+let subtotalCarrito = 0;
+let costoEnvioCarrito = 0;
+let subtotalGeneralCarrito = 0;
+let totalCarrito= 0;
 
 function setUserID(id){
     localStorage.setItem("userID",id);
@@ -15,10 +15,10 @@ function setUserID(id){
 // function subtotal(cantidad,precio){
 //   document.getElementById("form1").addEventListener("click", function(){
 //     cantidad=document.getElementById("form1").value;
-//     subtotalResultado=cantidad*precio
+//     subtotalCarrito=cantidad*precio
 //     document.getElementById("subtotalID").innerHTML=`
 //     <div>
-//       <h6 class="mb-0">${subtotalResultado}</h6>
+//       <h6 class="mb-0">${subtotalCarrito}</h6>
 //     </div>
 //     `
 //   })
@@ -27,20 +27,20 @@ function setUserID(id){
 
 function costoEnvio(){
     if (document.getElementById("tiposDeEnvio").value == "1"){
-      costoEnvioResultado= (subtotalResultado* 15)/100
+      costoEnvioCarrito= (subtotalCarrito* 15)/100
     }else if (document.getElementById("tiposDeEnvio").value == "2"){
-      costoEnvioResultado= (subtotalResultado * 7)/100
+      costoEnvioCarrito= (subtotalCarrito * 7)/100
     }else{
-      costoEnvioResultado=(subtotalResultado*5)/100
+      costoEnvioCarrito=(subtotalCarrito*5)/100
     }
     document.getElementById("costoEnvioID").innerHTML=`
     <div id="costoEnvioID" class="d-flex justify-content-between mb-5">
       <h5 class="text-uppercase">Costo Envío</h5>
-      <h5>${costoEnvioResultado}</h5>
+      <h5>${costoEnvioCarrito}</h5>
     </div>
     `
-    console.log(costoEnvioResultado);
-    console.log(typeof costoEnvioResultado);
+    console.log(costoEnvioCarrito);
+    console.log(typeof costoEnvioCarrito);
     console.log(document.getElementById("tiposDeEnvio").value);
     console.log(typeof document.getElementById("tiposDeEnvio").value);
 }
@@ -48,35 +48,35 @@ function costoEnvio(){
 function subtotal(cantidad,precio){
   document.getElementById("form1").addEventListener("click", function(){
     cantidad=document.getElementById("form1").value;
-    subtotalResultado=cantidad*precio
+    subtotalCarrito=cantidad*precio
     document.getElementById("subtotalID").innerHTML=`
     <div>
-      <h6 class="mb-0">${subtotalResultado}</h6>
+      <h6 class="mb-0">${subtotalCarrito}</h6>
     </div>
     `
-    costoEnvio(subtotalResultado);
-    sumaSubtotales(subtotalResultado);
-    totalCarrito(subtotalResultado)
+    costoEnvio(subtotalCarrito);
+    sumaSubtotales(subtotalCarrito);
+    totalCarrito(subtotalCarrito)
   })
 }
 
 function sumaSubtotales(){
     // let subtotales = subtotal(carritoInfo.articles[i].count, carritoInfo.articles[i].unitCost)
-      sumaSubtotalesResultado = 0 + subtotalResultado;
+      subtotalGeneralCarrito= 0 + subtotalCarrito;
       document.getElementById("subtotalesID").innerHTML=`
       <div class="d-flex justify-content-between mb-4" id="subtotalesID">
         <h5 class="text-uppercase">Subtotal</h5>
-        <h5>${sumaSubtotalesResultado}</h5>
+        <h5>${subtotalGeneralCarrito}</h5>
        </div>
       `
 }
 
-function totalCarrito(){
-  totalCarritoResultado = sumaSubtotalesResultado + costoEnvioResultado;
+function totalCarritoDeCompra(){
+  totalCarrito = subtotalGeneralCarrito + costoEnvioCarrito;
   document.getElementById("totalID").innerHTML=`
   <div class="d-flex justify-content-between mb-5" id="totalID">
     <h5 class="text-uppercase">Total</h5>
-    <h5>${totalCarritoResultado}</h5>
+    <h5>${totalCarrito}</h5>
   </div>
   `
 }
