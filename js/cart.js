@@ -30,7 +30,12 @@ function costoEnvio(){
     }else{
       costoEnvioResultado=(subtotalResultado*5)/100
     }
-    return costoEnvioResultado;
+    document.getElementById("costoEnvioID").innerHTML=`
+    <div id="costoEnvioID" class="d-flex justify-content-between mb-5">
+      <h5 class="text-uppercase">Costo Envío</h5>
+      <h5>${costoEnvioResultado}</h5>
+    </div>
+    `
 }
 
 function sumaSubtotales(){
@@ -141,7 +146,7 @@ function mostrarCarritoInfo(){
 
                   <hr class="my-4">
 
-                  <div class="d-flex justify-content-between mb-5">
+                  <div id="costoEnvioID" class="d-flex justify-content-between mb-5">
                     <h5 class="text-uppercase">Costo Envío</h5>
                     <h5>AgregarCalculoEnvío</h5>
                   </div>
