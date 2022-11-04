@@ -195,7 +195,7 @@ function mostrarCarritoInfo(){
 
                   <div id="costoEnvioID" class="d-flex justify-content-between mb-5">
                     <h5 class="text-uppercase">Costo Envío</h5>
-                    <h5>${costoEnvio(subtotalGeneralCarrito,valor)}</h5>
+                    <h5>${costoEnvio(subtotalGeneral(subtotal(carritoInfo.articles[i].count,carritoInfo.articles[i].unitCost)),valor)}</h5>
                   </div>
 
                   <hr class="my-4">
