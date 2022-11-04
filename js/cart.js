@@ -25,24 +25,36 @@ function setUserID(id){
 // }
 
 //función que calcula el costo de envío dependiendo el tipo de envío y el subtotal(porque es de donde se saca el porcentaje)
-function costoEnvio(){
-    if (document.getElementById("tiposDeEnvio").value == "1"){
-      costoEnvioCarrito= (subtotalCarrito* 15)/100
-    }else if (document.getElementById("tiposDeEnvio").value == "2"){
-      costoEnvioCarrito= (subtotalCarrito * 7)/100
-    }else{
-      costoEnvioCarrito=(subtotalCarrito*5)/100
-    }
-    document.getElementById("costoEnvioID").innerHTML=`
-    <div id="costoEnvioID" class="d-flex justify-content-between mb-5">
-      <h5 class="text-uppercase">Costo Envío</h5>
-      <h5>${costoEnvioCarrito}</h5>
-    </div>
-    `
-    console.log(costoEnvioCarrito);
-    console.log(typeof costoEnvioCarrito);
-    console.log(document.getElementById("tiposDeEnvio").value);
-    console.log(typeof document.getElementById("tiposDeEnvio").value);
+// function costoEnvio(){
+//     if (document.getElementById("tiposDeEnvio").value == "1"){
+//       costoEnvioCarrito= (subtotalCarrito* 15)/100
+//     }else if (document.getElementById("tiposDeEnvio").value == "2"){
+//       costoEnvioCarrito= (subtotalCarrito * 7)/100
+//     }else{
+//       costoEnvioCarrito=(subtotalCarrito*5)/100
+//     }
+//     document.getElementById("costoEnvioID").innerHTML=`
+//     <div id="costoEnvioID" class="d-flex justify-content-between mb-5">
+//       <h5 class="text-uppercase">Costo Envío</h5>
+//       <h5>${costoEnvioCarrito}</h5>
+//     </div>
+//     `
+// }
+
+function costoEnvio(subtotalCarrito,valor){
+  if (valor=document.getElementById("tiposDeEnvio").value == "1"){
+    costoEnvioCarrito= (subtotalCarrito* 15)/100
+  }else if (valor=document.getElementById("tiposDeEnvio").value == "2"){
+    costoEnvioCarrito= (subtotalCarrito * 7)/100
+  }else{
+    costoEnvioCarrito=(subtotalCarrito*5)/100
+  }
+  document.getElementById("costoEnvioID").innerHTML=`
+  <div id="costoEnvioID" class="d-flex justify-content-between mb-5">
+    <h5 class="text-uppercase">Costo Envío</h5>
+    <h5>${costoEnvioCarrito}</h5>
+  </div>
+  `
 }
 
 //función que calcula el subtotal dependiendo del precio y la cantidad
@@ -183,7 +195,7 @@ function mostrarCarritoInfo(){
 
                   <div id="costoEnvioID" class="d-flex justify-content-between mb-5">
                     <h5 class="text-uppercase">Costo Envío</h5>
-                    <h5>${costoEnvioCarrito}</h5>
+                    <h5>${costoEnvio(subtotal(carritoInfo.articles[i].count,carritoInfo.articles[i].unitCost),document.getElementById("tiposDeEnvio").value)}</h5>
                   </div>
 
                   <hr class="my-4">
