@@ -36,6 +36,10 @@ function costoEnvio(){
       <h5>${costoEnvioResultado}</h5>
     </div>
     `
+    console.log(costoEnvioResultado);
+    console.log(typeof costoEnvio);
+    console.log(document.getElementById("tiposDeEnvio").value);
+    console.log(typeof document.getElementById("tiposDeEnvio").value);
 }
 
 function sumaSubtotales(){
