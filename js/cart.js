@@ -58,8 +58,22 @@ function costoEnvio(){
 // }
 
 //función que calcula el subtotal dependiendo del precio y la cantidad
+// function subtotal(cantidad,precio){
+//   document.getElementById("form1").addEventListener("click", function(){
+//     cantidad=document.getElementById("form1").value;
+//     subtotalCarrito=cantidad*precio
+//     document.getElementById("subtotalID").innerHTML=`
+//     <div>
+//       <h6 class="mb-0">${subtotalCarrito}</h6>
+//     </div>
+//     `
+//     costoEnvio(subtotalCarrito);
+//     subtotalGeneral(subtotalCarrito);
+//     totalCarrito(subtotalCarrito)
+//   })
+// }
+
 function subtotal(cantidad,precio){
-  document.getElementById("form1").addEventListener("click", function(){
     cantidad=document.getElementById("form1").value;
     subtotalCarrito=cantidad*precio
     document.getElementById("subtotalID").innerHTML=`
@@ -70,8 +84,8 @@ function subtotal(cantidad,precio){
     costoEnvio(subtotalCarrito);
     subtotalGeneral(subtotalCarrito);
     totalCarrito(subtotalCarrito)
-  })
-}
+  }
+
 //función que suma los subtotales:
 function subtotalGeneral(){
       subtotalGeneralCarrito= 0 + subtotalCarrito;
