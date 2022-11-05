@@ -83,7 +83,7 @@ function subtotal(cantidad,precio){
     `
     costoEnvio(subtotalCarrito);
     subtotalGeneral(subtotalCarrito);
-    totalCarrito(subtotalCarrito)
+    totalCarritoDeCompra(subtotalCarrito)
   }
 
 //función que suma los subtotales:
@@ -160,7 +160,7 @@ function mostrarCarritoInfo(){
                   <h5 class="text-uppercase mb-3">Tipo de envío</h5>
 
                   <div class="mb-4 pb-2">
-                    <select id="tiposDeEnvio" class="select" required onchange="costoEnvio()">
+                    <select id="tiposDeEnvio" class="select" required onchange="costoEnvio(subtotalCarrito)">
                       <option value="1">Premium 2 a 5 días (15%)</option>
                       <option value="2">Express 5 a 8 días (7%)</option>
                       <option value="3">Standard 12 a 15 días (5%)</option>
@@ -209,7 +209,6 @@ function mostrarCarritoInfo(){
 
                   <div id="costoEnvioID" class="d-flex justify-content-between mb-5">
                     <h5 class="text-uppercase">Costo Envío</h5>
-                    <h5>calcular costo envio</h5>
                   </div>
 
                   <hr class="my-4">
