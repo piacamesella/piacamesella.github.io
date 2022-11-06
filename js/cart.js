@@ -91,7 +91,6 @@ function costoEnvio(){
 </div> */
 
 function subtotal(cantidad,precio){
-  currencyCarrito = carritoInfo.articles[i].currency;
   cantidad=document.getElementById("form1").value;
   subtotalCarrito=cantidad*precio
   document.getElementById("subtotalID").innerHTML=`
@@ -126,6 +125,7 @@ function totalCarritoDeCompra(){
 }
 
 function mostrarCarritoInfo(){
+  currencyCarrito = carritoInfo.articles[i].currency;
     let htmlContentToAppend = "";
     for(let i = 0; i < carritoInfo.articles.length; i++){
 
