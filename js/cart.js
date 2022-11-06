@@ -246,18 +246,14 @@ function mostrarCarritoInfo(){
                     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                       <div class="modal-dialog modal-lg modal-dialog modal-sm">
                         <div class="modal-content">
-                          <div class="modal-header">
-                            <h5 class="modal-title" id="staticBackdropLabel">Forma de pago</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                          </div>
                           <div class="modal-body">
                           <div class="col-lg-12">
 
                           <div class="card bg-secondary text-white rounded-3">
                             <div class="card-body">
+                            <h3 class="fw-bold mb-5 mt-2 pt-1">Forma de pago</h3>
+                            <hr class="my-4">
                               <div class="d-flex justify-content-between align-items-center mb-4">
-                                <h3 class="fw-bold mb-5 mt-2 pt-1">Forma de pago</h3>
-                                <hr class="my-4">
                                 <h5 class="mb-0">Tarjeta de crédito</h5>
                               </div>
           
@@ -272,13 +268,13 @@ function mostrarCarritoInfo(){
                               <form class="mt-4">
                                 <div class="form-outline form-white mb-4">
                                   <label class="form-label" for="typeName">Nombre del titular</label>
-                                  <input type="text" id="typeName" class="form-control form-control-lg" 
+                                  <input type="text" id="titularTarjetaID" class="form-control form-control-lg" 
                                     placeholder="Nombre del titular" />
                                 </div>
           
                                 <div class="form-outline form-white mb-4">
                                   <label class="form-label" for="typeText">Número de tarjeta</label>
-                                  <input type="text" id="typeText" class="form-control form-control-lg" size="16"
+                                  <input type="text" id="numeroTarjetaID" class="form-control form-control-lg" size="16"
                                     placeholder="---- ---- ---- ----" minlength="16" maxlength="16" />
                                 </div>
           
@@ -287,13 +283,13 @@ function mostrarCarritoInfo(){
                                     <div class="form-outline form-white">
                                       <label class="form-label" for="typeExp">Vencimiento</label>
                                       <input type="text" id="typeExp" class="form-control form-control-lg"
-                                        placeholder="MM/YY" size="4" id="exp" minlength="4" maxlength="4" />
+                                        placeholder="MM/YY" size="4" id="vencimientoTarjetaID" minlength="4" maxlength="4" />
                                     </div>
                                   </div>
                                   <div class="col-md-6">
                                     <div class="form-outline form-white">
                                       <label class="form-label" for="typeText">CVV</label>
-                                      <input type="password" id="typeText" class="form-control form-control-lg"
+                                      <input type="password" id="codigoTarjetaID" class="form-control form-control-lg"
                                         placeholder="&#9679;&#9679;&#9679;" size="1" minlength="3" maxlength="3" />
                                     </div>
                                   </div>
@@ -304,7 +300,7 @@ function mostrarCarritoInfo(){
                                 <div class="form-outline form-white mb-4">
                                   <h5 class="text-uppercase">Transferencia bancaria</h5>
                                   <label class="form-label" for="typeName">Número de cuenta</label>
-                                  <input type="text" id="typeName" class="form-control form-control-lg" 
+                                  <input type="text" id="transferenciaID" class="form-control form-control-lg" 
                                     placeholder="Número de cuenta" />
                                 </div>
           
@@ -313,7 +309,8 @@ function mostrarCarritoInfo(){
                               <hr class="my-4">
           
 
-                              <button type="button" class="btn btn-dark btn-block btn-lg" data-mdb-ripple-color="dark">Comprar</button>
+                              <button id="botonComprarID" type="button" class="btn btn-dark btn-block btn-lg" data-mdb-ripple-color="dark">Comprar</button>
+                              <button id="botonCancelarID" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
           
                             </div>
                           </div>
