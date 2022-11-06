@@ -89,17 +89,28 @@ function costoEnvio(){
   <h5 class="text-uppercase">Subtotal</h5>
 </div> */
 
-function subtotal(cantidad,precio){
-  cantidad=document.getElementById("form1").value;
-  subtotalCarrito=cantidad*precio
-  document.getElementById("subtotalID").innerHTML=`
-  <div>
-    <h6 class="mb-0"> ${subtotalCarrito}</h6>
-  </div>
-  `
-  subtotalGeneral(subtotalCarrito);
-  costoEnvio(subtotalGeneralCarrito);
-  totalCarritoDeCompra(subtotalGeneralCarrito)
+// function subtotal(cantidad,precio){
+//   cantidad=document.getElementById("form1").value;
+//   subtotalCarrito=cantidad*precio
+//   document.getElementById("subtotalID").innerHTML=`
+//   <div>
+//     <h6 class="mb-0"> ${subtotalCarrito}</h6>
+//   </div>
+//   `
+//   subtotalGeneral(subtotalCarrito);
+//   costoEnvio(subtotalGeneralCarrito);
+//   totalCarritoDeCompra(subtotalGeneralCarrito)
+// }
+
+// probar para aplicar en la funcion del fetch:
+function subtotal(){
+  document.getElementById("form1").addEventListener("click", function(){
+    document.getElementById("subtotalID").innerHTML=`
+    <div>
+      <h6 class="mb-0">${carritoInfo.articles[i].currency} ${document.getElementById("form1").value*carritoInfo.articles[i].unitCost}</h6>
+    </div>
+    `
+  })
 }
 
 //función que suma los subtotales:
@@ -253,19 +264,20 @@ function mostrarCarritoInfo(){
                             <div class="card-body">
                             <h3 class="fw-bold mb-5 mt-2 pt-1">Forma de pago</h3>
                             <hr class="my-4">
-                              <div class="d-flex justify-content-between align-items-center mb-4">
-                                <h5 class="mb-0">Tarjeta de crédito</h5>
-                              </div>
-          
-                              <p class="mb-0">Tipo de tarjeta</p>
-                              <img src="https://1000marcas.net/wp-content/uploads/2019/12/Visa-Logo-2005.jpg" class="img-fluid rounded-3" style="width:60px;">
-                              <img src="http://www.descuento.uy/wp-content/uploads/2018/12/logo-Santander.jpg" class="img-fluid rounded-3" style="width:60px;">
-                              <img src="https://logos-marcas.com/wp-content/uploads/2020/04/PayPal-Logotipo-2007%E2%80%932014.jpg" class="img-fluid rounded-3" style="width:60px;">
-                              <img src="https://logos-marcas.com/wp-content/uploads/2020/09/MasterCard-Logotipo-1979-1990-650x366.jpg" class="img-fluid rounded-3" style="width:60px;">
-                              <img src="https://www.expertiza.uy/media/posts/482/logo-bbva.webp" class="img-fluid rounded-3" style="width:60px;">
-                              <img src="https://www.todoenuruguay.com/wp-content/uploads/2021/05/scotiabank-logo-min.png" class="img-fluid rounded-3" style="width:60px;">
                               
                               <form class="mt-4">
+                                <div class="d-flex justify-content-between align-items-center mb-4">
+                                  <h5 class="mb-0"><input id="opcionTarjetaID" type="radio" name="pago" value="Tarjeta" required>Tarjeta de crédito</h5>
+                                </div>
+
+                                <p class="mb-0">Tipo de tarjeta</p>
+                                <img src="https://1000marcas.net/wp-content/uploads/2019/12/Visa-Logo-2005.jpg" class="img-fluid rounded-3" style="width:60px;">
+                                <img src="http://www.descuento.uy/wp-content/uploads/2018/12/logo-Santander.jpg" class="img-fluid rounded-3" style="width:60px;">
+                                <img src="https://logos-marcas.com/wp-content/uploads/2020/04/PayPal-Logotipo-2007%E2%80%932014.jpg" class="img-fluid rounded-3" style="width:60px;">
+                                <img src="https://logos-marcas.com/wp-content/uploads/2020/09/MasterCard-Logotipo-1979-1990-650x366.jpg" class="img-fluid rounded-3" style="width:60px;">
+                                <img src="https://www.expertiza.uy/media/posts/482/logo-bbva.webp" class="img-fluid rounded-3" style="width:60px;">
+                                <img src="https://www.todoenuruguay.com/wp-content/uploads/2021/05/scotiabank-logo-min.png" class="img-fluid rounded-3" style="width:60px;">
+
                                 <div class="form-outline form-white mb-4">
                                   <label class="form-label" for="typeName">Nombre del titular</label>
                                   <input type="text" id="titularTarjetaID" class="form-control form-control-lg" 
@@ -298,9 +310,9 @@ function mostrarCarritoInfo(){
                                 <hr class="my-4">
 
                                 <div class="form-outline form-white mb-4">
-                                  <h5 class="text-uppercase">Transferencia bancaria</h5>
+                                  <h5 class="mb-0"><input id="opcionTransferenciaID" type="radio" name="pago" value="Transferencia" required>Transferencia bancaria</h5>
                                   <label class="form-label" for="typeName">Número de cuenta</label>
-                                  <input type="text" id="transferenciaID" class="form-control form-control-lg" 
+                                  <input type="text" id="numeroTransferenciaID" class="form-control form-control-lg" 
                                     placeholder="Número de cuenta" />
                                 </div>
           
@@ -309,7 +321,7 @@ function mostrarCarritoInfo(){
                               <hr class="my-4">
           
 
-                              <button id="botonComprarID" type="button" class="btn btn-dark btn-block btn-lg" data-mdb-ripple-color="dark">Comprar</button>
+                              <button id="botonComprarID" type="button" class="btn btn-dark btn-block btn-lg" data-mdb-ripple-color="dark">Finalizar compra</button>
                               <button id="botonCancelarID" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
           
                             </div>
@@ -319,10 +331,6 @@ function mostrarCarritoInfo(){
           
                       </div>
           
-                           </div>
-                           <div class="modal-footer">
-                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                             <button type="button" class="btn btn-primary">Confirmar</button>
                            </div>
                         </div>
                      </div>
@@ -353,6 +361,7 @@ document.addEventListener("DOMContentLoaded", function(a){
         {
             carritoInfo=resultado.data;
             mostrarCarritoInfo(carritoInfo);
+            subtotal(carritoInfo)
             console.log(carritoInfo);
         }
     })
