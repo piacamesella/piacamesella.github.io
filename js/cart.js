@@ -3,6 +3,7 @@ let subtotalCarrito = 0;
 let costoEnvioCarrito = 0;
 let subtotalGeneralCarrito = 0;
 let totalCarrito= 0;
+let currencyCarrito = "";
 
 function setUserID(id){
     localStorage.setItem("userID",id);
@@ -72,18 +73,36 @@ function costoEnvio(){
 //   })
 // }
 
+// function subtotal(cantidad,precio){
+//     cantidad=document.getElementById("form1").value;
+//     subtotalCarrito=cantidad*precio
+//     document.getElementById("subtotalID").innerHTML=`
+//     <div>
+//       <h6 class="mb-0">${subtotalCarrito}</h6>
+//     </div>
+//     `
+//     subtotalGeneral(subtotalCarrito);
+//     costoEnvio(subtotalGeneralCarrito);
+//     totalCarritoDeCompra(subtotalGeneralCarrito)
+// }
+
+/* <div class="d-flex justify-content-between mb-4" id="subtotalesID">
+  <h5 class="text-uppercase">Subtotal</h5>
+</div> */
+
 function subtotal(cantidad,precio){
-    cantidad=document.getElementById("form1").value;
-    subtotalCarrito=cantidad*precio
-    document.getElementById("subtotalID").innerHTML=`
-    <div>
-      <h6 class="mb-0">${subtotalCarrito}</h6>
-    </div>
-    `
-    subtotalGeneral(subtotalCarrito);
-    costoEnvio(subtotalGeneralCarrito);
-    totalCarritoDeCompra(subtotalGeneralCarrito)
-  }
+  currencyCarrito = carritoInfo.articles[i].currency;
+  cantidad=document.getElementById("form1").value;
+  subtotalCarrito=cantidad*precio
+  document.getElementById("subtotalID").innerHTML=`
+  <div>
+    <h6 class="mb-0"> ${currencyCarrito + subtotalCarrito}</h6>
+  </div>
+  `
+  subtotalGeneral(subtotalCarrito);
+  costoEnvio(subtotalGeneralCarrito);
+  totalCarritoDeCompra(subtotalGeneralCarrito)
+}
 
 //función que suma los subtotales:
 function subtotalGeneral(){
