@@ -251,27 +251,24 @@ function mostrarCarritoInfo(){
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                           </div>
                           <div class="modal-body">
-                          <div class="col-lg-5">
+                          <div class="col-lg-12">
 
                           <div class="card bg-secondary text-white rounded-3">
                             <div class="card-body">
                               <div class="d-flex justify-content-between align-items-center mb-4">
+                                <h3 class="fw-bold mb-5 mt-2 pt-1">Forma de pago</h3>
+                                <hr class="my-4">
                                 <h5 class="mb-0">Tarjeta de crédito</h5>
                               </div>
           
                               <p class="mb-0">Tipo de tarjeta</p>
-                              <a href="#!" type="submit" class="text-white"><i
-                                  class="fab fa-cc-mastercard fa-2x me-2"></i></a>
-                              <img src="https://img2.freepng.es/20181128/gkr/kisspng-mastercard-logo-visa-credit-card-portable-network-mastercard-plus-datacenter-trkiyeampaposde-5bfe50c6987830.6480665815433934786245.jpg" class="img-fluid rounded-3" style="width:45px;">
-                              <a href="#!" type="submit" class="text-white"><i
-                                  class="fab fa-cc-visa fa-2x me-2"></i></a>
-                              <img src="https://1000marcas.net/wp-content/uploads/2019/12/Visa-Logo-2005.jpg" class="img-fluid rounded-3" style="width:45px;">
-                              <a href="#!" type="submit" class="text-white"><i
-                                  class="fab fa-cc-amex fa-2x me-2"></i></a>
-                              <img src="https://w7.pngwing.com/pngs/745/624/png-transparent-american-express-logo-credit-card-payment-credit-card-blue-text-label.png" class="img-fluid rounded-3" style="width:45px;">
-                              <a href="#!" type="submit" class="text-white"><i class="fab fa-cc-paypal fa-2x"></i></a>
-                              <img src="https://logos-marcas.com/wp-content/uploads/2020/04/PayPal-Logotipo-2007%E2%80%932014.jpg" class="img-fluid rounded-3" style="width:45px;">
-          
+                              <img src="https://1000marcas.net/wp-content/uploads/2019/12/Visa-Logo-2005.jpg" class="img-fluid rounded-3" style="width:60px;">
+                              <img src="http://www.descuento.uy/wp-content/uploads/2018/12/logo-Santander.jpg" class="img-fluid rounded-3" style="width:60px;">
+                              <img src="https://logos-marcas.com/wp-content/uploads/2020/04/PayPal-Logotipo-2007%E2%80%932014.jpg" class="img-fluid rounded-3" style="width:60px;">
+                              <img src="https://logos-marcas.com/wp-content/uploads/2020/09/MasterCard-Logotipo-1979-1990-650x366.jpg" class="img-fluid rounded-3" style="width:60px;">
+                              <img src="https://www.expertiza.uy/media/posts/482/logo-bbva.webp" class="img-fluid rounded-3" style="width:60px;">
+                              <img src="https://www.todoenuruguay.com/wp-content/uploads/2021/05/scotiabank-logo-min.png" class="img-fluid rounded-3" style="width:60px;">
+                              
                               <form class="mt-4">
                                 <div class="form-outline form-white mb-4">
                                   <label class="form-label" for="typeName">Nombre del titular</label>
@@ -300,6 +297,15 @@ function mostrarCarritoInfo(){
                                         placeholder="&#9679;&#9679;&#9679;" size="1" minlength="3" maxlength="3" />
                                     </div>
                                   </div>
+                                </div>
+
+                                <hr class="my-4">
+
+                                <div class="form-outline form-white mb-4">
+                                  <h5 class="text-uppercase">Transferencia bancaria</h5>
+                                  <label class="form-label" for="typeName">Número de cuenta</label>
+                                  <input type="text" id="typeName" class="form-control form-control-lg" 
+                                    placeholder="Número de cuenta" />
                                 </div>
           
                               </form>
