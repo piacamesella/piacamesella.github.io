@@ -3,7 +3,6 @@ let subtotalCarrito = 0;
 let costoEnvioCarrito = 0;
 let subtotalGeneralCarrito = 0;
 let totalCarrito= 0;
-let currencyCarrito = "";
 
 function setUserID(id){
     localStorage.setItem("userID",id);
@@ -95,7 +94,7 @@ function subtotal(cantidad,precio){
   subtotalCarrito=cantidad*precio
   document.getElementById("subtotalID").innerHTML=`
   <div>
-    <h6 class="mb-0">${currencyCarrito} ${subtotalCarrito}</h6>
+    <h6 class="mb-0"> ${subtotalCarrito}</h6>
   </div>
   `
   subtotalGeneral(subtotalCarrito);
@@ -125,7 +124,6 @@ function totalCarritoDeCompra(){
 }
 
 function mostrarCarritoInfo(){
-  currencyCarrito = carritoInfo.articles[i].currency;
     let htmlContentToAppend = "";
     for(let i = 0; i < carritoInfo.articles.length; i++){
 
@@ -221,6 +219,7 @@ function mostrarCarritoInfo(){
 
                   <div class="d-flex justify-content-between mb-4" id="subtotalesID">
                     <h5 class="text-uppercase">Subtotal</h5>
+                    <h5>${subtotalGeneralCarrito}</h5>
                   </div>
 
                   <hr class="my-4">
@@ -238,8 +237,97 @@ function mostrarCarritoInfo(){
 
                   <hr class="my-4">
 
-                  <button type="button" class="btn btn-dark btn-block btn-lg"
-                    data-mdb-ripple-color="dark">Comprar</button>
+                  <div class="d-flex justify-content-between mb-5" id="totalID">
+                    <h5 class="text-uppercase">Forma de pago</h5>
+                    <button type="button" class="btn btn-dark btn-primary" data-bs-toggle="modal" data-mdb-ripple-color="dark" data-bs-target="#staticBackdrop">
+                     Seleccionar
+                    </button>
+
+                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-lg modal-dialog modal-sm">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">Forma de pago</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                          <div class="col-lg-5">
+
+                          <div class="card bg-secondary text-white rounded-3">
+                            <div class="card-body">
+                              <div class="d-flex justify-content-between align-items-center mb-4">
+                                <h5 class="mb-0">Tarjeta de crédito</h5>
+                              </div>
+          
+                              <p class="mb-0">Tipo de tarjeta</p>
+                              <a href="#!" type="submit" class="text-white"><i
+                                  class="fab fa-cc-mastercard fa-2x me-2"></i></a>
+                              <img src="https://img2.freepng.es/20181128/gkr/kisspng-mastercard-logo-visa-credit-card-portable-network-mastercard-plus-datacenter-trkiyeampaposde-5bfe50c6987830.6480665815433934786245.jpg" class="img-fluid rounded-3" style="width:45px;">
+                              <a href="#!" type="submit" class="text-white"><i
+                                  class="fab fa-cc-visa fa-2x me-2"></i></a>
+                              <img src="https://1000marcas.net/wp-content/uploads/2019/12/Visa-Logo-2005.jpg" class="img-fluid rounded-3" style="width:45px;">
+                              <a href="#!" type="submit" class="text-white"><i
+                                  class="fab fa-cc-amex fa-2x me-2"></i></a>
+                              <img src="https://w7.pngwing.com/pngs/745/624/png-transparent-american-express-logo-credit-card-payment-credit-card-blue-text-label.png" class="img-fluid rounded-3" style="width:45px;">
+                              <a href="#!" type="submit" class="text-white"><i class="fab fa-cc-paypal fa-2x"></i></a>
+                              <img src="https://logos-marcas.com/wp-content/uploads/2020/04/PayPal-Logotipo-2007%E2%80%932014.jpg" class="img-fluid rounded-3" style="width:45px;">
+          
+                              <form class="mt-4">
+                                <div class="form-outline form-white mb-4">
+                                  <label class="form-label" for="typeName">Nombre del titular</label>
+                                  <input type="text" id="typeName" class="form-control form-control-lg" 
+                                    placeholder="Nombre del titular" />
+                                </div>
+          
+                                <div class="form-outline form-white mb-4">
+                                  <label class="form-label" for="typeText">Número de tarjeta</label>
+                                  <input type="text" id="typeText" class="form-control form-control-lg" size="16"
+                                    placeholder="---- ---- ---- ----" minlength="16" maxlength="16" />
+                                </div>
+          
+                                <div class="row mb-4">
+                                  <div class="col-md-6">
+                                    <div class="form-outline form-white">
+                                      <label class="form-label" for="typeExp">Vencimiento</label>
+                                      <input type="text" id="typeExp" class="form-control form-control-lg"
+                                        placeholder="MM/YY" size="4" id="exp" minlength="4" maxlength="4" />
+                                    </div>
+                                  </div>
+                                  <div class="col-md-6">
+                                    <div class="form-outline form-white">
+                                      <label class="form-label" for="typeText">CVV</label>
+                                      <input type="password" id="typeText" class="form-control form-control-lg"
+                                        placeholder="&#9679;&#9679;&#9679;" size="1" minlength="3" maxlength="3" />
+                                    </div>
+                                  </div>
+                                </div>
+          
+                              </form>
+          
+                              <hr class="my-4">
+          
+
+                              <button type="button" class="btn btn-dark btn-block btn-lg" data-mdb-ripple-color="dark">Comprar</button>
+          
+                            </div>
+                          </div>
+          
+                        </div>
+          
+                      </div>
+          
+                           </div>
+                           <div class="modal-footer">
+                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                             <button type="button" class="btn btn-primary">Confirmar</button>
+                           </div>
+                        </div>
+                     </div>
+                   </div>
+                  </div>
+
+                  <hr class="my-4">
+
                   
 
                 </div>
