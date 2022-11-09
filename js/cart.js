@@ -134,6 +134,91 @@ function totalCarritoDeCompra(){
   `
 }
 
+// function formaDePago(){
+//   let titularTarjeta = document.getElementById("titularTarjetaID").value;
+//   let numeroTarjeta = document.getElementById("numeroTarjetaID").value;
+//   let vencimientoTarjeta = document.getElementById("vencimientoTarjetaID").value;
+//   let codigoTarjeta = document.getElementById("codigoTarjetaID").value;
+//   let numeroTransferencia = document.getElementById("numeroTransferenciaID").value;
+//   if(document.getElementById("opcionTarjetaID").checked){
+//     titularTarjeta!=="" && numeroTarjeta!=="" && vencimientoTarjeta!=="" && codigoTarjeta!=="";
+//     document.getElementById("numeroTransferenciaID").innerHTML=`
+//     <input type="text" id="numeroTransferenciaID" class="form-control form-control-lg" 
+//     disabled placeholder="Número de cuenta" />
+//     `
+//   }
+//   if(document.getElementById("opcionTransferenciaID").checked){
+//     numeroTransferencia!=="";
+//     document.getElementById("titularTarjetaID").innerHTML=`
+//     <input type="text" id="titularTarjetaID" class="form-control form-control-lg" 
+//     disabled placeholder="Nombre del titular" />
+//     `
+//     document.getElementById("numeroTarjetaID").innerHTML=`
+//     <input type="text" id="numeroTarjetaID" class="form-control form-control-lg" size="16"
+//     disabled placeholder="---- ---- ---- ----" minlength="16" maxlength="16" />
+//     `
+//     document.getElementById("vencimientoTarjetaID").innerHTML=`
+//     <input type="text" id="vencimientoTarjetaID" class="form-control form-control-lg"
+//     disabled placeholder="MM/YY" size="4" minlength="4" maxlength="4" />
+//     `
+//     document.getElementById("codigoTarjetaID").innerHTML=`
+//     <input type="password" id="codigoTarjetaID" class="form-control form-control-lg"
+//     disabled placeholder="&#9679;&#9679;&#9679;" size="1" minlength="3" maxlength="3" />
+//     `
+//   }
+// }
+
+function formaDePago(){
+  let titularTarjeta = document.getElementById("titularTarjetaID").value;
+  let numeroTarjeta = document.getElementById("numeroTarjetaID").value;
+  let vencimientoTarjeta = document.getElementById("vencimientoTarjetaID").value;
+  let codigoTarjeta = document.getElementById("codigoTarjetaID").value;
+  let numeroTransferencia = document.getElementById("numeroTransferenciaID").value;
+  let opcionSeleccionada = document.querySelector(`input[name="pago"]:checked`);
+  if (opcionSeleccionada.value=document.getElementById("opcionTarjetaID").value){
+    titularTarjeta!=="" && numeroTarjeta!=="" && vencimientoTarjeta!=="" && codigoTarjeta!=="";
+    document.getElementById("numeroTransferenciaID").innerHTML=`
+    <input type="text" id="numeroTransferenciaID" class="form-control form-control-lg" 
+    disabled placeholder="Número de cuenta" />
+    `
+  }
+  if(opcionSeleccionada.value=document.getElementById("opcionTransferenciaID").value){
+    numeroTransferencia!=="";
+    document.getElementById("titularTarjetaID").innerHTML=`
+    <input type="text" id="titularTarjetaID" class="form-control form-control-lg" 
+    disabled placeholder="Nombre del titular" />
+    `
+    document.getElementById("numeroTarjetaID").innerHTML=`
+    <input type="text" id="numeroTarjetaID" class="form-control form-control-lg" size="16"
+    disabled placeholder="---- ---- ---- ----" minlength="16" maxlength="16" />
+    `
+    document.getElementById("vencimientoTarjetaID").innerHTML=`
+    <input type="text" id="vencimientoTarjetaID" class="form-control form-control-lg"
+    disabled placeholder="MM/YY" size="4" minlength="4" maxlength="4" />
+    `
+    document.getElementById("codigoTarjetaID").innerHTML=`
+    <input type="password" id="codigoTarjetaID" class="form-control form-control-lg"
+    disabled placeholder="&#9679;&#9679;&#9679;" size="1" minlength="3" maxlength="3" />
+    `
+  }else{
+    alert("Seleccione método de pago");
+  }
+}
+
+function finalizarCompra(){
+  document.getElementById("botonComprarID").addEventListener("click", function(){
+    let calle = document.getElementById("inputCalle").value;
+    let numero = document.getElementById("inputNumero").value;
+    let esquina = document.getElementById("inputEsquina").value;
+        if (calle!== "" && numero!=="" && esquina!==""&&document.getElementById("form1").value>0 && formaDePago()){
+          document.getElementById("botonComprarID").innerHTML=`
+          <button id="botonComprarID" type="button" class="btn btn-dark btn-block btn-lg" data-bs-dismiss="modal" data-mdb-ripple-color="dark">Finalizar compra</button>
+          `
+          alert("¡Has comprado con éxito!")
+        }
+  })
+}
+
 function mostrarCarritoInfo(){
     let htmlContentToAppend = "";
     for(let i = 0; i < carritoInfo.articles.length; i++){
@@ -294,8 +379,8 @@ function mostrarCarritoInfo(){
                                   <div class="col-md-6">
                                     <div class="form-outline form-white">
                                       <label class="form-label" for="typeExp">Vencimiento</label>
-                                      <input type="text" id="typeExp" class="form-control form-control-lg"
-                                        placeholder="MM/YY" size="4" id="vencimientoTarjetaID" minlength="4" maxlength="4" />
+                                      <input type="text" id="vencimientoTarjetaID" class="form-control form-control-lg"
+                                        placeholder="MM/YY" size="4" minlength="4" maxlength="4" />
                                     </div>
                                   </div>
                                   <div class="col-md-6">
@@ -362,6 +447,7 @@ document.addEventListener("DOMContentLoaded", function(a){
             carritoInfo=resultado.data;
             mostrarCarritoInfo(carritoInfo);
             subtotal(carritoInfo)
+            formaDePago();
             console.log(carritoInfo);
         }
     })
