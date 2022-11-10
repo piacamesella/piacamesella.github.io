@@ -41,21 +41,6 @@ function setUserID(id){
 //     `
 // }
 
-function costoEnvio(){
-  if (document.getElementById("tiposDeEnvio").value == "1"){
-    costoEnvioCarrito= (subtotalGeneralCarrito* 15)/100
-  }else if (document.getElementById("tiposDeEnvio").value == "2"){
-    costoEnvioCarrito= (subtotalGeneralCarrito* 7)/100
-  }else{
-    costoEnvioCarrito=(subtotalGeneralCarrito*5)/100
-  }
-  document.getElementById("costoEnvioID").innerHTML=`
-  <div id="costoEnvioID" class="d-flex justify-content-between mb-5">
-    <h5 class="text-uppercase">Costo Envío</h5>
-    <h5>${costoEnvioCarrito}</h5>
-  </div>
-  `
-}
 //función que calcula el subtotal dependiendo del precio y la cantidad
 // function subtotal(cantidad,precio){
 //   document.getElementById("form1").addEventListener("click", function(){
@@ -89,29 +74,57 @@ function costoEnvio(){
   <h5 class="text-uppercase">Subtotal</h5>
 </div> */
 
-// function subtotal(cantidad,precio){
-//   cantidad=document.getElementById("form1").value;
+//subtotal opcion sin click y con click
+// function subtotal(cantidad, precio){
 //   subtotalCarrito=cantidad*precio
+//   if(document.getElementById("form1").addEventListener("click")){
+//     cantidad=document.getElementById("form1").value;
 //   document.getElementById("subtotalID").innerHTML=`
 //   <div>
-//     <h6 class="mb-0"> ${subtotalCarrito}</h6>
+//     <h6 class="mb-0">${subtotalCarrito}</h6>
 //   </div>
 //   `
+//   costoEnvio(subtotalCarrito);
 //   subtotalGeneral(subtotalCarrito);
-//   costoEnvio(subtotalGeneralCarrito);
-//   totalCarritoDeCompra(subtotalGeneralCarrito)
+//   totalCarrito(subtotalCarrito)
+//   }
 // }
 
-// probar para aplicar en la funcion del fetch:
-function subtotal(){
-  document.getElementById("form1").addEventListener("click", function(){
-    document.getElementById("subtotalID").innerHTML=`
-    <div>
-      <h6 class="mb-0">${carritoInfo.articles[i].currency} ${document.getElementById("form1").value*carritoInfo.articles[i].unitCost}</h6>
-    </div>
-    `
-  })
+function alertas(){
+  let calle = document.getElementById("inputCalle").value;
+  let numero = document.getElementById("inputNumero").value;
+  let esquina = document.getElementById("inputEsquina").value;
+
+  if(calle==""){
+    alert("Debes ingresar una calle")
+  }
+  if(numero==""){
+    alert("Debes ingresar un número de puerta")
+  }
+  if(esquina==""){
+    alert("Debes ingresar una esquina")
+  }
+
+  if(document.getElementById("tiposDeEnvio").value !== "0"){
+    alert("Debes seleccionar el tipo de envío")
+  }
+
 }
+
+function subtotal(cantidad,precio){
+  cantidad=document.getElementById("form1").value;
+  subtotalCarrito=cantidad*precio
+  document.getElementById("subtotalID").innerHTML=`
+  <div>
+    <h6 class="mb-0"> ${subtotalCarrito}</h6>
+  </div>
+  `
+  subtotalGeneral(subtotalCarrito);
+  costoEnvio(subtotalGeneralCarrito);
+  totalCarritoDeCompra(subtotalGeneralCarrito)
+}
+
+// probar para aplicar en la funcion del fetch:
 
 //función que suma los subtotales:
 function subtotalGeneral(){
@@ -123,6 +136,25 @@ function subtotalGeneral(){
        </div>
       `
 }
+// función que calcula el costo de envío (subtotal general más el porcentaje del mismo dependiendo del tipo de envío seleccionado)
+// acordarme de agregar opción value=0 alerta a la hora de apretar botón comprar
+function costoEnvio(){
+  if (document.getElementById("tiposDeEnvio").value == "1"){
+    costoEnvioCarrito= (subtotalGeneralCarrito* 15)/100
+  }else if (document.getElementById("tiposDeEnvio").value == "2"){
+    costoEnvioCarrito= (subtotalGeneralCarrito* 7)/100
+  }else {
+    costoEnvioCarrito=(subtotalGeneralCarrito*5)/100
+  }
+  document.getElementById("costoEnvioID").innerHTML=`
+  <div id="costoEnvioID" class="d-flex justify-content-between mb-5">
+    <h5 class="text-uppercase">Costo Envío</h5>
+    <h5>${costoEnvioCarrito}</h5>
+  </div>
+  `
+  return costoEnvioCarrito;
+}
+
 //función que suma el subtotal general y el costo del envío
 function totalCarritoDeCompra(){
   totalCarrito = subtotalGeneralCarrito + costoEnvioCarrito;
@@ -144,27 +176,46 @@ function totalCarritoDeCompra(){
 //     titularTarjeta!=="" && numeroTarjeta!=="" && vencimientoTarjeta!=="" && codigoTarjeta!=="";
 //     document.getElementById("numeroTransferenciaID").innerHTML=`
 //     <input type="text" id="numeroTransferenciaID" class="form-control form-control-lg" 
-//     disabled placeholder="Número de cuenta" />
+//     disabled="true" placeholder="Número de cuenta" />
 //     `
 //   }
 //   if(document.getElementById("opcionTransferenciaID").checked){
 //     numeroTransferencia!=="";
 //     document.getElementById("titularTarjetaID").innerHTML=`
 //     <input type="text" id="titularTarjetaID" class="form-control form-control-lg" 
-//     disabled placeholder="Nombre del titular" />
+//     disabled="true" placeholder="Nombre del titular" />
 //     `
 //     document.getElementById("numeroTarjetaID").innerHTML=`
 //     <input type="text" id="numeroTarjetaID" class="form-control form-control-lg" size="16"
-//     disabled placeholder="---- ---- ---- ----" minlength="16" maxlength="16" />
+//     disabled="true" placeholder="---- ---- ---- ----" minlength="16" maxlength="16" />
 //     `
 //     document.getElementById("vencimientoTarjetaID").innerHTML=`
 //     <input type="text" id="vencimientoTarjetaID" class="form-control form-control-lg"
-//     disabled placeholder="MM/YY" size="4" minlength="4" maxlength="4" />
+//     disabled="true" placeholder="MM/YY" size="4" minlength="4" maxlength="4" />
 //     `
 //     document.getElementById("codigoTarjetaID").innerHTML=`
 //     <input type="password" id="codigoTarjetaID" class="form-control form-control-lg"
-//     disabled placeholder="&#9679;&#9679;&#9679;" size="1" minlength="3" maxlength="3" />
+//     disabled="true" placeholder="&#9679;&#9679;&#9679;" size="1" minlength="3" maxlength="3" />
 //     `
+//   }
+// }
+
+// function formaDePago(){
+//   let titularTarjeta = document.getElementById("titularTarjetaID").value;
+//   let numeroTarjeta = document.getElementById("numeroTarjetaID").value;
+//   let vencimientoTarjeta = document.getElementById("vencimientoTarjetaID").value;
+//   let codigoTarjeta = document.getElementById("codigoTarjetaID").value;
+//   let numeroTransferencia = document.getElementById("numeroTransferenciaID").value;
+//   if(document.getElementById("opcionTarjetaID").checked){
+//     titularTarjeta!=="" && numeroTarjeta!=="" && vencimientoTarjeta!=="" && codigoTarjeta!=="";
+//     document.getElementById("numeroTransferenciaID").setAttribute("disabled","");
+//   }
+//   if(document.getElementById("opcionTransferenciaID").checked){
+//     numeroTransferencia!=="";
+//     document.getElementById("titularTarjetaID").setAttribute("disabled","");
+//     document.getElementById("numeroTarjetaID").setAttribute("disabled","");
+//     document.getElementById("vencimientoTarjetaID").setAttribute("disabled","");
+//     document.getElementById("codigoTarjetaID").setAttribute("disabled","");
 //   }
 // }
 
@@ -174,50 +225,52 @@ function formaDePago(){
   let vencimientoTarjeta = document.getElementById("vencimientoTarjetaID").value;
   let codigoTarjeta = document.getElementById("codigoTarjetaID").value;
   let numeroTransferencia = document.getElementById("numeroTransferenciaID").value;
-  let opcionSeleccionada = document.querySelector(`input[name="pago"]:checked`);
-  if (opcionSeleccionada.value=document.getElementById("opcionTarjetaID").value){
+  if(document.getElementById("opcionTarjetaID").checked){
+    numeroTransferencia.setAttribute("disabled","true");
     titularTarjeta!=="" && numeroTarjeta!=="" && vencimientoTarjeta!=="" && codigoTarjeta!=="";
-    document.getElementById("numeroTransferenciaID").innerHTML=`
-    <input type="text" id="numeroTransferenciaID" class="form-control form-control-lg" 
-    disabled placeholder="Número de cuenta" />
-    `
   }
-  if(opcionSeleccionada.value=document.getElementById("opcionTransferenciaID").value){
+  if(document.getElementById("opcionTransferenciaID").checked){
+    titularTarjeta.setAttribute("disabled","true");
+    numeroTarjeta.setAttribute("disabled","true");
+    vencimientoTarjeta.setAttribute("disabled","true");
+    codigoTarjeta.setAttribute("disabled","true");
     numeroTransferencia!=="";
-    document.getElementById("titularTarjetaID").innerHTML=`
-    <input type="text" id="titularTarjetaID" class="form-control form-control-lg" 
-    disabled placeholder="Nombre del titular" />
-    `
-    document.getElementById("numeroTarjetaID").innerHTML=`
-    <input type="text" id="numeroTarjetaID" class="form-control form-control-lg" size="16"
-    disabled placeholder="---- ---- ---- ----" minlength="16" maxlength="16" />
-    `
-    document.getElementById("vencimientoTarjetaID").innerHTML=`
-    <input type="text" id="vencimientoTarjetaID" class="form-control form-control-lg"
-    disabled placeholder="MM/YY" size="4" minlength="4" maxlength="4" />
-    `
-    document.getElementById("codigoTarjetaID").innerHTML=`
-    <input type="password" id="codigoTarjetaID" class="form-control form-control-lg"
-    disabled placeholder="&#9679;&#9679;&#9679;" size="1" minlength="3" maxlength="3" />
-    `
-  }else{
-    alert("Seleccione método de pago");
   }
 }
 
+//botón comprar
 function finalizarCompra(){
   document.getElementById("botonComprarID").addEventListener("click", function(){
     let calle = document.getElementById("inputCalle").value;
     let numero = document.getElementById("inputNumero").value;
     let esquina = document.getElementById("inputEsquina").value;
-        if (calle!== "" && numero!=="" && esquina!==""&&document.getElementById("form1").value>0 && formaDePago()){
+        if (calle!== "" && numero!=="" && esquina!==""&&document.getElementById("form1").value>0 && document.getElementById("tiposDeEnvio").value !== "0"){
+          formaDePago(carritoInfo);
           document.getElementById("botonComprarID").innerHTML=`
           <button id="botonComprarID" type="button" class="btn btn-dark btn-block btn-lg" data-bs-dismiss="modal" data-mdb-ripple-color="dark">Finalizar compra</button>
           `
           alert("¡Has comprado con éxito!")
+        } else {
+          alertas()
         }
   })
 }
+
+// function finalizarCompra(){
+//   document.getElementById("botonComprarID").addEventListener("click", function(){
+//     let calle = document.getElementById("inputCalle").value;
+//     let numero = document.getElementById("inputNumero").value;
+//     let esquina = document.getElementById("inputEsquina").value;
+//         if (camposDireccionCompletados && cantidadArticulosMayorAUno && envioSeleccionado && formaDePago(carritoInfo)){
+//           document.getElementById("botonComprarID").innerHTML=`
+//           <button id="botonComprarID" type="button" class="btn btn-dark btn-block btn-lg" data-bs-dismiss="modal" data-mdb-ripple-color="dark">Finalizar compra</button>
+//           `
+//           alert("¡Has comprado con éxito!")
+//         }else{
+//           alertas()
+//         }
+//   })
+// }
 
 function mostrarCarritoInfo(){
     let htmlContentToAppend = "";
@@ -252,7 +305,7 @@ function mostrarCarritoInfo(){
 
                     </div>
                     <div class="col-xs-2 col-md-3 col-lg-2 col-xl-2 offset-lg-1" id="subtotalID">
-                      <h6 class="mb-0">${carritoInfo.articles[i].currency} ${carritoInfo.articles[i].unitCost}</h6>
+                      <h6 class="mb-0">${carritoInfo.articles[i].currency} ${carritoInfo.articles[i].count*carritoInfo.articles[i].unitCost}</h6>
                     </div>
                   </div>
 
@@ -273,6 +326,7 @@ function mostrarCarritoInfo(){
 
                   <div class="mb-4 pb-2">
                     <select id="tiposDeEnvio" class="select" required onchange="costoEnvio(subtotalCarrito)">
+                      <option value="0">--Selecciona el tipo de envío--</option>
                       <option value="1">Premium 2 a 5 días (15%)</option>
                       <option value="2">Express 5 a 8 días (7%)</option>
                       <option value="3">Standard 12 a 15 días (5%)</option>
@@ -290,21 +344,21 @@ function mostrarCarritoInfo(){
                       <div class="mb-1 pb-2">
                         <div class="col-6">
                           <label for="inputCalle"><h6 class="text-uppercase mb-3">Calle</h5></label>
-                          <input type="text" name="calle" id="inputCalle">
+                          <input type="text" name="calle" id="inputCalle" placeholder="Ingresa tu calle" size="30">
                         </div>
                       </div>
             
                       <div class="mb-1 pb-2">
                         <div class="col-6">
                           <label for="inputNumero"><h6 class="text-uppercase mb-3">Número</h5></label>
-                          <input type="text" name="numero" id="inputNumero">
+                          <input type="text" name="numero" id="inputNumero" placeholder="Ingresa un número de puerta" size="30">
                         </div>
                       </div>
             
                       <div class="mb-1 pb-2">
                         <div class="col-6">
                           <label for="inputEsquina"><h6 class="text-uppercase mb-3">Esquina</h5></label>
-                          <input type="text" name="esquina" id="inputEsquina">
+                          <input type="text" name="esquina" id="inputEsquina" placeholder="Ingresa una esquina" size="30">
                         </div>
                       </div>
             
@@ -436,7 +490,13 @@ function mostrarCarritoInfo(){
   </div>
 </section>
     `
-    }
+  console.log(carritoInfo.articles[0].currency)
+  console.log(typeof carritoInfo.articles[0].currency)
+  console.log(carritoInfo.articles[0].count)
+  console.log(typeof carritoInfo.articles[0].count)
+  console.log(carritoInfo.articles[0].unitCost)
+  console.log(typeof carritoInfo.articles[0].unitCost)
+  }
 document.getElementById("contenedor").innerHTML += htmlContentToAppend;
 }
 
