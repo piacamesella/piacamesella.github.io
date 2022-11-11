@@ -137,14 +137,20 @@ function subtotalGeneral(){
       `
 }
 // función que calcula el costo de envío (subtotal general más el porcentaje del mismo dependiendo del tipo de envío seleccionado)
+//y llama a la función del total
 // acordarme de agregar opción value=0 alerta a la hora de apretar botón comprar
 function costoEnvio(){
   if (document.getElementById("tiposDeEnvio").value == "1"){
     costoEnvioCarrito= (subtotalGeneralCarrito* 15)/100
-  }else if (document.getElementById("tiposDeEnvio").value == "2"){
+  }
+  if (document.getElementById("tiposDeEnvio").value == "2"){
     costoEnvioCarrito= (subtotalGeneralCarrito* 7)/100
-  }else {
+  }
+  if(document.getElementById("tiposDeEnvio").value == "3"){
     costoEnvioCarrito=(subtotalGeneralCarrito*5)/100
+  }
+  if(document.getElementById("tiposDeEnvio").value == "0"){
+    costoEnvioCarrito=""
   }
   document.getElementById("costoEnvioID").innerHTML=`
   <div id="costoEnvioID" class="d-flex justify-content-between mb-5">
@@ -152,6 +158,7 @@ function costoEnvio(){
     <h5>${costoEnvioCarrito}</h5>
   </div>
   `
+  totalCarritoDeCompra();
   return costoEnvioCarrito;
 }
 
@@ -219,24 +226,106 @@ function totalCarritoDeCompra(){
 //   }
 // }
 
-function formaDePago(){
-  let titularTarjeta = document.getElementById("titularTarjetaID").value;
-  let numeroTarjeta = document.getElementById("numeroTarjetaID").value;
-  let vencimientoTarjeta = document.getElementById("vencimientoTarjetaID").value;
-  let codigoTarjeta = document.getElementById("codigoTarjetaID").value;
-  let numeroTransferencia = document.getElementById("numeroTransferenciaID").value;
-  if(document.getElementById("opcionTarjetaID").checked){
-    numeroTransferencia.setAttribute("disabled","true");
-    titularTarjeta!=="" && numeroTarjeta!=="" && vencimientoTarjeta!=="" && codigoTarjeta!=="";
-  }
-  if(document.getElementById("opcionTransferenciaID").checked){
-    titularTarjeta.setAttribute("disabled","true");
-    numeroTarjeta.setAttribute("disabled","true");
-    vencimientoTarjeta.setAttribute("disabled","true");
-    codigoTarjeta.setAttribute("disabled","true");
-    numeroTransferencia!=="";
-  }
+// function formaDePago(){
+//   let titularTarjeta = document.getElementById("titularTarjetaID").value;
+//   let numeroTarjeta = document.getElementById("numeroTarjetaID").value;
+//   let vencimientoTarjeta = document.getElementById("vencimientoTarjetaID").value;
+//   let codigoTarjeta = document.getElementById("codigoTarjetaID").value;
+//   let numeroTransferencia = document.getElementById("numeroTransferenciaID").value;
+//   if(document.getElementById("opcionTarjetaID").checked){
+//     numeroTransferencia.setAttribute("disabled","true");
+//     titularTarjeta!=="" && numeroTarjeta!=="" && vencimientoTarjeta!=="" && codigoTarjeta!=="";
+//   }
+//   if(document.getElementById("opcionTransferenciaID").checked){
+//     titularTarjeta.setAttribute("disabled","true");
+//     numeroTarjeta.setAttribute("disabled","true");
+//     vencimientoTarjeta.setAttribute("disabled","true");
+//     codigoTarjeta.setAttribute("disabled","true");
+//     numeroTransferencia!=="";
+//   }
+// }
+//hoy
+// function formaDePago(){
+//   let titularTarjeta = document.getElementById("titularTarjetaID").value;
+//   let numeroTarjeta = document.getElementById("numeroTarjetaID").value;
+//   let vencimientoTarjeta = document.getElementById("vencimientoTarjetaID").value;
+//   let codigoTarjeta = document.getElementById("codigoTarjetaID").value;
+//   let numeroTransferencia = document.getElementById("numeroTransferenciaID").value;
+//   if(document.getElementById("opcionTarjetaID").addEventListener("click")){
+//     numeroTransferencia.setAttribute("disabled","");
+//     // titularTarjeta!=="" && numeroTarjeta!=="" && vencimientoTarjeta!=="" && codigoTarjeta!=="";
+//   }
+//   if(document.getElementById("opcionTransferenciaID").addEventListener("click")){
+//     titularTarjeta.setAttribute("disabled","");
+//     numeroTarjeta.setAttribute("disabled","");
+//     vencimientoTarjeta.setAttribute("disabled","");
+//     codigoTarjeta.setAttribute("disabled","");
+//     // numeroTransferencia!=="";
+//   }
+// }
+
+// function formaDePago(){
+//   // let titularTarjeta = document.getElementById("titularTarjetaID").value;
+//   // let numeroTarjeta = document.getElementById("numeroTarjetaID").value;
+//   // let vencimientoTarjeta = document.getElementById("vencimientoTarjetaID").value;
+//   // let codigoTarjeta = document.getElementById("codigoTarjetaID").value;
+//   // let numeroTransferencia = document.getElementById("numeroTransferenciaID").value;
+//   if(document.getElementById("opcionTarjetaID").addEventListener("click")){
+//     // titularTarjeta!=="" && numeroTarjeta!=="" && vencimientoTarjeta!=="" && codigoTarjeta!=="";
+//     document.getElementById("numeroTransferenciaID").innerHTML=`
+//     <input type="text" id="numeroTransferenciaID" class="form-control form-control-lg" 
+//     disabled="true" placeholder="Número de cuenta" />
+//     `
+//   }
+//   if(document.getElementById("opcionTransferenciaID").addEventListener("click")){
+//     // numeroTransferencia!=="";
+//     document.getElementById("titularTarjetaID").innerHTML=`
+//     <input type="text" id="titularTarjetaID" class="form-control form-control-lg" 
+//     disabled="true" placeholder="Nombre del titular" />
+//     `
+//     document.getElementById("numeroTarjetaID").innerHTML=`
+//     <input type="text" id="numeroTarjetaID" class="form-control form-control-lg" size="16"
+//     disabled="true" placeholder="---- ---- ---- ----" minlength="16" maxlength="16" />
+//     `
+//     document.getElementById("vencimientoTarjetaID").innerHTML=`
+//     <input type="text" id="vencimientoTarjetaID" class="form-control form-control-lg"
+//     disabled="true" placeholder="MM/YY" size="4" minlength="4" maxlength="4" />
+//     `
+//     document.getElementById("codigoTarjetaID").innerHTML=`
+//     <input type="password" id="codigoTarjetaID" class="form-control form-control-lg"
+//     disabled="true" placeholder="&#9679;&#9679;&#9679;" size="1" minlength="3" maxlength="3" />
+//     `
+//   }
+// }
+//onclick input opción tarjeta:
+function pagoConTarjeta(){
+  document.getElementById("numeroTransferenciaID").setAttribute("disabled","true");
+  document.getElementById("titularTarjetaID").removeAttribute("disabled","true");
+  document.getElementById("numeroTarjetaID").removeAttribute("disabled","true");
+  document.getElementById("vencimientoTarjetaID").removeAttribute("disabled","true");
+  document.getElementById("codigoTarjetaID").removeAttribute("disabled","true");
 }
+
+//onclick input opción transferencia:
+function pagoConTransferencia(){
+  document.getElementById("titularTarjetaID").setAttribute("disabled","true");
+  document.getElementById("numeroTarjetaID").setAttribute("disabled","true");
+  document.getElementById("vencimientoTarjetaID").setAttribute("disabled","true");
+  document.getElementById("codigoTarjetaID").setAttribute("disabled","true");
+  document.getElementById("numeroTransferenciaID").removeAttribute("disabled","true");
+}
+
+// function formaDePago(){
+//   if(document.getElementById("opcionTarjetaID").onclick){
+//     document.getElementById("numeroTransferenciaID").setAttribute("disabled","true");
+//   }
+//   if(document.getElementById("opcionTransferenciaID").onclick){
+//     document.getElementById("titularTarjetaID").setAttribute("disabled","true");
+//     document.getElementById("numeroTarjetaID").setAttribute("disabled","true");
+//     document.getElementById("vencimientoTarjetaID").setAttribute("disabled","true");
+//     document.getElementById("codigoTarjetaID").setAttribute("disabled","true");
+//   }
+// }
 
 //botón comprar
 function finalizarCompra(){
@@ -406,7 +495,7 @@ function mostrarCarritoInfo(){
                               
                               <form class="mt-4">
                                 <div class="d-flex justify-content-between align-items-center mb-4">
-                                  <h5 class="mb-0"><input id="opcionTarjetaID" type="radio" name="pago" value="Tarjeta" required>Tarjeta de crédito</h5>
+                                  <h5 class="mb-0"><input id="opcionTarjetaID" type="radio" name="pago" value="Tarjeta" required onclick="pagoConTarjeta()">Tarjeta de crédito</h5>
                                 </div>
 
                                 <p class="mb-0">Tipo de tarjeta</p>
@@ -449,7 +538,7 @@ function mostrarCarritoInfo(){
                                 <hr class="my-4">
 
                                 <div class="form-outline form-white mb-4">
-                                  <h5 class="mb-0"><input id="opcionTransferenciaID" type="radio" name="pago" value="Transferencia" required>Transferencia bancaria</h5>
+                                  <h5 class="mb-0"><input id="opcionTransferenciaID" type="radio" name="pago" value="Transferencia" required onclick="pagoConTransferencia()">Transferencia bancaria</h5>
                                   <label class="form-label" for="typeName">Número de cuenta</label>
                                   <input type="text" id="numeroTransferenciaID" class="form-control form-control-lg" 
                                     placeholder="Número de cuenta" />
@@ -460,7 +549,7 @@ function mostrarCarritoInfo(){
                               <hr class="my-4">
           
 
-                              <button id="botonComprarID" type="button" class="btn btn-dark btn-block btn-lg" data-mdb-ripple-color="dark">Finalizar compra</button>
+                              <button id="botonComprarID" type="button" class="btn btn-dark btn-block btn-lg" data-mdb-ripple-color="dark" onclick="finalizarCompra()">Finalizar compra</button>
                               <button id="botonCancelarID" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
           
                             </div>
@@ -498,6 +587,7 @@ function mostrarCarritoInfo(){
   console.log(typeof carritoInfo.articles[0].unitCost)
   }
 document.getElementById("contenedor").innerHTML += htmlContentToAppend;
+// formaDePago();
 }
 
 document.addEventListener("DOMContentLoaded", function(a){
@@ -507,7 +597,7 @@ document.addEventListener("DOMContentLoaded", function(a){
             carritoInfo=resultado.data;
             mostrarCarritoInfo(carritoInfo);
             subtotal(carritoInfo)
-            formaDePago();
+            // formaDePago(mostrarCarritoInfo(carritoInfo));
             console.log(carritoInfo);
         }
     })
