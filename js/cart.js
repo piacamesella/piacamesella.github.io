@@ -144,14 +144,23 @@ function botonFormaDePago(){
   let calle = document.getElementById("inputCalle").value;
   let numero = document.getElementById("inputNumero").value;
   let esquina = document.getElementById("inputEsquina").value;
+  let errorCalle =  document.getElementById("errorInputCalle");
+  let errorNumero = document.getElementById("errorInputNumero");
+  let errorEsquina = document.getElementById("errorInputEsquina");
 
   // if (calle!== "" && numero!=="" && esquina!==""&& document.getElementById("tiposDeEnvio").value !== "0"){
   //   document.getElementById("btnFormaDePago").removeAttribute("disabled","true");
-  // }else{
-  //   alertas();
   // }
-  if (calle == "" || numero =="" || esquina =="" || document.getElementById("tiposDeEnvio").value == "0"){
-    alertas();
+  
+  if (calle==""){
+    errorCalle.classList.remove("input-error-direccion");
+    errorCalle.classList.add("input-error-direccion-activado");
+  }
+  if (numero==""){
+    errorNumero("errorInputNumero").classList.replace("input-error-direccion-activado");
+  }
+  if (esquina==""){
+    errorEsquina("errorInputEsquina").classList.replace("input-error-direccion-activado");
   }
 }
 //
@@ -271,7 +280,7 @@ function mostrarCarritoInfo(){
                         <div class="col-12">
                           <label for="inputCalle"><h6 class="text-uppercase mb-3">Calle</h5></label>
                           <input type="text" name="calle" id="inputCalle" placeholder="Ingresa tu calle" size="30">
-                          <p class="input-error-direccion">Debes ingresar una calle</p>
+                          <p class="input-error-direccion" id="errorInputCalle">Debes ingresar una calle</p>
                         </div>
                       </div>
             
@@ -279,7 +288,7 @@ function mostrarCarritoInfo(){
                         <div class="col-12">
                           <label for="inputNumero"><h6 class="text-uppercase mb-3">Número</h5></label>
                           <input type="text" name="numero" id="inputNumero" placeholder="Ingresa un número de puerta" size="30">
-                          <p class="input-error-direccion">Debes ingresar un número de puerta</p>
+                          <p class="input-error-direccion" id="errorInputNumero">Debes ingresar un número de puerta</p>
                         </div>
                       </div>
             
@@ -287,7 +296,7 @@ function mostrarCarritoInfo(){
                         <div class="col-12">
                           <label for="inputEsquina"><h6 class="text-uppercase mb-3">Esquina</h5></label>
                           <input type="text" name="esquina" id="inputEsquina" placeholder="Ingresa una esquina" size="30">
-                          <p class="input-error-direccion">Debes ingresar una esquina</p>
+                          <p class="input-error-direccion" id="errorInputEsquina">Debes ingresar una esquina</p>
                         </div>
                       </div>
             

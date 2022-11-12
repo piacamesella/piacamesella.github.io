@@ -239,10 +239,10 @@ a.custom-card:hover {
 .input-error-direccion{
   font-size: 14px;
   margin-bottom: 0;
-  /* display: none; */
+  display: none;
   color: red;
 }
 
-.input-error-direccion-active{
+.input-error-direccion-activado{
   display: block;
 }
