@@ -236,13 +236,25 @@ a.custom-card:hover {
   }
 
 /* alertas carrito: */
+/* alertas direccion: */
 .input-error-direccion{
   font-size: 14px;
   margin-bottom: 0;
   display: none;
-  color: red;
 }
 
 .input-error-direccion-activado{
   display: block;
+  color: red;
+}
+/* alerta envio: */
+.input-error-envio-activado{
+  font-size: 14px;
+  margin-bottom: 0;
+  display: block;
+  color: red;
+}
+
+.input-error-envio-desactivado{
+  display: none;
 }
