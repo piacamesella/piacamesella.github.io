@@ -1,3 +1,5 @@
+// const formDireccionEnvio=document.getElementById("formDireccionEnvio");
+const formFormaDePago=document.getElementById("formFormaDePago");
 let carritoInfo = [];
 let subtotalCarrito = 0;
 let costoEnvioCarrito = 0;
@@ -7,35 +9,17 @@ let valorInputCalle = "";
 let valorInputNumero = "";
 let valorInputEsquina = "";
 let valorTipoEnvio = 0;
+let valorCantidad = 0;
 
 function setUserID(id){
     localStorage.setItem("userID",id);
 }
 
-// function getUserID(id){
-//     localStorage.getItem("userID",id);
-// }
-
-// function subtotal(cantidad,precio){
-//   document.getElementById("form1").addEventListener("click", function(){
-//     cantidad=document.getElementById("form1").value;
-//     subtotalCarrito=cantidad*precio
-//     document.getElementById("subtotalID").innerHTML=`
-//     <div>
-//       <h6 class="mb-0">${subtotalCarrito}</h6>
-//     </div>
-//     `
-//   })
-// }
-
-/* <div class="d-flex justify-content-between mb-4" id="subtotalesID">
-  <h5 class="text-uppercase">Subtotal</h5>
-</div> */
-
 //función que calcula el subtotal y es llamada en el input utilizando el evento oninput:
 //y llama al subtotal general(suma de subtotales)
 function subtotal(cantidad,precio){
   cantidad=document.getElementById("form1").value;
+  valorCantidad=document.getElementById("form1").value;
   subtotalCarrito=cantidad*precio
   document.getElementById("subtotalID").innerHTML=`
   <div>
@@ -75,6 +59,7 @@ function costoEnvio(){
   if(document.getElementById("tiposDeEnvio").value == "0"){
     costoEnvioCarrito=""
   }
+
   document.getElementById("costoEnvioID").innerHTML=`
   <div id="costoEnvioID" class="d-flex justify-content-between mb-5">
     <h5 class="text-uppercase">Costo Envío</h5>
@@ -96,220 +81,130 @@ function totalCarritoDeCompra(){
   </div>
   `
 }
-
-//   // let titularTarjeta = document.getElementById("titularTarjetaID").value;
-//   // let numeroTarjeta = document.getElementById("numeroTarjetaID").value;
-//   // let vencimientoTarjeta = document.getElementById("vencimientoTarjetaID").value;
-//   // let codigoTarjeta = document.getElementById("codigoTarjetaID").value;
-//   // let numeroTransferencia = document.getElementById("numeroTransferenciaID").value;
-//     // titularTarjeta!=="" && numeroTarjeta!=="" && vencimientoTarjeta!=="" && codigoTarjeta!=="";
-//     // numeroTransferencia!=="";
-
-//forma de pago onclick input opción tarjeta:
+//forma de pago onclick input opción tarjeta, deshabilita opción transferencia y valida campos de tarjeta:
 function pagoConTarjeta(){
+  // let titularTarjeta = document.getElementById("titularTarjetaID").value;
+  // let numeroTarjeta = document.getElementById("numeroTarjetaID").value;
+  // let vencimientoTarjeta = document.getElementById("vencimientoTarjetaID").value;
+  // let codigoTarjeta = document.getElementById("codigoTarjetaID").value;
+
   document.getElementById("numeroTransferenciaID").setAttribute("disabled","true");
   document.getElementById("titularTarjetaID").removeAttribute("disabled","true");
   document.getElementById("numeroTarjetaID").removeAttribute("disabled","true");
   document.getElementById("vencimientoTarjetaID").removeAttribute("disabled","true");
   document.getElementById("codigoTarjetaID").removeAttribute("disabled","true");
+  
+  // document.getElementById("botonComprarID").addEventListener("click",function(){
+  //   if(titularTarjeta==""||numeroTarjeta==""||vencimientoTarjeta==""||codigoTarjeta==""){
+  //     alert("Debes introducir los datos de la tarjeta");
+  //   }
+  // })
 }
-
-//forma de pago onclick input opción transferencia:
+//forma de pago onclick input opción transferencia, deshabilita opción tarjeta y valida campos de transferencia:
 function pagoConTransferencia(){
+  // let numeroTransferencia = document.getElementById("numeroTransferenciaID").value;
+
   document.getElementById("titularTarjetaID").setAttribute("disabled","true");
   document.getElementById("numeroTarjetaID").setAttribute("disabled","true");
   document.getElementById("vencimientoTarjetaID").setAttribute("disabled","true");
   document.getElementById("codigoTarjetaID").setAttribute("disabled","true");
   document.getElementById("numeroTransferenciaID").removeAttribute("disabled","true");
+
+  // document.getElementById("botonComprarID").addEventListener("click",function(){
+  //   if(numeroTransferencia==""){
+  //     alert("Debes introducir el número de transferencia");
+  //   }
+  // })
 }
-//de acá para abajo hacer
-// function botonFormaDePago(){
-//   let habilitarBtn = document.getElementById("btnFormaDePago").removeAttribute("disabled","true");
-//   let calle = document.getElementById("inputCalle").value;
-//   let numero = document.getElementById("inputNumero").value;
-//   let esquina = document.getElementById("inputEsquina").value;
-//   let errorCalle =  document.getElementById("errorInputCalle");
-//   let errorNumero = document.getElementById("errorInputNumero");
-//   let errorEsquina = document.getElementById("errorInputEsquina");
+// onkeyup
+// function inputTransferencia(){
+//   let numeroTransferencia = document.getElementById("numeroTransferenciaID").value;
 
-//   if (calle!== "" && numero!=="" && esquina!==""&& document.getElementById("tiposDeEnvio").value !== "0"){
-//     habilitarBtn;
-//   }
-  
-//   if (calle==""){
-//     errorCalle.classList.remove("input-error-direccion");
-//     errorCalle.classList.add("input-error-direccion-activado");
-//   }
-//   if (numero==""){
-//     errorNumero.classList.replace("input-error-direccion-activado");
-//   }
-//   if (esquina==""){
-//     errorEsquina.classList.replace("input-error-direccion-activado");
-//   }
-// }
-// document.getElementById("errorInputCalle").classList.add("-activado");
-
-// function botonFormaDePago(){
-//   let habilitarBtn = document.getElementById("btnFormaDePago").removeAttribute("disabled","true");
-//   let calle = document.getElementById("inputCalle").value;
-//   let numero = document.getElementById("inputNumero").value;
-//   let esquina = document.getElementById("inputEsquina").value;
-//   let errorCalle =  document.getElementById("errorInputCalle"); 
-//   let errorNumero = document.getElementById("errorInputNumero");
-//   let errorEsquina = document.getElementById("errorInputEsquina");
-//   if (calle.value=""){
-//     errorCalle.classList.replace("input-error-direccion-activado");
-//   }
-//   if (numero.value=""){
-//     errorNumero.classList.replace("input-error-direccion-activado");
-//   }
-//   if (esquina.value=""){
-//     errorEsquina.classList.replace("input-error-direccion-activado");
-//   }
-//   if (calle.value!== "" && numero.value!=="" && esquina.value!==""&& document.getElementById("tiposDeEnvio").value !== "0"){
-//     habilitarBtn;
-//   }
+//   document.getElementById("botonComprarID").addEventListener("click",function(){
+//     if(numeroTransferencia==""){
+//       alert("Debes introducir el número de transferencia");
+//     }
+//   })
 // }
 
-// function validarBtn1(){
-//   let deshabilitarBtn = document.getElementById("btnFormaDePago").setAttribute("disabled","true");
-//   let habilitarBtn = document.getElementById("btnFormaDePago").removeAttribute("disabled","true");
-//   let calle = document.getElementById("inputCalle").value;
-//   let numero = document.getElementById("inputNumero").value;
-//   let esquina = document.getElementById("inputEsquina").value;
-//   if (calle=""){
-//     deshabilitarBtn
-//   }
-//   if (numero=""){
-//     deshabilitarBtn
-//   }
-//   if (esquina=""){
-//     deshabilitarBtn
-//   }
-//   if (calle!== "" && numero!=="" && esquina!==""){
-//     habilitarBtn
-//   }
-// }
+function  validacionEnvio(envio){
+  let errorEnvio = document.getElementById("errorEnvio");
+  envio =valorTipoEnvio;
+    if (envio.value!=="0"){
+      errorEnvio.classList.remove("input-error-envio-activado");
+      errorEnvio.classList.add("input-error-envio-desactivado");
+    }else{
+      document.getElementById("btnFormaDePago").setAttribute("disabled","true");
+      errorEnvio.classList.remove("input-error-envio-desactivado");
+      errorEnvio.classList.add("input-error-envio-activado");
+    }
+}
 
-// function botonFormaDePago(){
-//   document.getElementById("btnFormaDePago").addEventListener("keyup",validarBtn1());
-// }
-
-// function botonFormaDePago(){
-//   if (document.getElementById("inputCalle").value!== "" && document.getElementById("inputNumero").value!=="" && document.getElementById("inputEsquina").value!==""){
-//     document.getElementById("btnFormaDePago").removeAttribute("disabled","true");
-//   }
-// }
-
-function validacionInputCalle(calle){
+//funcion input calle que avisa si el campo está vacío adjudicándole clases, y de lo contrario se le quitarán
+function validacionInputCalle(calleValue){
   let errorCalle =  document.getElementById("errorInputCalle");
-  calle=document.getElementById("inputCalle").value;
-  valorInputCalle=calle;
-  if (calle!==""){
-    // document.getElementById("btnFormaDePago").removeAttribute("disabled","true");
-    errorCalle.classList.remove("input-error-direccion-activado");
-    errorCalle.classList.add("input-error-direccion");
-  }else{
+  let calle=document.getElementById("inputCalle");
+  calleValue=document.getElementById("inputCalle").value;
+  valorInputCalle=calleValue;
+  if (calleValue==""){
     document.getElementById("btnFormaDePago").setAttribute("disabled","true");
     errorCalle.classList.remove("input-error-direccion");
     errorCalle.classList.add("input-error-direccion-activado");
-  }
-}
-
-function validacionInputNumero(numero){
-  let errorNumero = document.getElementById("errorInputNumero");
-  numero=document.getElementById("inputNumero").value;
-  valorInputNumero=numero;
-  if (numero!==""){
+    calle.classList.remove("error-borde-desactivado");
+    calle.classList.add("error-borde");
     // document.getElementById("btnFormaDePago").removeAttribute("disabled","true");
-    errorNumero.classList.remove("input-error-direccion-activado");
-    errorNumero.classList.add("input-error-direccion");
   }else{
+    document.getElementById("btnFormaDePago").removeAttribute("disabled","true");
+    errorCalle.classList.remove("input-error-direccion-activado");
+    errorCalle.classList.add("input-error-direccion");
+    calle.classList.remove("error-borde");
+    calle.classList.add("error-borde-desactivado");
+  }
+  return valorInputCalle;
+}
+//funcion input numero que avisa si el campo está vacío adjudicándole clases, y de lo contrario se le quitarán
+function validacionInputNumero(numeroValue){
+  let errorNumero =  document.getElementById("errorInputNumero");
+  let numero=document.getElementById("inputNumero");
+  numeroValue=document.getElementById("inputNumero").value;
+  valorInputNumero=numeroValue;
+  if (numeroValue==""){
     document.getElementById("btnFormaDePago").setAttribute("disabled","true");
     errorNumero.classList.remove("input-error-direccion");
     errorNumero.classList.add("input-error-direccion-activado");
-  }
-}
-
-function validacionInputEsquina(esquina){
-  let errorEsquina = document.getElementById("errorInputEsquina");
-  esquina=document.getElementById("inputEsquina").value;
-  valorInputEsquina=esquina;
-  if (esquina!==""){
+    numero.classList.remove("error-borde-desactivado");
+    numero.classList.add("error-borde");
     // document.getElementById("btnFormaDePago").removeAttribute("disabled","true");
-    errorEsquina.classList.remove("input-error-direccion-activado");
-    errorEsquina.classList.add("input-error-direccion");
   }else{
+    document.getElementById("btnFormaDePago").removeAttribute("disabled","true");
+    errorNumero.classList.remove("input-error-direccion-activado");
+    errorNumero.classList.add("input-error-direccion");
+    numero.classList.remove("error-borde");
+    numero.classList.add("error-borde-desactivado");
+  }
+  return valorInputNumero;
+}
+//funcion input esquina que avisa si el campo está vacío adjudicándole clases, y de lo contrario se le quitarán
+function validacionInputEsquina(esquinaValue){
+  let errorEsquina = document.getElementById("errorInputEsquina");
+  let esquina=document.getElementById("inputEsquina");
+  esquinaValue=document.getElementById("inputEsquina").value;
+  valorInputEsquina=esquinaValue;
+  if (esquinaValue==""){
     document.getElementById("btnFormaDePago").setAttribute("disabled","true");
     errorEsquina.classList.remove("input-error-direccion");
     errorEsquina.classList.add("input-error-direccion-activado");
-  }
-}
-
-function validacionEnvio(envio){
-  let errorEnvio = document.getElementById("errorEnvio");
-  envio = document.getElementById("tiposDeEnvio").value;
-  valorTipoEnvio = envio;
-  // errorEnvio.classList.remove("input-error-envio-activado");
-  // errorEnvio.classList.add("input-error-envio-activado");
-  if (envio!=="0"){
-//     // document.getElementById("btnFormaDePago").removeAttribute("disabled","true");
-    errorEnvio.classList.remove("input-error-envio-activado");
-    errorEnvio.classList.add("input-error-envio-desactivado");
-//   }else{
-//     document.getElementById("btnFormaDePago").setAttribute("disabled","true");
-//     errorEnvio.classList.remove("input-error-envio-activado");
-//     errorEnvio.classList.add("input-error-envio-activado");
-  }
-}
-
-function botonFormaDePago(){
-  if (valorInputCalle!=="" && valorInputNumero!=="" && valorInputEsquina!=="" && valorTipoEnvio!=="0"){
-    document.getElementById("btnFormaDePago").removeAttribute("disabled","true");
+    esquina.classList.remove("error-borde-desactivado");
+    esquina.classList.add("error-borde");
   }else{
-    document.getElementById("btnFormaDePago").setAttribute("disabled","true");
+    document.getElementById("btnFormaDePago").removeAttribute("disabled","true");
+    errorEsquina.classList.remove("input-error-direccion-activado");
+    errorEsquina.classList.add("input-error-direccion");
+    esquina.classList.remove("error-borde");
+    esquina.classList.add("error-borde-desactivado");
   }
+  return valorInputEsquina;
 }
-
-// function botonFormaDePago(){
-//   if (valorInputCalle!==""||valorInputNumero!==""||valorInputEsquina!==""||valorTipoEnvio!=="0"){
-//     document.getElementById("btnFormaDePago").setAttribute("disabled","true");
-//   }
-// }
-
-//botón comprar
-function finalizarCompra(){
-  document.getElementById("botonComprarID").addEventListener("click", function(){
-    let calle = document.getElementById("inputCalle").value;
-    let numero = document.getElementById("inputNumero").value;
-    let esquina = document.getElementById("inputEsquina").value;
-        if (calle!== "" && numero!=="" && esquina!==""&&document.getElementById("form1").value>0 && document.getElementById("tiposDeEnvio").value !== "0"){
-          formaDePago(carritoInfo);
-          document.getElementById("botonComprarID").innerHTML=`
-          <button id="botonComprarID" type="button" class="btn btn-dark btn-block btn-lg" data-bs-dismiss="modal" data-mdb-ripple-color="dark">Finalizar compra</button>
-          `
-          alert("¡Has comprado con éxito!")
-        } else {
-          alertas()
-        }
-  })
-}
-
-// function finalizarCompra(){
-//   document.getElementById("botonComprarID").addEventListener("click", function(){
-//     let calle = document.getElementById("inputCalle").value;
-//     let numero = document.getElementById("inputNumero").value;
-//     let esquina = document.getElementById("inputEsquina").value;
-//         if (camposDireccionCompletados && cantidadArticulosMayorAUno && envioSeleccionado && formaDePago(carritoInfo)){
-//           document.getElementById("botonComprarID").innerHTML=`
-//           <button id="botonComprarID" type="button" class="btn btn-dark btn-block btn-lg" data-bs-dismiss="modal" data-mdb-ripple-color="dark">Finalizar compra</button>
-//           `
-//           alert("¡Has comprado con éxito!")
-//         }else{
-//           alertas()
-//         }
-//   })
-// }
 
 function mostrarCarritoInfo(){
     let htmlContentToAppend = "";
@@ -339,7 +234,7 @@ function mostrarCarritoInfo(){
                     </div>
                     <div class="col-xs-3 col-md-3 col-lg-3 col-xl-2 d-flex">
 
-                      <input id="form1" min="0" name="quantity" value="${carritoInfo.articles[i].count}" type="number" oninput="subtotal(${carritoInfo.articles[i].count},${carritoInfo.articles[i].unitCost})"
+                      <input id="form1" min="1" name="quantity" value="${carritoInfo.articles[i].count}" type="number" oninput="subtotal(${carritoInfo.articles[i].count},${carritoInfo.articles[i].unitCost})"
                         class="form-control form-control-sm"/>
 
                     </div>
@@ -379,19 +274,19 @@ function mostrarCarritoInfo(){
                   <h5 class="text-uppercase mb-3">Dirección de envío</h5>
                   </div>
                   <div class="container">
-                    <form class="row g-3">
+                    <form id="formDireccionEnvio" class="row g-3">
 
                       <div class="mb-1 pb-2">
                         <div class="col-12">
-                          <label for="inputCalle"><h6 class="text-uppercase mb-3">Calle</h5></label>
-                          <input type="text" name="calle" id="inputCalle" placeholder="Ingresa tu calle" size="30" onkeyup="validacionInputCalle()">
+                          <label for="inputCalle"><h6 class="text-uppercase mb-3 error-borde-desactivado">Calle</h5></label>
+                          <input type="text" name="calle" id="inputCalle" placeholder="Ingresa tu calle" size="30" onkeyup="validacionInputCalle(${valorInputCalle})">
                           <p class="input-error-direccion" id="errorInputCalle">Debes ingresar una calle</p>
                         </div>
                       </div>
             
                       <div class="mb-1 pb-2">
                         <div class="col-12">
-                          <label for="inputNumero"><h6 class="text-uppercase mb-3">Número</h5></label>
+                          <label for="inputNumero"><h6 class="text-uppercase mb-3 error-borde-desactivado">Número</h5></label>
                           <input type="text" name="numero" id="inputNumero" placeholder="Ingresa un número de puerta" size="30" onkeyup="validacionInputNumero()">
                           <p class="input-error-direccion" id="errorInputNumero">Debes ingresar un número de puerta</p>
                         </div>
@@ -399,7 +294,7 @@ function mostrarCarritoInfo(){
             
                       <div class="mb-1 pb-2">
                         <div class="col-12">
-                          <label for="inputEsquina"><h6 class="text-uppercase mb-3">Esquina</h5></label>
+                          <label for="inputEsquina"><h6 class="text-uppercase mb-3 error-borde-desactivado">Esquina</h5></label>
                           <input type="text" name="esquina" id="inputEsquina" placeholder="Ingresa una esquina" size="30" onkeyup="validacionInputEsquina()">
                           <p class="input-error-direccion" id="errorInputEsquina">Debes ingresar una esquina</p>
                         </div>
@@ -432,7 +327,7 @@ function mostrarCarritoInfo(){
 
                   <div class="d-flex justify-content-between mb-5" id="totalID">
                     <h5 class="text-uppercase">Forma de pago</h5>
-                    <button type="button" id="btnFormaDePago" class="btn btn-dark btn-primary" data-bs-toggle="modal" data-mdb-ripple-color="dark" data-bs-target="#staticBackdrop" disabled="true" onclick="botonFormaDePago()">
+                    <button type="button" id="btnFormaDePago" class="btn btn-dark btn-primary" data-bs-toggle="modal" data-mdb-ripple-color="dark" data-bs-target="#staticBackdrop" onclick="botonFormaDePago()">
                      Seleccionar
                     </button>
 
@@ -447,7 +342,7 @@ function mostrarCarritoInfo(){
                             <h3 class="fw-bold mb-5 mt-2 pt-1">Forma de pago</h3>
                             <hr class="my-4">
                               
-                              <form class="mt-4">
+                              <form id="formFormaDePago" class="mt-4">
                                 <div class="d-flex justify-content-between align-items-center mb-4">
                                   <h5 class="mb-0"><input id="opcionTarjetaID" type="radio" name="pago" value="Tarjeta" required onclick="pagoConTarjeta()">Tarjeta de crédito</h5>
                                 </div>
@@ -495,7 +390,7 @@ function mostrarCarritoInfo(){
                                   <h5 class="mb-0"><input id="opcionTransferenciaID" type="radio" name="pago" value="Transferencia" required onclick="pagoConTransferencia()">Transferencia bancaria</h5>
                                   <label class="form-label" for="typeName">Número de cuenta</label>
                                   <input type="text" id="numeroTransferenciaID" class="form-control form-control-lg" 
-                                    placeholder="Número de cuenta" />
+                                    placeholder="Número de cuenta"  onkeyup="inputTransferencia()"/>
                                 </div>
           
                               </form>

@@ -258,3 +258,11 @@ a.custom-card:hover {
 .input-error-envio-desactivado{
   display: none;
 }
+
+/* borde error inputs: */
+.error-borde{
+  border-color:red;
+}
+.error-borde-desactivado{
+  border-color:black;
+}
