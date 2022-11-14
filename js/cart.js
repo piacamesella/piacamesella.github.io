@@ -128,18 +128,18 @@ function pagoConTransferencia(){
 //   })
 // }
 
-function  validacionEnvio(envio){
-  let errorEnvio = document.getElementById("errorEnvio");
-  envio =valorTipoEnvio;
-    if (envio.value!=="0"){
-      errorEnvio.classList.remove("input-error-envio-activado");
-      errorEnvio.classList.add("input-error-envio-desactivado");
-    }else{
-      document.getElementById("btnFormaDePago").setAttribute("disabled","true");
-      errorEnvio.classList.remove("input-error-envio-desactivado");
-      errorEnvio.classList.add("input-error-envio-activado");
-    }
-}
+// function  validacionEnvio(envio){
+//   let errorEnvio = document.getElementById("errorEnvio");
+//   envio =valorTipoEnvio;
+//     if (envio.value!=="0"){
+//       errorEnvio.classList.remove("input-error-envio-activado");
+//       errorEnvio.classList.add("input-error-envio-desactivado");
+//     }else{
+//       document.getElementById("btnFormaDePago").setAttribute("disabled","true");
+//       errorEnvio.classList.remove("input-error-envio-desactivado");
+//       errorEnvio.classList.add("input-error-envio-activado");
+//     }
+// }
 
 //funcion input calle que avisa si el campo está vacío adjudicándole clases, y de lo contrario se le quitarán
 //onkeyup
