@@ -32,6 +32,7 @@ function subtotal(cantidad,precio){
 }
 
 //función que suma los subtotales y llama a la función del costo de envío:
+//probar bucle incrementar
 function subtotalGeneral(){
       subtotalGeneralCarrito= 0 + subtotalCarrito;
       document.getElementById("subtotalesID").innerHTML=`
@@ -44,7 +45,7 @@ function subtotalGeneral(){
 }
 // función que calcula el costo de envío (subtotal general más el porcentaje del mismo dependiendo del tipo de envío seleccionado)
 //y llama a la función del total
-// acordarme de agregar opción value=0 alerta a la hora de apretar botón comprar
+//la llamo en onchange()
 function costoEnvio(){
   valorTipoEnvio = document.getElementById("tiposDeEnvio").value;
   if (document.getElementById("tiposDeEnvio").value == "1"){
@@ -141,6 +142,7 @@ function  validacionEnvio(envio){
 }
 
 //funcion input calle que avisa si el campo está vacío adjudicándole clases, y de lo contrario se le quitarán
+//onkeyup
 function validacionInputCalle(calleValue){
   let errorCalle =  document.getElementById("errorInputCalle");
   let calle=document.getElementById("inputCalle");
@@ -163,6 +165,7 @@ function validacionInputCalle(calleValue){
   return valorInputCalle;
 }
 //funcion input numero que avisa si el campo está vacío adjudicándole clases, y de lo contrario se le quitarán
+//onkeyup
 function validacionInputNumero(numeroValue){
   let errorNumero =  document.getElementById("errorInputNumero");
   let numero=document.getElementById("inputNumero");
@@ -185,6 +188,7 @@ function validacionInputNumero(numeroValue){
   return valorInputNumero;
 }
 //funcion input esquina que avisa si el campo está vacío adjudicándole clases, y de lo contrario se le quitarán
+//onkeyup
 function validacionInputEsquina(esquinaValue){
   let errorEsquina = document.getElementById("errorInputEsquina");
   let esquina=document.getElementById("inputEsquina");
