@@ -462,7 +462,7 @@ document.addEventListener("DOMContentLoaded", function(){
         window.location = "cart.html"
     });
     document.getElementById("miPerfil").addEventListener("click", function() {
-      if (email!==""){
+      if (localStorage.getItem("usuario")!==""){
         window.location = "my-profile.html" 
     }
     });
