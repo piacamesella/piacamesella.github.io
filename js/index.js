@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function(){
         window.location = "cart.html"
     });
     document.getElementById("miPerfil").addEventListener("click", function() {
-        if (email!==""){
+        if (email.valueOf!==""){
             window.location = "my-profile.html" 
         }
     });
