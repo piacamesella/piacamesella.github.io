@@ -352,6 +352,14 @@ function mostrarCarritoInfo(){
                                 </div>
 
                                 <p class="mb-0">Tipo de tarjeta</p>
+                                <a href="#!" type="submit" class="text-white"><i
+                                class="fab fa-cc-mastercard fa-2x me-2"></i></a>
+                                <a href="#!" type="submit" class="text-white"><i
+                                class="fab fa-cc-visa fa-2x me-2"></i></a>
+                                <a href="#!" type="submit" class="text-white"><i
+                                class="fab fa-cc-amex fa-2x me-2"></i></a>
+                                <a href="#!" type="submit" class="text-white"><i class="fab fa-cc-paypal fa-2x"></i></a>
+        
                                 <img src="https://1000marcas.net/wp-content/uploads/2019/12/Visa-Logo-2005.jpg" class="img-fluid rounded-3" style="width:60px;">
                                 <img src="https://logos-marcas.com/wp-content/uploads/2020/04/PayPal-Logotipo-2007%E2%80%932014.jpg" class="img-fluid rounded-3" style="width:60px;">
                                 <img src="https://logos-marcas.com/wp-content/uploads/2020/09/MasterCard-Logotipo-1979-1990-650x366.jpg" class="img-fluid rounded-3" style="width:60px;">
