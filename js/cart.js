@@ -360,11 +360,6 @@ function mostrarCarritoInfo(){
                                 class="fab fa-cc-amex fa-2x me-2"></i></a>
                                 <a href="#!" type="submit" class="text-white"><i class="fab fa-cc-paypal fa-2x"></i></a>
         
-                                <img src="https://1000marcas.net/wp-content/uploads/2019/12/Visa-Logo-2005.jpg" class="img-fluid rounded-3" style="width:60px;">
-                                <img src="https://logos-marcas.com/wp-content/uploads/2020/04/PayPal-Logotipo-2007%E2%80%932014.jpg" class="img-fluid rounded-3" style="width:60px;">
-                                <img src="https://logos-marcas.com/wp-content/uploads/2020/09/MasterCard-Logotipo-1979-1990-650x366.jpg" class="img-fluid rounded-3" style="width:60px;">
-                                <img src="https://www.expertiza.uy/media/posts/482/logo-bbva.webp" class="img-fluid rounded-3" style="width:60px;">
-                                <img src="https://www.todoenuruguay.com/wp-content/uploads/2021/05/scotiabank-logo-min.png" class="img-fluid rounded-3" style="width:60px;">
 
                                 <div class="form-outline form-white mb-4">
                                   <label class="form-label" for="typeName">Nombre del titular</label>
