@@ -73,95 +73,65 @@
                     <div class="row">
                       <div class="col-md-6 mb-4">
       
-                        <div class="d-flex justify-content-between mb-2">
-                           <h5 class="text-uppercase mb-3">Dirección de envío</h5>
-                        </div>
       
                         <div class="form-outline">
-                          <input type="text" id="firstName" class="form-control form-control-lg" />
-                          <label class="form-label" for="firstName">Primer nombre</label>
+                          <label class="form-label" for="primerNombre">Primer nombre*</label>
+                          <input type="text" id="primerNombre" class="form-control form-control-lg" />
                         </div>
       
                       </div>
                       <div class="col-md-6 mb-4">
       
                         <div class="form-outline">
-                          <input type="text" id="lastName" class="form-control form-control-lg" />
-                          <label class="form-label" for="lastName">Segundo nombre</label>
+                          <label class="form-label" for="segundoNombre">Segundo nombre</label>
+                          <input type="text" id="segundoNombre" class="form-control form-control-lg" />
                         </div>
       
                       </div>
                     </div>
       
                     <div class="row">
+                      <div class="col-md-6 mb-4">
+      
+                        <div class="form-outline">
+                          <label for="primerApellido" class="form-label">Primer apellido*</label>
+                          <input type="text" class="form-control form-control-lg" id="primerApellido" />
+                        </div>
+      
+                      </div>
+
                       <div class="col-md-6 mb-4 d-flex align-items-center">
       
                         <div class="form-outline datepicker w-100">
-                          <input type="text" class="form-control form-control-lg" id="birthdayDate" />
-                          <label for="birthdayDate" class="form-label">Primer apellido</label>
+                          <label for="segundoApellido" class="form-label">Segundo apellido</label>
+                          <input type="text" class="form-control form-control-lg" id="segundoApellido" />
                         </div>
-      
-                      </div>
-                      <div class="col-md-6 mb-4">
-      
-                        <h6 class="mb-2 pb-1">Gender: </h6>
-      
-                        <div class="form-check form-check-inline">
-                          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="femaleGender"
-                            value="option1" checked />
-                          <label class="form-check-label" for="femaleGender">Female</label>
-                        </div>
-      
-                        <div class="form-check form-check-inline">
-                          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="maleGender"
-                            value="option2" />
-                          <label class="form-check-label" for="maleGender">Male</label>
-                        </div>
-      
-                        <div class="form-check form-check-inline">
-                          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="otherGender"
-                            value="option3" />
-                          <label class="form-check-label" for="otherGender">Other</label>
-                        </div>
-      
-                      </div>
+
+                       </div>
                     </div>
       
                     <div class="row">
                       <div class="col-md-6 mb-4 pb-2">
       
                         <div class="form-outline">
-                          <input type="email" id="emailAddress" class="form-control form-control-lg" />
-                          <label class="form-label" for="emailAddress">Email</label>
+                          <label class="form-label" for="email">Email*</label>
+                          <input type="email" id="emailID" class="form-control form-control-lg" />
                         </div>
       
                       </div>
                       <div class="col-md-6 mb-4 pb-2">
       
                         <div class="form-outline">
-                          <input type="tel" id="phoneNumber" class="form-control form-control-lg" />
-                          <label class="form-label" for="phoneNumber">Phone Number</label>
+                          <label class="form-label" for="numeroTel">Teléfono de contacto</label>
+                          <input type="tel" id="numeroTel" class="form-control form-control-lg" />
                         </div>
       
                       </div>
                     </div>
       
-                    <div class="row">
-                      <div class="col-12">
-      
-                        <select class="select form-control-lg">
-                          <option value="1" disabled>Choose option</option>
-                          <option value="2">Subject 1</option>
-                          <option value="3">Subject 2</option>
-                          <option value="4">Subject 3</option>
-                        </select>
-                        <label class="form-label select-label">Choose option</label>
-      
-                      </div>
-                    </div>
       
                     <div class="mt-4 pt-2">
-                      <input class="btn btn-primary btn-lg" type="submit" value="Submit" />
+                      <input class="btn btn-primary btn-lg" type="submit" value="Guardar cambios" />
                     </div>
       
                   </form>
