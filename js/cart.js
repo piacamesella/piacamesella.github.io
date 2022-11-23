@@ -353,7 +353,6 @@ function mostrarCarritoInfo(){
 
                                 <p class="mb-0">Tipo de tarjeta</p>
                                 <img src="https://1000marcas.net/wp-content/uploads/2019/12/Visa-Logo-2005.jpg" class="img-fluid rounded-3" style="width:60px;">
-                                <img src="http://www.descuento.uy/wp-content/uploads/2018/12/logo-Santander.jpg" class="img-fluid rounded-3" style="width:60px;">
                                 <img src="https://logos-marcas.com/wp-content/uploads/2020/04/PayPal-Logotipo-2007%E2%80%932014.jpg" class="img-fluid rounded-3" style="width:60px;">
                                 <img src="https://logos-marcas.com/wp-content/uploads/2020/09/MasterCard-Logotipo-1979-1990-650x366.jpg" class="img-fluid rounded-3" style="width:60px;">
                                 <img src="https://www.expertiza.uy/media/posts/482/logo-bbva.webp" class="img-fluid rounded-3" style="width:60px;">
