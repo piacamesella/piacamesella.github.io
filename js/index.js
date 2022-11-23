@@ -27,7 +27,9 @@ document.addEventListener("DOMContentLoaded", function(){
         window.location = "cart.html"
     });
     document.getElementById("miPerfil").addEventListener("click", function() {
-        window.location = "my-profile.html"
+        if (localStorage.gettItem("usuario",email).value!==""){
+            window.location = "my-profile.html" 
+        }
     });
     document.getElementById("cerrarSesion").addEventListener("click", function() {
         localStorage.removeItem("usuario");
