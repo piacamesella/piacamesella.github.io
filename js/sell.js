@@ -148,5 +148,6 @@ document.addEventListener("DOMContentLoaded", function(e){
     });
 });
 
-let email=localStorage.getItem("usuario");
-document.getElementById("emailIngresado").innerHTML= email;
+// let email=localStorage.getItem("usuario");
+// document.getElementById("emailIngresado").innerHTML= email;
+menuDesplegable;
