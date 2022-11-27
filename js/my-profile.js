@@ -59,10 +59,11 @@ document.addEventListener("DOMContentLoaded", function(){
         inputEmail.value=email && inputNombre.value=="" && inputSegundoNombre.value=="" && inputApellido.value=="" && inputSegundoApellido.value=="" && inputTel.value=="";
     }else{
         inputNombre.innerHTML+=datos.nombre;
+        inputApellido.value=datos.apellido;
     }
 })
 
-document.getElementById("emailID").value=email;
+// document.getElementById("emailID").value=email;
 
 document.addEventListener("DOMContentLoaded", function(){
     let email=localStorage.getItem("usuario");
