@@ -58,7 +58,7 @@ document.getElementById("guardarCambiosID").addEventListener("click", function()
 
 document.addEventListener("DOMContentLoaded", function(){
     if(localStorage.getItem("datosPerfil")==null){
-        inputEmail.innerHTML=email && inputNombre.value=="" && inputSegundoNombre.value=="" && inputApellido.value=="" && inputSegundoApellido.value=="" && inputTel.value=="";
+        inputEmail.value.innerHTML=email && inputNombre.value=="" && inputSegundoNombre.value=="" && inputApellido.value=="" && inputSegundoApellido.value=="" && inputTel.value=="";
     }else{
         localStorage.getItem("datosPerfil");
         inputNombre.value=datos.nombre;
