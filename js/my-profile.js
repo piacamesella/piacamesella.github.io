@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function(){
     }
 })
 
-document.getElementById("emailID").value=email;
+document.getElementById("emailID").value=localStorage.getItem("usuario");
 
 document.addEventListener("DOMContentLoaded", function(){
     let email=localStorage.getItem("usuario");
