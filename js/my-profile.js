@@ -10,6 +10,7 @@ let datoSegundoNombre="";
 let datoApellido="";
 let datoSegundoApellido="";
 let datoTel="";
+let datosLocal=[];
 
 // function nombreIngresado(){
 //     datoNombre=inputNombre.value;
@@ -49,13 +50,14 @@ document.getElementById("guardarCambiosID").addEventListener("click", function()
             emailLogin: email,
             tel:inputTel.value,
         };
+        datosLocal.push(datos);
         localStorage.setItem("datosPerfil",JSON.stringify(datos));
         console.log(datos.nombre);
     }
 })
 
 document.addEventListener("DOMContentLoaded", function(){
-    if(inputNombre.value!=="" && inputApellido.value!=="" && inputTel.value!==""){
+    if(localStorage.getItem("datosPerfil")==null){
         inputEmail.value=email && inputNombre.value=="" && inputSegundoNombre.value=="" && inputApellido.value=="" && inputSegundoApellido.value=="" && inputTel.value=="";
     }else{
         localStorage.getItem("datosPerfil");
