@@ -49,7 +49,7 @@ document.getElementById("guardarCambiosID").addEventListener("click", function()
             emailLogin: email,
             tel:inputTel.value,
         };
-        localStorage.setItem("datosPerfil",datos);
+        localStorage.setItem("datosPerfil",JSON.stringify(datos));
         console.log(datos.nombre);
     }
 })
