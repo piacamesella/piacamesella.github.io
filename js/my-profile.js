@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function(){
         inputApellido.value=localStorage.getItem("apellido");
         inputSegundoApellido.value=localStorage.getItem("segundoApellido");
         inputEmail.value=localStorage.getItem("usuario");
-        inputTel.value=localStorage.getItem("tel");
+        inputTel.value=localStorage.getItem("tel");;
     }
 })
 
