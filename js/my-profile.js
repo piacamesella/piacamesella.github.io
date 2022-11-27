@@ -58,7 +58,7 @@ document.getElementById("guardarCambiosID").addEventListener("click", function()
 
 document.addEventListener("DOMContentLoaded", function(){
     if(localStorage.getItem("datosPerfil")==null){
-        inputEmail.value=email && inputNombre.value=="" && inputSegundoNombre.value=="" && inputApellido.value=="" && inputSegundoApellido.value=="" && inputTel.value=="";
+        inputEmail.innerHTML=email && inputNombre.value=="" && inputSegundoNombre.value=="" && inputApellido.value=="" && inputSegundoApellido.value=="" && inputTel.value=="";
     }else{
         localStorage.getItem("datosPerfil");
         inputNombre.value=datos.nombre;
@@ -66,7 +66,6 @@ document.addEventListener("DOMContentLoaded", function(){
     }
 })
 
-document.getElementById("emailID").innerHTML=email;
 
 document.addEventListener("DOMContentLoaded", function(){
     let email=localStorage.getItem("usuario");
