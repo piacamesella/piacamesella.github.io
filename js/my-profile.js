@@ -58,6 +58,7 @@ document.addEventListener("DOMContentLoaded", function(){
     if(inputNombre.value!=="" && inputApellido.value!=="" && inputTel.value!==""){
         inputEmail.value=email && inputNombre.value=="" && inputSegundoNombre.value=="" && inputApellido.value=="" && inputSegundoApellido.value=="" && inputTel.value=="";
     }else{
+        localStorage.getItem("datosPerfil");
         inputNombre.value=datos.nombre;
         inputApellido.value=datos.apellido;
     }
