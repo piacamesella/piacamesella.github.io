@@ -47,7 +47,7 @@ let getJSONData = function(url){
     });
 }
 
-const menuDesplegable= function(){
+let menuDesplegable= function(){
   document.addEventListener("DOMContentLoaded", function(){
     let email=localStorage.getItem("usuario");
     document.getElementById("emailIngresado").innerHTML=email;
