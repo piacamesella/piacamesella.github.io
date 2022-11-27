@@ -54,6 +54,14 @@ document.getElementById("guardarCambiosID").addEventListener("click", function()
     }
 })
 
+document.addEventListener("DOMContentLoaded", function(){
+    if(inputNombre.value!=="" && inputApellido.value!=="" && inputTel.value!==""){
+        inputEmail.value=email && inputNombre.value=="" && inputSegundoNombre.value=="" && inputApellido.value=="" && inputSegundoApellido.value=="" && inputTel.value=="";
+    }else{
+        inputNombre.innerHTML+=datos.nombre;
+    }
+})
+
 document.getElementById("emailID").value=email;
 
 document.addEventListener("DOMContentLoaded", function(){
