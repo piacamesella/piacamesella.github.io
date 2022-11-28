@@ -469,7 +469,7 @@ document.addEventListener("DOMContentLoaded", function(){
     });
     //cambiar el cerrar sesión para que no borre al usuario del local storage
     document.getElementById("cerrarSesion").addEventListener("click", function() {
-        // localStorage.removeItem("usuario");
+        localStorage.removeItem("usuario");
         window.location = "index.html"
     });
     

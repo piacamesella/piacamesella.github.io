@@ -156,6 +156,7 @@ document.addEventListener("DOMContentLoaded", function(){
         }
     });
     document.getElementById("cerrarSesion").addEventListener("click", function() {
+        localStorage.removeItem("usuario");
         window.location = "index.html"
     });
     
