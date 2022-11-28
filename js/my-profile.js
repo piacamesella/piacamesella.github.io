@@ -68,14 +68,6 @@ let tel="";
 //     }
 // })
 
-function mostrarDatos(datosIngresados){
-    inputNombre.value=datosIngresados.nombre
-    inputSegundoNombre.value=datosIngresados.segundoNombre
-    inputApellido.value=datosIngresados.apellido
-    inputSegundoApellido.value=datosIngresados.segundoApellido
-    inputEmail.value=datosIngresados.emailLogin
-    inputTel.value=datosIngresados.tel
-}
 
 document.getElementById("guardarCambiosID").addEventListener("click", function(){
     if(inputNombre.value!=="" && inputApellido.value!=="" && inputTel.value!==""){
@@ -95,15 +87,19 @@ document.getElementById("guardarCambiosID").addEventListener("click", function()
 });
 //mostrar datos dependiendo de si el usuario ya ha ingresado o no:
 document.addEventListener("DOMContentLoaded", function(){
-    if(localStorage.getItem("datosPerfil")==null){
+    datos=JSON.parse(localStorage.getItem("datosPerfil"));
+    if(localStorage.getItem("datosPerfil")==null||datos.emailLogin!==email){
         inputEmail.value=email && inputNombre.value=="" && inputSegundoNombre.value=="" && inputApellido.value=="" && inputSegundoApellido.value=="" && inputTel.value=="";
     }else{
-        datos=JSON.parse(localStorage.getItem("datosPerfil"));
-        if(datos.emailLogin=email){
-            mostrarDatos(datos);
-            console.log(datos);
-            console.log(datos.emailLogin)
-        }
+        // datos=JSON.parse(localStorage.getItem("datosPerfil"));
+        // if(datos.emailLogin=email){
+            inputNombre.value=datos.nombre
+            inputSegundoNombre.value=datos.segundoNombre
+            inputApellido.value=datos.apellido
+            inputSegundoApellido.value=datos.segundoApellido
+            inputEmail.value=datos.emailLogin
+            inputTel.value=datos.tel
+        // }
         // mostrarDatos(datos);
         // inputNombre.value=datos.nombre
         // inputSegundoNombre.value=datos.segundoNombre
@@ -114,32 +110,6 @@ document.addEventListener("DOMContentLoaded", function(){
         // console.log(datos);
     }
 })
-
-// document.getElementById("guardarCambiosID").addEventListener("click", function(){
-//     if(inputNombre.value!=="" && inputApellido.value!=="" && inputTel.value!==""){
-//         localStorage.setItem("nombre",inputNombre.value);
-//         localStorage.setItem("segundoNombre",inputSegundoNombre.value)
-//         localStorage.setItem("apellido",inputApellido.value)
-//         localStorage.setItem("segundoApellido",inputSegundoApellido.value)
-//         localStorage.setItem("tel",inputTel.value)
-//         }else{
-//             alert("Debes completar los campos obligatorios(*)");
-//         }
-//     }
-// )
-
-// document.addEventListener("DOMContentLoaded", function(){
-//     if(localStorage.getItem("nombre")==null && localStorage.getItem("apellido")==null && localStorage.getItem("tel")==null){
-//         inputEmail.value=document.getElementById("emailIngresado").value && inputNombre.value=="" && inputSegundoNombre.value=="" && inputApellido.value=="" && inputSegundoApellido.value=="" && inputTel.value=="";
-//     }else{
-//         inputNombre.value=localStorage.getItem("nombre");
-//         inputSegundoNombre.value=localStorage.getItem("segundoNombre");
-//         inputApellido.value=localStorage.getItem("apellido");
-//         inputSegundoApellido.value=localStorage.getItem("segundoApellido");
-//         inputEmail.value=localStorage.getItem("usuario");
-//         inputTel.value=localStorage.getItem("tel");
-//     }
-// })
 
 document.addEventListener("DOMContentLoaded", function(){
     let email=localStorage.getItem("usuario");
@@ -156,5 +126,5 @@ document.addEventListener("DOMContentLoaded", function(){
         localStorage.removeItem("usuario");
         window.location = "index.html"
     });
-     
+
   });
