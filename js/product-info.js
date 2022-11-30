@@ -1,13 +1,11 @@
 let productInfo;
 let images=[];
 let relatedProducts=[];
-// let estrellasScore = 0;
-// let estrellasDoradas = `
-// <span  class="fa fa-star checked"></span>
-// `
-// let estrellasNegras = `
-// <span class="fa fa-star"></span>
-// `
+let puntuacion=1;
+let estrellasDoradas = "";
+let estrellasNegras = "";
+let calificacionEstrellas = "";
+
 //función que guarda el productID en el almacenamiento local y recarga la página
 
 function setProductID(id){
@@ -103,38 +101,28 @@ document.addEventListener("DOMContentLoaded", function(){
                     <div class="row">
                         <div class="col">
                             <div class="d-flex w-100 justify-content-between">
-                            <h4 class="mb-1">${products.user} <small class="text-muted"> - ${products.dateTime} - </small><br><small class="text-muted">${products.description}</small></h4>
+                            <h4 class="mb-1">${products.user} <small class="text-muted"> - ${products.dateTime} - ${calificacionEstrellas}</small><br><small class="text-muted">${products.description}</small></h4>
                         </div>
                     </div>
                 </div>
                 `
+                puntuacion=products.score;
             }
             document.getElementById("prod-comments-container").innerHTML = htmlContentToAppend;
          }
       }
       );
-    //   function estrellas(score){
-    //     for(let i = 0; i < 5; i++){
-    //         let estrellasScore = score[i];
-    //         console.log(estrellasScore);
-    //         document.getElementById("estrellasDoradas").innerHTML = estrellasDoradas;
-    //         estrellasScore=5-score;
-    //         console.log(estrellasScore);
-    //         document.getElementById("estrellasNegras").innerHTML = estrellasNegras;
-    //     }
-    function estrellas(score){
-        for(let i = 1; i < score; i++){
-            estrellas += `<span class="fa fa-star checked"></span>`;
-        }
-        for (let i = score + 1; i <=5; i++){
-            estrellas+= `<span class="fa fa-star"></span>`;
-        }
-        // return estrellas;
-            document.getElementById("estrellasScore").innerHTML +=`<div style="text-align: right;">${estrellas}</div><br><hr>`;
-        }
-    }        
-// });
-);
+});
+
+
+for(let i = 0; i < puntuacion; i++){
+    estrellasDoradas += `<span class="fa fa-star checked"></span>`;
+}
+ for (let i = puntuacion + 1; i <=5; i++){
+     estrellasNegras+= `<span class="fa fa-star"></span>`;
+}
+calificacionEstrellas+= `<div style="text-align: right;">${estrellasDoradas+estrellasNegras}</div><br><hr>`;
+console.log(estrellas)
 
 
 document.addEventListener("DOMContentLoaded", function(){
