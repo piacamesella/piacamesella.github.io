@@ -21,8 +21,8 @@ function getProductID(id){
 function mostrarProductInfo(){
     let htmlContentToAppend = "";
     htmlContentToAppend+= `
-     <div "getProductID(${"productID"})" class="list-group-item">
-     <div class="row">
+     <div "getProductID(${"productID"})" class="list-group-item" style="background-color:beige;">
+     <div class="row" style="background-color:beige;">
          <div class="col-3">
          <h2 <small class="text">${productInfo.name}</small><br>
          </div>
@@ -60,7 +60,7 @@ function mostrarProductosRelacionados(){
     relatedProducts=productInfo.relatedProducts;
     for(let i = 0; i < relatedProducts.length; i++){
         htmlContentToAppend += `
-        <div onclick="setProductID(${productInfo.relatedProducts[i].id})" class="list-group-item">
+        <div onclick="setProductID(${productInfo.relatedProducts[i].id})" class="list-group-item" style="background-color:beige;">
         <div class="row">
             <div class="col-3">
             <h4 <small class="text">${productInfo.relatedProducts[i].name}</small><br>

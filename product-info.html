@@ -11,6 +11,37 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <style>
+    body{
+      background-image: url("img/perfil.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-attachment: fixed;
+    }
+    @media only screen and (max-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+
+      body {
+        background-image: url("img/perfilchica.png");
+        background-size:cover;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+    }
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+  
+  </style>
 </head>
 
 <body>
@@ -47,39 +78,38 @@
     </div>
   </nav>
   <main>
-    <div class="list-group-item">
-    <div id="contenedor" class="container py-5 h-100"></div>
-    <div id="contenedorImagenes" class="row"></div>
-    <div class="row">
-    <div class="list-group">
-    </div>
-</div>
-</main>
-<div>
-<h3>Comentarios</h3>
-<div id="prod-comments-container"></div>
-<!-- <div id="estrellasScore"></div>
-<div id="estrellasDoradas"></div>
-<div id="estrellasNegras"></div> -->
-</div>
-<div>
-<h3>Comentar</h3>
-<p>Tu opinión:<br><textarea name="comentario"></textarea></p><br>
-<p>Tu puntuación:<br></p><br>
-<select name="select" style=" width:125px">
-  <option value="1">1</option>
-  <option value="2">2</option>
-  <option value="3">3</option>
-  <option value="4">4</option>
-  <option value="5">5</option>
-</select><br>
-<p><input type="submit" value="Enviar"></p>
-</div>
-<div>
-  <h2>Productos relacionados</h2>
-  <div class="list-group-item">
-  <div id="relatedProducts" class="row">
-</div>
+      <div class="container py-5 h-100">
+        <div id="contenedor" class="container py-5 h-100"></div>
+        <div id="contenedorImagenes" class="row"></div>
+        <div class="row"></div>
+        <div class="list-group"></div>
+      </div>
+      <div class="container py-5 h-100">
+        <h3>Comentarios</h3>
+        <div id="prod-comments-container"></div>
+        <div id="estrellasScore"></div>
+        <div id="estrellasDoradas"></div>
+        <div id="estrellasNegras"></div>
+      </div>
+      <div class="container py-5 h-100">
+        <h3>Comentar</h3>
+        <p>Tu opinión:<br><textarea name="comentario"></textarea></p><br>
+        <p>Tu puntuación:<br></p><br>
+        <select name="select" style=" width:125px">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select><br>
+        <p><input type="submit" value="Enviar"></p>
+      </div>
+      <div class="container py-5 h-100">
+        <h2>Productos relacionados</h2>
+        <div class="list-group-item">
+        <div id="relatedProducts" class="row">
+      </div>
+  </main>
   <footer class="text-muted">
     <div class="container">
       <p class="float-end">
