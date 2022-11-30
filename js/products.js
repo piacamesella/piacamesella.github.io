@@ -18,7 +18,7 @@ function mostrarArrayProducts(){
         (products.cost>=min && max==undefined)||(products.cost<=max && min==undefined)){
 
             htmlContentToAppend += `
-            <div onclick="setProductID(${products.id})" class="list-group-item list-group-item-action cursor-active">
+            <div onclick="setProductID(${products.id})" class="list-group-item list-group-item-action cursor-active" style="background-color:beige;">
                 <div class="row">
                     <div class="col-3">
                         <img src="${products.image}" alt="${products.description}" class="img-thumbnail">
