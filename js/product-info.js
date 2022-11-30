@@ -60,7 +60,7 @@ function mostrarProductosRelacionados(){
     relatedProducts=productInfo.relatedProducts;
     for(let i = 0; i < relatedProducts.length; i++){
         htmlContentToAppend += `
-        <div onclick="setProductID(${productInfo.relatedProducts[i].id})" class="list-group-item" style="background-color:beige;">
+        <div onclick="setProductID(${productInfo.relatedProducts[i].id})" class="list-group-item list-group-item-action cursor-active" style="background-color:beige;">
         <div class="row">
             <div class="col-3">
             <h4 <small class="text">${productInfo.relatedProducts[i].name}</small><br>
