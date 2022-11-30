@@ -107,7 +107,8 @@ document.addEventListener("DOMContentLoaded", function(){
         // inputSegundoApellido.value=datos.segundoApellido
         // inputEmail.value=datos.emailLogin
         // inputTel.value=datos.tel
-        // console.log(datos);
+        console.log(datos);
+        console.log(datos.emailLogin)
     }
 })
 
